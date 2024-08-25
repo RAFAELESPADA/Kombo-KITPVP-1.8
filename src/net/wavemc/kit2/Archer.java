@@ -72,7 +72,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 				.nbt("cancel-drop")
 				.toStack());
 				player.getInventory().setItem(10, new ItemBuilder("§aFlecha!", Material.ARROW)
-						.nbt("kit-handler", "flecha").addEnchant(Enchantment.SHARPNESS, 1)
+						.nbt("kit-handler", "flecha").addEnchant(Enchantment.DAMAGE_ALL, 1)
 						.nbt("cancel-drop").addFlags(
 								ItemFlag.HIDE_ENCHANTS)
 						.toStack()

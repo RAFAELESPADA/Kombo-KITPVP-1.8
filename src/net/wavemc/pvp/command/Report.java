@@ -61,7 +61,7 @@ public class Report implements CommandExecutor {
                     online.sendMessage("§bVitíma: §6" + sender.getName());
                     online.sendMessage("§bAcusado: §c" + targetName + " §7(" + targetPlayer.getWorld().getName() == Bukkit.getWorld("1v1").getName() ? "Duels" : targetPlayer.getWorld().getName() + ")");
                     online.sendMessage("§bMotivo: §8" + reason);
-                    online.playSound(online.getLocation(), Sound.BLOCK_ANVIL_LAND, 10, 10);
+                    online.playSound(online.getLocation(), Sound.ANVIL_LAND, 10, 10);
                 });
 	return false;
 

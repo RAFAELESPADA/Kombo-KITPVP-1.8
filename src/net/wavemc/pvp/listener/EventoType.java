@@ -56,7 +56,7 @@ public enum EventoType {
             Bukkit.getScheduler().runTaskLater(WavePvP.getInstance(), () -> {
             	EventoUtils.getEventoPlayers().forEach(p -> {
                p.sendMessage(WavePvP.getInstance().getConfig().getString("Prefix").replace("&", "§") + " §f" + ChatColor.translateAlternateColorCodes('&', message));
-               p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
+               p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0f, 1.0f);
         });
             	
     }, actualsec * 20);

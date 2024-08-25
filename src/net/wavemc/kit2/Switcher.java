@@ -26,7 +26,7 @@ public class Switcher extends KitHandler2 {
     public void execute(Player player) {
         super.execute(player);
 
-        player.getInventory().setItem(2, new ItemBuilder(Material.SNOWBALL)
+        player.getInventory().setItem(2, new ItemBuilder(Material.SNOW_BALL)
                 .amount(2)
                 .nbt("cancel-drop").nbt("kit-handler", "switcher")
                 .toStack()
@@ -37,7 +37,7 @@ public void snowball(final ProjectileLaunchEvent e) {
     if (e.getEntity() instanceof Snowball) {
     	if (e.getEntity().getShooter() instanceof Player) {
         final Player p = (Player) e.getEntity().getShooter();
-            if (!KitManager2.getPlayer(p.getName()).haskit2(this) || !p.getItemInHand().equals(new ItemStack(Material.SNOWBALL))) {
+            if (!KitManager2.getPlayer(p.getName()).haskit2(this) || !p.getItemInHand().equals(new ItemStack(Material.SNOW_BALL))) {
             	return;
             }
             if (GladiatorListener2.combateGlad.containsKey(p) || net.wavemc.kit2.GladiatorListener.combateGlad.containsKey(p)) {
@@ -48,7 +48,7 @@ public void snowball(final ProjectileLaunchEvent e) {
             if (inCooldown(p)) {
             	e.setCancelled(true);
                 sendMessageCooldown(p);
-                p.getInventory().addItem(new ItemBuilder(Material.SNOWBALL)
+                p.getInventory().addItem(new ItemBuilder(Material.SNOW_BALL)
                         .amount(1)
                         .nbt("cancel-drop").nbt("kit-handler", "switcher")
                         .toStack());
@@ -58,13 +58,13 @@ public void snowball(final ProjectileLaunchEvent e) {
             if (inCooldown(p) && KitManager2.getPlayer(p.getName()).haskit2(this)) {
              e.setCancelled(true);
              sendMessageCooldown(p);
-             p.getInventory().addItem(new ItemBuilder(Material.SNOWBALL)
+             p.getInventory().addItem(new ItemBuilder(Material.SNOW_BALL)
                      .amount(1)
                      .nbt("cancel-drop").nbt("kit-handler", "switcher")
                      .toStack());
              return;
             }
-            p.getInventory().addItem( new ItemBuilder(Material.SNOWBALL)
+            p.getInventory().addItem( new ItemBuilder(Material.SNOW_BALL)
                     .amount(1)
                     .nbt("cancel-drop").nbt("kit-handler", "switcher")
                     .toStack());
@@ -95,7 +95,7 @@ public void snowball(final ProjectileLaunchEvent e) {
     	       }
     	        Player p = (Player)e.getEntity();
     	        if (KitManager.getPlayer(p.getName()).hasKit(WaveKit.NEO) || KitManager2.getPlayer(p.getName()).haskit2(WaveKit2.NEO)) {
-					p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_BANJO, 15.0f, 15.0f);
+					p.playSound(p.getLocation(), Sound.NOTE_PLING, 15.0f, 15.0f);
 					shooter.sendMessage("§cSeu kit falhou porque seu oponente está de NEO!");
 					return;
 				}
@@ -105,8 +105,8 @@ public void snowball(final ProjectileLaunchEvent e) {
     	        Location shooterLoc = shooter.getLocation();
     	        shooter.teleport(e.getEntity().getLocation());
     	        p.teleport(shooterLoc);
-    	        shooter.playSound(shooter.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 10.0F, 10.0F);
-    	        p.playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 10.0F, 10.0F);
+    	        shooter.playSound(shooter.getLocation(), Sound.ENDERMAN_TELEPORT, 10.0F, 10.0F);
+    	        p.playSound(p.getLocation(), Sound.ENDERMAN_TELEPORT, 10.0F, 10.0F);
     	      } 
     }
 }

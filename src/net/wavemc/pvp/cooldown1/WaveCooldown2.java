@@ -126,7 +126,7 @@ public class WaveCooldown2 {
                     it.remove();
 
                     WaveActionBar.send(player, "");
-                    player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1F, 1F);
+                    player.playSound(player.getLocation(), Sound.LEVEL_UP, 1F, 1F);
                     CooldownFinishEvent e = new CooldownFinishEvent(player, cooldown);
                     Bukkit.getServer().getPluginManager().callEvent(e);
                 }

@@ -49,7 +49,7 @@ public class Hulk extends KitHandler {
 			return;
 		}
         else if (KitManager.getPlayer(rightClicked.getName()).hasKit(WaveKit.NEO) || KitManager2.getPlayer(rightClicked.getName()).haskit2(WaveKit2.NEO)) {
-        	event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 15.0f, 15.0f);
+        	event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.NOTE_BASS, 15.0f, 15.0f);
 			event.getPlayer().sendMessage(ChatColor.RED + "Você não pode usar o hulk em " + ChatColor.DARK_RED + rightClicked.getName() + ChatColor.RED + " porque ele esta com o kit" + ChatColor.DARK_RED + " NEO");
 			return;
 		}

@@ -33,7 +33,7 @@ public void onInteract(PlayerInteractEvent event) {
 	if (event.getItem() == null) {
 		return;
 	}
-	if (event.getItem().getType().equals(Material.MUSHROOM_STEW)) {
+	if (event.getItem().getType().equals(Material.MUSHROOM_SOUP)) {
 		return;
 	}
 	if (p.getNearbyEntities(5, 5, 5).size() > 0 && p.getNearbyEntities(5, 5, 5) instanceof Player) {
@@ -54,7 +54,7 @@ public void onInteract(PlayerInteractEvent event) {
 				return;
 			}
 			if (!inCooldown(event.getPlayer())) {
-				Block target = p.getTargetBlock(null, 200);
+				Block target = p.getEyeLocation().getBlock();
 				if (target.getType() != Material.AIR && target.getType() != Material.GLASS) {
 					if (target.getRelative(BlockFace.UP).getLocation().getY() > WavePvP.getInstance().getConfig().getInt("SpawnAltura") - 8) {
 						p.sendMessage("§cAponte o flash mais para baixo.");

@@ -52,35 +52,35 @@ public class KitHandler2 implements Listener {
 		player.getInventory().setItem(15, new ItemStack(Material.BROWN_MUSHROOM, 32));
 	
 	
-	player.getInventory().setItem(3 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(4 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(5 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(6 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(7 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(9 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(10 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(11 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(12 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(16 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(17 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(18 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(19 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(20 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(21 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(22 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(23 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(24 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(25 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(26 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(27 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(28 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(29 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(30 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(31 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(32 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(33 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(34 , new ItemStack(Material.MUSHROOM_STEW));
-			player.getInventory().setItem(35 , new ItemStack(Material.MUSHROOM_STEW));
+	player.getInventory().setItem(3 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(4 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(5 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(6 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(7 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(9 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(10 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(11 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(12 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(16 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(17 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(18 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(19 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(20 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(21 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(22 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(23 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(24 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(25 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(26 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(27 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(28 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(29 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(30 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(31 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(32 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(33 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(34 , new ItemStack(Material.MUSHROOM_SOUP));
+			player.getInventory().setItem(35 , new ItemStack(Material.MUSHROOM_SOUP));
 			
 		}
 	

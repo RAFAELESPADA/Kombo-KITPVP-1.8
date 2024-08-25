@@ -63,7 +63,7 @@ ArrayList<Player> subiu = new ArrayList();
 					return;
 				 }
 			p2.damage(10);
-			p2.playSound(p.getLocation(), Sound.ENTITY_GHAST_SCREAM, 10, 10);
+			p2.playSound(p.getLocation(), Sound.GHAST_SCREAM, 10, 10);
 			p2.getWorld().strikeLightning(p2.getLocation());
 			p2.setFireTicks(140);
 			addCooldown(p , 40);
@@ -82,7 +82,7 @@ ArrayList<Player> subiu = new ArrayList();
 		return;
 	}
 	
-	if ((e.getPlayer().getItemInHand().getType() != Material.FIRE_CHARGE)) {
+	if ((e.getPlayer().getItemInHand().getType() != Material.FIREBALL)) {
 		return;
 	}
 	int l = (int)p.getEyeLocation().getDirection().multiply(3.0).add(new Vector(0, 0, 0)).getY();
@@ -95,7 +95,7 @@ ArrayList<Player> subiu = new ArrayList();
 	/*  91 */         sendMessageCooldown(p);
 	/*  92 */         return;
 	/*     */       }
-	 p.playSound(p.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 1.0F, 1.0F);
+	 p.playSound(p.getLocation(), Sound.EXPLODE, 1.0F, 1.0F);
 	/*  76 */       p.setVelocity(p.getEyeLocation().getDirection().multiply(2.0).add(new Vector(0, 0, 0)));
 	danometeor.add(p.getName());
 	subiu.remove(p);
@@ -105,7 +105,7 @@ ArrayList<Player> subiu = new ArrayList();
 /*     */         public void run()
 /*     */         {
 /* 106 */           if (KitManager.getPlayer(p.getName()).hasKit()) {
-    p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
+    p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
 /* 107 */           p.sendMessage(ChatColor.GREEN + "Você pode usar o meteor de novo");
 /*     */         }
 /*     */         }
@@ -132,7 +132,7 @@ private static double calcMotY(double targetY) {
 	return;
 }
 /*     */     
-	if ((e.getPlayer().getItemInHand().getType() != Material.FIRE_CHARGE)) {
+	if ((e.getPlayer().getItemInHand().getType() != Material.FIREBALL)) {
 		return;
 	}
 /*  87 */       e.setCancelled(true);
@@ -163,21 +163,21 @@ Bukkit.getScheduler().runTaskLater(WavePvP.getInstance() , new Runnable() {
 
 /* 107 */           p.sendMessage(ChatColor.RED + "APERTE SHIFT PARA USAR O METEOR QUANDO ESTIVER NO ALTO!");
 /*  98 */       Location loc = p.getLocation();
-/*  99 */       p.playSound(loc, Sound.BLOCK_NOTE_BLOCK_BELL, 1.0F, 1.0F);
+/*  99 */       p.playSound(loc, Sound.ANVIL_BREAK, 1.0F, 1.0F);
 Location location = p.getLocation();
 for (final Entity pertos : p.getNearbyEntities(20, 20 , 20)) {
 	  if (pertos instanceof Player) {
-		  ((Player) pertos).playSound((Location)pertos.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 1f, 1f);
+		  ((Player) pertos).playSound((Location)pertos.getLocation(), Sound.ANVIL_BREAK, 1f, 1f);
 }
 
-location.getWorld().playEffect(location, Effect.ZOMBIE_INFECT, 15);
+location.getWorld().playEffect(location, Effect.FLAME, 15);
 
 Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnable()
 /*     */       {
 /*     */         public void run()
 /*     */         {
-/* 106 */          p.playSound(loc, Sound.BLOCK_NOTE_BLOCK_BELL, 1.0F, 1.0F);
-location.getWorld().playEffect(location, Effect.ZOMBIE_INFECT, 15);
+/* 106 */          p.playSound(loc, Sound.ANVIL_BREAK, 1.0F, 1.0F);
+location.getWorld().playEffect(location, Effect.FLAME, 15);
 
 /*     */         }
 /* 109 */       }, 20L);
@@ -185,8 +185,8 @@ Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnabl
 /*     */       {
 /*     */         public void run()
 /*     */         {
-/* 106 */          p.playSound(loc, Sound.BLOCK_NOTE_BLOCK_BELL, 1.0F, 1.0F);
-location.getWorld().playEffect(location, Effect.ZOMBIE_INFECT, 15);
+/* 106 */          p.playSound(loc, Sound.ANVIL_BREAK, 1.0F, 1.0F);
+location.getWorld().playEffect(location, Effect.FLAME, 15);
 
 /*     */         }
 /* 109 */       }, 40L);
@@ -194,16 +194,16 @@ Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnabl
 /*     */       {
 /*     */         public void run()
 /*     */         {
-/* 106 */          p.playSound(loc, Sound.ENTITY_FIREWORK_ROCKET_BLAST, 1.0F, 1.0F);
+/* 106 */          p.playSound(loc, Sound.ANVIL_BREAK, 1.0F, 1.0F);
 
-location.getWorld().playEffect(location, Effect.ZOMBIE_INFECT, 15);
+location.getWorld().playEffect(location, Effect.FLAME, 15);
 /*     */         }
 /* 109 */       }, 60L);
 Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnable()
 /*     */       {
 /*     */         public void run()
 /*     */         {
-/* 106 */          p.playSound(loc, Sound.BLOCK_ANVIL_DESTROY, 1.0F, 1.0F);
+/* 106 */          p.playSound(loc, Sound.ANVIL_BREAK, 1.0F, 1.0F);
 
 location.getWorld().playEffect(location, Effect.BLAZE_SHOOT, 15);
 /*     */         }
@@ -212,61 +212,61 @@ Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnabl
 /*     */       {
 /*     */         public void run()
 /*     */         {
-/* 106 */          p.playSound(loc, Sound.BLOCK_FENCE_GATE_OPEN, 1.0F, 1.0F);
+/* 106 */          p.playSound(loc, Sound.ANVIL_BREAK, 1.0F, 1.0F);
 
-location.getWorld().playEffect(location, Effect.ANVIL_LAND, 15);
+location.getWorld().playEffect(location, Effect.FLAME, 15);
 /*     */         }
 /* 109 */       }, 100L);
 Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnable()
 /*     */       {
 /*     */         public void run()
 /*     */         {
-/* 106 */          p.playSound(loc, Sound.ENTITY_HORSE_HURT, 1.0F, 1.0F);
+/* 106 */          p.playSound(loc, Sound.ANVIL_BREAK, 1.0F, 1.0F);
 
-location.getWorld().playEffect(location, Effect.END_GATEWAY_SPAWN, 15);
+location.getWorld().playEffect(location, Effect.FLAME, 15);
 /*     */         }
 /* 109 */       }, 120L);
 Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnable()
 /*     */       {
 /*     */         public void run()
 /*     */         {
-/* 106 */          p.playSound(loc, Sound.AMBIENT_CAVE, 1.0F, 1.0F);
+/* 106 */          p.playSound(loc, Sound.ANVIL_BREAK, 1.0F, 1.0F);
 
-location.getWorld().playEffect(location, Effect.ANVIL_USE, 15);
+location.getWorld().playEffect(location, Effect.FLAME, 15);
 /*     */         }
 /* 109 */       }, 130L);
 Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnable()
 /*     */       {
 /*     */         public void run()
 /*     */         {
-/* 106 */          p.playSound(loc, Sound.ENTITY_WITHER_SHOOT, 1.0F, 1.0F);
+/* 106 */          p.playSound(loc, Sound.ANVIL_BREAK, 1.0F, 1.0F);
 
-location.getWorld().playEffect(location, Effect.BAT_TAKEOFF, 15);
+location.getWorld().playEffect(location, Effect.FLAME, 15);
 /*     */         }
 /* 109 */       }, 140L);
 Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnable()
 /*     */       {
 /*     */         public void run()
 /*     */         {
-/* 106 */          p.playSound(loc, Sound.AMBIENT_CAVE, 1.0F, 1.0F);
+/* 106 */          p.playSound(loc, Sound.ANVIL_BREAK, 1.0F, 1.0F);
 
-location.getWorld().playEffect(location, Effect.ANVIL_LAND, 15);
+location.getWorld().playEffect(location, Effect.FLAME, 15);
 /*     */         }
 /* 109 */       }, 155L);
 Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnable()
 /*     */       {
 /*     */         public void run()
 /*     */         {
-/* 106 */          p.playSound(loc, Sound.BLOCK_CAKE_ADD_CANDLE, 1.0F, 1.0F);
+/* 106 */          p.playSound(loc, Sound.ANVIL_BREAK, 1.0F, 1.0F);
 
-location.getWorld().playEffect(location, Effect.ELECTRIC_SPARK, 15);
+location.getWorld().playEffect(location, Effect.FLAME, 15);
 /*     */         }
 /* 109 */       }, 160L);
 Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnable()
 /*     */       {
 /*     */         public void run()
 /*     */         {
-/* 106 */          p.playSound(loc, Sound.ITEM_TOTEM_USE, 1.0F, 1.0F);
+/* 106 */          p.playSound(loc, Sound.ANVIL_BREAK, 1.0F, 1.0F);
 
 /*     */         }
 /* 109 */       }, 200L);
@@ -278,7 +278,7 @@ subiu.add(p);
 		return;
 	}
 	
-	if ((e.getPlayer().getItemInHand().getType() != Material.FIRE_CHARGE)) {
+	if ((e.getPlayer().getItemInHand().getType() != Material.FIREBALL)) {
 		return;
 	}
 	if (hasCooldown(p))
@@ -288,7 +288,7 @@ subiu.add(p);
 	/*     */       }
 
 /* 106 */            if (KitManager.getPlayer(p.getName()).hasKit()) {
-    p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
+    p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
 
 /* 107 */           p.sendMessage(ChatColor.RED + "APERTE SHIFT PARA USAR O METEOR QUANDO ESTIVER NO ALTO!");
 /*     */         }

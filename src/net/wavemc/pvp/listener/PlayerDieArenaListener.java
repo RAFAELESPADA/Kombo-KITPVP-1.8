@@ -41,14 +41,15 @@ public class PlayerDieArenaListener implements Listener {
 		List<ItemStack> drops = new ArrayList<>(event.getDrops());
 		Location deathLocation = event.getDeathLocation();
 		if (drops.size() > 0) {
-			deathLocation.getWorld().playEffect(deathLocation, Effect.LAVA_INTERACT, 4);
+			deathLocation.getWorld().playEffect(deathLocation, Effect.LAVADRIP, 4);
 		}
 		player.spigot().respawn();
-		ItemStack capacete0 = new ItemStack(Material.MUSHROOM_STEW);
+		ItemStack capacete0 = new ItemStack(Material.MUSHROOM_SOUP);
 		ItemStack capacete1 = new ItemStack(Material.BOWL);
 		ItemStack capacete2 = new ItemStack(Material.BROWN_MUSHROOM);
 		ItemStack capacete3 = new ItemStack(Material.RED_MUSHROOM);
-		ItemStack capacete4 = new ItemStack(Material.COCOA_BEANS);
+
+	    ItemStack capacete4 = new ItemStack(Material.INK_SACK, (short)3);
 		event.getDrops().clear();
 		drops.clear();
 		new BukkitRunnable() {
@@ -93,7 +94,7 @@ public class PlayerDieArenaListener implements Listener {
 			w.dropItemNaturally(deathLocation, capacete0);
 			}
 			WavePlayer killerWavePlayer = WaveBukkit.getInstance().getPlayerManager().getPlayer(killer.getName());
-			killer.playSound(killer.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10.0f, 10.0f);
+			killer.playSound(killer.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
 			killer.sendMessage("§3Você matou " + player.getName() + ". §8(" + (event.isValidKill() ? "Conta" : "Não conta" + ")"));
 			if (event.isValidKill()) {
 				int killerAddCoins = !killer.hasPermission("wave.doublexp") ? random.nextInt(15) + 15 : random.nextInt(30) + 20;
@@ -121,7 +122,7 @@ public class PlayerDieArenaListener implements Listener {
 			}
 			victimWavePlayer.getPvp().addDeaths(1);
 			player.sendMessage("§cVocê morreu para o jogador " + killer.getName());
-			player.playSound(player.getLocation(), Sound.ENTITY_BAT_DEATH, 10f, 10f);
+			player.playSound(player.getLocation(), Sound.BAT_DEATH, 10f, 10f);
 					WaveBukkit.getInstance().getPlayerManager().getController().save(victimWavePlayer);
 					WaveBukkit.getInstance().getPlayerManager().getController().save(killerWavePlayer);
 		}else {
@@ -150,7 +151,7 @@ public class PlayerDieArenaListener implements Listener {
 		}.runTaskLater(WavePvP.getInstance(), 3);
 		
 		if (event.hasKiller()) {
-			ItemStack capacete0 = new ItemStack(Material.MUSHROOM_STEW);
+			ItemStack capacete0 = new ItemStack(Material.MUSHROOM_SOUP);
 			ItemStack capacete1 = new ItemStack(Material.BOWL , 64);
 			ItemStack capacete2 = new ItemStack(Material.BROWN_MUSHROOM , 64);
 			ItemStack capacete3 = new ItemStack(Material.RED_MUSHROOM, 64);
@@ -168,7 +169,7 @@ public class PlayerDieArenaListener implements Listener {
 			      killer.getInventory().setLeggings(new ItemStack(Material.IRON_LEGGINGS));
 			      killer.getInventory().setBoots(new ItemStack(Material.IRON_BOOTS));
 			WavePlayer killerWavePlayer = WaveBukkit.getInstance().getPlayerManager().getPlayer(killer.getName());
-			killer.playSound(killer.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10.0f, 10.0f);
+			killer.playSound(killer.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
 			killer.sendMessage("§3Você matou " + player.getName() + ". §8(" + (event.isValidKill() ? "Conta" : "Não conta" + ")"));
 			if (event.isValidKill()) {
 				int killerAddCoins = !killer.hasPermission("wave.doublexp") ? random.nextInt(15) + 15 : random.nextInt(37) + 20;
@@ -210,7 +211,7 @@ w.dropItemNaturally(deathLocation, capacete3);
 			killerWavePlayer.getPvp().addKills(1);
 			victimWavePlayer.getPvp().addDeaths(1);
 			player.sendMessage("§cVocê morreu para o jogador " + killer.getName());
-			player.playSound(player.getLocation(), Sound.ENTITY_BAT_DEATH, 10f, 10f);
+			player.playSound(player.getLocation(), Sound.BAT_DEATH, 10f, 10f);
 					WaveBukkit.getInstance().getPlayerManager().getController().save(victimWavePlayer);
 					WaveBukkit.getInstance().getPlayerManager().getController().save(killerWavePlayer);
 			}	else {
@@ -235,7 +236,7 @@ w.dropItemNaturally(deathLocation, capacete3);
 		}.runTaskLater(WavePvP.getInstance(), 3);
 		
 		if (event.hasKiller()) {
-			ItemStack capacete0 = new ItemStack(Material.MUSHROOM_STEW);
+			ItemStack capacete0 = new ItemStack(Material.MUSHROOM_SOUP);
 			ItemStack capacete1 = new ItemStack(Material.BOWL , 64);
 			ItemStack capacete2 = new ItemStack(Material.BROWN_MUSHROOM , 64);
 			ItemStack capacete3 = new ItemStack(Material.RED_MUSHROOM, 64);
@@ -253,7 +254,7 @@ w.dropItemNaturally(deathLocation, capacete3);
 			      killer.getInventory().setLeggings(new ItemStack(Material.IRON_LEGGINGS));
 			      killer.getInventory().setBoots(new ItemStack(Material.IRON_BOOTS));
 			WavePlayer killerWavePlayer = WaveBukkit.getInstance().getPlayerManager().getPlayer(killer.getName());
-			killer.playSound(killer.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10.0f, 10.0f);
+			killer.playSound(killer.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
 			killer.sendMessage("§3Você matou " + player.getName() + ". §8(" + (event.isValidKill() ? "Conta" : "Não conta" + ")"));
 			if (event.isValidKill()) {
 				int killerAddCoins = !killer.hasPermission("wave.doublexp") ? random.nextInt(15) + 15 : random.nextInt(37) + 20;
@@ -295,7 +296,7 @@ w.dropItemNaturally(deathLocation, capacete3);
 			killerWavePlayer.getPvp().addKills(1);
 			victimWavePlayer.getPvp().addDeaths(1);
 			player.sendMessage("§cVocê morreu para o jogador " + killer.getName());
-			player.playSound(player.getLocation(), Sound.ENTITY_BAT_DEATH, 10f, 10f);
+			player.playSound(player.getLocation(), Sound.BAT_DEATH, 10f, 10f);
 					WaveBukkit.getInstance().getPlayerManager().getController().save(victimWavePlayer);
 					WaveBukkit.getInstance().getPlayerManager().getController().save(killerWavePlayer);
 			}	else {
@@ -319,7 +320,7 @@ w.dropItemNaturally(deathLocation, capacete3);
 		}.runTaskLater(WavePvP.getInstance(), 3);
 		
 		if (event.hasKiller()) {
-			ItemStack capacete0 = new ItemStack(Material.MUSHROOM_STEW);
+			ItemStack capacete0 = new ItemStack(Material.MUSHROOM_SOUP);
 			ItemStack capacete1 = new ItemStack(Material.BOWL , 64);
 			ItemStack capacete2 = new ItemStack(Material.BROWN_MUSHROOM , 64);
 			ItemStack capacete3 = new ItemStack(Material.RED_MUSHROOM, 64);
@@ -338,7 +339,7 @@ w.dropItemNaturally(deathLocation, capacete3);
 			      killer.getInventory().setLeggings(new ItemStack(Material.IRON_LEGGINGS));
 			      killer.getInventory().setBoots(new ItemStack(Material.IRON_BOOTS));
 			WavePlayer killerWavePlayer = WaveBukkit.getInstance().getPlayerManager().getPlayer(killer.getName());
-			killer.playSound(killer.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10.0f, 10.0f);
+			killer.playSound(killer.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
 			killer.sendMessage("§3Você matou " + player.getName() + ". §8(" + (event.isValidKill() ? "Conta" : "Não conta" + ")"));
 			if (event.isValidKill()) {
 				int killerAddCoins = !killer.hasPermission("wave.doublexp") ? random.nextInt(15) + 15 : random.nextInt(37) + 20;
@@ -381,7 +382,7 @@ w.dropItemNaturally(deathLocation, capacete3);
 			killerWavePlayer.getPvp().addKills(1);
 			victimWavePlayer.getPvp().addDeaths(1);
 			player.sendMessage("§cVocê morreu para o jogador " + killer.getName());
-			player.playSound(player.getLocation(), Sound.ENTITY_BAT_DEATH, 10f, 10f);
+			player.playSound(player.getLocation(), Sound.BAT_DEATH, 10f, 10f);
 					WaveBukkit.getInstance().getPlayerManager().getController().save(victimWavePlayer);
 					WaveBukkit.getInstance().getPlayerManager().getController().save(killerWavePlayer);
 			}	else {

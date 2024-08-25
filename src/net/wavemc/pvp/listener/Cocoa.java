@@ -42,22 +42,21 @@ public class Cocoa
   public void inv(PlayerInteractEvent e)
   {
     Player p = e.getPlayer();
-    
-    
+    ItemStack cocoa = new ItemStack(Material.INK_SACK, (short)3);
     Inventory inventory = Bukkit.getServer().createInventory(p, 36, "§bCocoa");
     for (int i = 0; i != 9; i++) {
-		inventory.setItem(i, new ItemStack(Material.COCOA_BEANS));
+		inventory.setItem(i, cocoa);
 	}
 	
 	for (int i = 9; i != 18; i++) {
-		inventory.setItem(i, new ItemStack(Material.COCOA_BEANS));
+		inventory.setItem(i, cocoa);
 	}
 	
 	for (int i = 18; i != 27; i++) {
 		inventory.setItem(i, new ItemStack(Material.BOWL, 64));
 	} 
     if ((e.getAction() == Action.RIGHT_CLICK_BLOCK) && (e.getClickedBlock() != null) && (
-      (e.getClickedBlock().getType() == Material.OAK_WALL_SIGN) || (e.getClickedBlock().getType() == Material.OAK_SIGN)))
+      (e.getClickedBlock().getType() == Material.WALL_SIGN) || (e.getClickedBlock().getType() == Material.SIGN)))
     {
       Sign s = (Sign)e.getClickedBlock().getState();
       String[] lines = s.getLines();

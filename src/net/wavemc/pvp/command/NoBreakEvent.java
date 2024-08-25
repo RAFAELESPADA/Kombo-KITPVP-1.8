@@ -16,7 +16,6 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
-import org.bukkit.block.data.BlockData;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -42,7 +41,6 @@ import net.wavemc.pvp.warp.WaveWarp;
 public final class NoBreakEvent
   implements Listener, CommandExecutor
 {
-	  public static HashMap<Block, BlockData> blocodata = new HashMap();
 
 	  public static HashMap<Block, Material> blocosalv = new HashMap();
   public static ArrayList<Player> embuild = new ArrayList<Player>();
@@ -172,13 +170,12 @@ public final class NoBreakEvent
     			return;
     		}
     		blocosalv.put(e.getBlock(), e.getBlock().getType());
-    		blocodata.put(e.getBlock(), e.getBlock().getBlockData());
     		WaveBukkit.getExecutorService().submit(() -> {
     			new BukkitRunnable() {
     				@Override
     				public void run() {
     					
-    					e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.BLOCK_GLASS_BREAK, 10, 10);
+    					e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.GLASS, 10, 10);
     				 Block tp = e.getPlayer().getWorld().getHighestBlockAt(e.getPlayer().getLocation());
                         if (e.getPlayer().getLocation().getY() < yaml.getInt("Y-arenabuild") - 15) {
                         	Location l = tp.getLocation();
@@ -187,7 +184,7 @@ public final class NoBreakEvent
     					e.getPlayer().teleport(l);
                         }
     					e.getBlock().setType(blocosalv.get(e.getBlock()));
-                        e.getBlock().setBlockData(e.getBlock().getBlockData());
+
     				}}.runTaskLater(WavePvP.getInstance(), 10 * 10L);
     		
     		});

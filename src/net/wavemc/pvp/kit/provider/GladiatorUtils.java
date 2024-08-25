@@ -63,7 +63,7 @@ public class GladiatorUtils {
             for (int y = 0; y <= radius; y ++) {
                 for (int z = -(radius); z <= radius; z++) {
                     Block block = WORLD.getBlockAt((int) pX + x, (int) pY + y, (int) pZ + z);
-                    block.setType(Material.WHITE_STAINED_GLASS);
+                    block.setType(Material.STAINED_GLASS);
                    
                 }
             }

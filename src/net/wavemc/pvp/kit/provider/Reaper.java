@@ -23,11 +23,11 @@ public class Reaper extends KitHandler {
         Player victim = (Player)e.getEntity();
 
         if (KitManager.getPlayer(damager.getName()).hasKit(this)){
-          if (damager.getInventory().getItemInHand().getType() == Material.WOODEN_HOE) {
+          if (damager.getInventory().getItemInHand().getType() == Material.WOOD_HOE) {
         	  damager.getLocation().getWorld().playEffect(damager.getLocation(), Effect.GHAST_SHOOT, 8);
         	  damager.getLocation().getWorld().playEffect(damager.getLocation(), Effect.GHAST_SHRIEK, 8);
             victim.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 100, 3));
-            victim.playSound(victim.getLocation(), Sound.ENTITY_GHAST_SCREAM, 10, 10);
+            victim.playSound(victim.getLocation(), Sound.GHAST_SCREAM, 10, 10);
            
          
       }

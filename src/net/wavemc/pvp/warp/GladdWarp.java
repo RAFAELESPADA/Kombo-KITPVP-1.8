@@ -25,13 +25,13 @@ public class GladdWarp extends WarpHandle {
 	@Override
 	public void execute(Player player) {
 		super.execute(player);
-	      player.getInventory().setItem(3, new ItemBuilder("§3Desafiar §7(Clique)", Material.IRON_BARS)
+	      player.getInventory().setItem(3, new ItemBuilder("§3Desafiar §7(Clique)", Material.IRON_FENCE)
 					.nbt("cancel-drop")
 					.nbt("cancel-click")
 					.nbt("1v1g", "challenge")
 					.toStack()
 			);
-	 	 player.getInventory().setItem(5, new ItemBuilder("§bRetornar §7(Clique)", Material.RED_BED)
+	 	 player.getInventory().setItem(5, new ItemBuilder("§bRetornar §7(Clique)", Material.BED)
 					.nbt("cancel-drop")
 					.nbt("cancel-click")
 					.nbt("voltar", "spawn")

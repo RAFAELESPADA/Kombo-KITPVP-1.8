@@ -68,7 +68,7 @@ public final class GladiatorListener2 extends KitHandler
 	public void execute(Player player) {
 		super.execute(player);
 		
-		player.getInventory().setItem(1, new ItemBuilder("§bPuxar!", Material.IRON_BARS)
+		player.getInventory().setItem(1, new ItemBuilder("§bPuxar!", Material.IRON_FENCE)
 				.nbt("kit-handler", "glad")
 				.nbt("cancel-drop")
 				.toStack()
@@ -100,7 +100,7 @@ public final class GladiatorListener2 extends KitHandler
                if (e.getItem() == null) {
             	   return;
                }
-               if (!(e.getItem().getType() == Material.MUSHROOM_STEW)) {
+               if (!(e.getItem().getType() == Material.MUSHROOM_SOUP)) {
             	   return;
                }
                 p.setHealth(Math.min(p.getMaxHealth(), p.getHealth() + 7));
@@ -195,7 +195,7 @@ public final class GladiatorListener2 extends KitHandler
         final Player bp = e.getPlayer();
         if (e.getRightClicked() instanceof Player) {
             final Player toGlad = (Player)e.getRightClicked();
-            if (!KitManager.getPlayer(bp.getName()).hasKit(this) || !ItemBuilder.has(bp.getItemInHand(), "kit-handler", "glad") || bp.getItemInHand().getType() != Material.IRON_BARS) {
+            if (!KitManager.getPlayer(bp.getName()).hasKit(this) || !ItemBuilder.has(bp.getItemInHand(), "kit-handler", "glad") || bp.getItemInHand().getType() != Material.IRON_FENCE) {
             	return;
             }
                 if (toGlad.getGameMode() == GameMode.CREATIVE) {
@@ -215,7 +215,7 @@ public final class GladiatorListener2 extends KitHandler
 					return;
 				}
 				if (KitManager.getPlayer(toGlad.getName()).hasKit(WaveKit.NEO) || KitManager2.getPlayer(toGlad.getName()).haskit2(WaveKit2.NEO)) {
-					bp.playSound(bp.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 15.0f, 15.0f);
+					bp.playSound(bp.getLocation(), Sound.NOTE_BASS, 15.0f, 15.0f);
 					bp.sendMessage(ChatColor.RED + "Você não pode desafiar " + ChatColor.DARK_RED + toGlad.getName() + ChatColor.RED + " porque ele está com o kit" + ChatColor.DARK_RED + " NEO");
 					return;
 				}

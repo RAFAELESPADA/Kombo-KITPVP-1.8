@@ -31,7 +31,7 @@ public class KitsInventoryPageTwo {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui", WaveKit.ANTISTOMPER.getName())
 						.toStack()
@@ -42,7 +42,7 @@ public class KitsInventoryPageTwo {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui", WaveKit2.STOMPER.getName())
 						.toStack()
@@ -53,7 +53,7 @@ public class KitsInventoryPageTwo {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui", WaveKit.VIPER.getName())
 						.toStack()
@@ -64,7 +64,7 @@ public class KitsInventoryPageTwo {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui", WaveKit.THOR.getName())
 						.toStack()
@@ -75,7 +75,7 @@ public class KitsInventoryPageTwo {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui", WaveKit.HULK.getName())
 						.toStack()
@@ -86,7 +86,7 @@ public class KitsInventoryPageTwo {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui", WaveKit.REAPER.getName())
 						.toStack()
@@ -97,7 +97,7 @@ public class KitsInventoryPageTwo {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui", WaveKit.SWITCHER.getName())
 						.toStack()
@@ -109,7 +109,7 @@ public class KitsInventoryPageTwo {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui", WaveKit.PYRO.getName())
 						.toStack()

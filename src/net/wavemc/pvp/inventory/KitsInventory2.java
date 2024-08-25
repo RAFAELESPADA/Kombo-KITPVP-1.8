@@ -31,19 +31,19 @@ public class KitsInventory2 {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui2", WaveKit2.ANCHOR.getName())
 					.toStack()
 			);
     }	else {
-    	inventory.setItem(13 , new ItemBuilder("§c" + WaveKit2.ANCHOR.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+    	inventory.setItem(13 , new ItemBuilder("§c" + WaveKit2.ANCHOR.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
     			.lore("§f" + WaveKit2.ANCHOR.getDescription())
     					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
     							ItemFlag.HIDE_DESTROYS,
     							ItemFlag.HIDE_ENCHANTS,
     							ItemFlag.HIDE_PLACED_ON,
-    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+    							
     							ItemFlag.HIDE_UNBREAKABLE)
     					.nbt("kit-visual", WaveKit2.ANCHOR.getName())
     					.toStack()
@@ -55,8 +55,8 @@ public class KitsInventory2 {
 					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 							ItemFlag.HIDE_DESTROYS,ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
-							ItemFlag.HIDE_UNBREAKABLE).addEnchant(Enchantment.SHARPNESS, 1)
+							
+							ItemFlag.HIDE_UNBREAKABLE).addEnchant(Enchantment.DAMAGE_ALL, 1)
 					.nbt("kit-gui2", WaveKit2.PVP.getName())
 					.toStack()
 			);
@@ -66,7 +66,7 @@ public class KitsInventory2 {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui2", WaveKit2.ARCHER.getName())
 					.toStack()
@@ -78,19 +78,19 @@ public class KitsInventory2 {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui2", WaveKit2.BOXER.getName())
 					.toStack()
 			);
 	} else {
-    	inventory.setItem(14 , new ItemBuilder("§c" + WaveKit2.BOXER.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+    	inventory.setItem(14 , new ItemBuilder("§c" + WaveKit2.BOXER.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
     			.lore("§f" + WaveKit2.BOXER.getDescription())
     					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
     							ItemFlag.HIDE_DESTROYS,
     							ItemFlag.HIDE_ENCHANTS,
     							ItemFlag.HIDE_PLACED_ON,
-    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+    							
     							ItemFlag.HIDE_UNBREAKABLE)
     					.nbt("kit-visual", WaveKit2.BOXER.getName())
     					.toStack()
@@ -103,19 +103,19 @@ public class KitsInventory2 {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui2", WaveKit2.SNAIL.getName())
 					.toStack()
 			);
 	} else {
-    	inventory.setItem(15 , new ItemBuilder("§c" + WaveKit2.SNAIL.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+    	inventory.setItem(15 , new ItemBuilder("§c" + WaveKit2.SNAIL.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
     			.lore("§f" + WaveKit2.SNAIL.getDescription())
     					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
     							ItemFlag.HIDE_DESTROYS,
     							ItemFlag.HIDE_ENCHANTS,
     							ItemFlag.HIDE_PLACED_ON,
-    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+    							
     							ItemFlag.HIDE_UNBREAKABLE)
     					.nbt("kit-visual", WaveKit2.SNAIL.getName())
     					.toStack()
@@ -127,7 +127,7 @@ public class KitsInventory2 {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui2", WaveKit2.KANGAROO.getName())
 					.toStack()
@@ -139,19 +139,19 @@ public class KitsInventory2 {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui2", WaveKit2.FISHERMAN.getName())
 					.toStack()
 			);
 	} else {
-    	inventory.setItem(14 , new ItemBuilder("§c" + WaveKit2.FISHERMAN.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+    	inventory.setItem(14 , new ItemBuilder("§c" + WaveKit2.FISHERMAN.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
     			.lore("§f" + WaveKit2.FISHERMAN.getDescription())
     					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
     							ItemFlag.HIDE_DESTROYS,
     							ItemFlag.HIDE_ENCHANTS,
     							ItemFlag.HIDE_PLACED_ON,
-    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+    							
     							ItemFlag.HIDE_UNBREAKABLE)
     					.nbt("kit-visual", WaveKit2.FISHERMAN.getName())
     					.toStack()
@@ -165,19 +165,19 @@ public class KitsInventory2 {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+								
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui2", WaveKit2.STOMPER.getName())
 						.toStack()
 				);
 		} else {
-	    	inventory.setItem(34 , new ItemBuilder("§c" + WaveKit2.STOMPER.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+	    	inventory.setItem(34 , new ItemBuilder("§c" + WaveKit2.STOMPER.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
 	    			.lore("§f" + WaveKit2.STOMPER.getDescription())
 	    					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 	    							ItemFlag.HIDE_DESTROYS,
 	    							ItemFlag.HIDE_ENCHANTS,
 	    							ItemFlag.HIDE_PLACED_ON,
-	    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+	    							
 	    							ItemFlag.HIDE_UNBREAKABLE)
 	    					.nbt("kit-visual", WaveKit2.STOMPER.getName())
 	    					.toStack()
@@ -191,19 +191,19 @@ public class KitsInventory2 {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+								
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui2", WaveKit2.THOR.getName())
 						.toStack()
 				);
 		} else {
-	    	inventory.setItem(25 , new ItemBuilder("§c" + WaveKit2.THOR.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+	    	inventory.setItem(25 , new ItemBuilder("§c" + WaveKit2.THOR.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
 	    			.lore("§f" + WaveKit2.THOR.getDescription())
 	    					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 	    							ItemFlag.HIDE_DESTROYS,
 	    							ItemFlag.HIDE_ENCHANTS,
 	    							ItemFlag.HIDE_PLACED_ON,
-	    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+	    							
 	    							ItemFlag.HIDE_UNBREAKABLE)
 	    					.nbt("kit-visual", WaveKit2.THOR.getName())
 	    					.toStack()
@@ -217,19 +217,19 @@ public class KitsInventory2 {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+								
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui2", WaveKit2.VIPER.getName())
 						.toStack()
 				);
 		} else {
-	    	inventory.setItem(16 , new ItemBuilder("§c" + WaveKit2.VIPER.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+	    	inventory.setItem(16 , new ItemBuilder("§c" + WaveKit2.VIPER.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
 	    			.lore("§f" + WaveKit2.VIPER.getDescription())
 	    					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 	    							ItemFlag.HIDE_DESTROYS,
 	    							ItemFlag.HIDE_ENCHANTS,
 	    							ItemFlag.HIDE_PLACED_ON,
-	    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+	    							
 	    							ItemFlag.HIDE_UNBREAKABLE)
 	    					.nbt("kit-visual", WaveKit2.VIPER.getName())
 	    					.toStack()
@@ -242,19 +242,19 @@ public class KitsInventory2 {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui2", WaveKit2.ANTISTOMPER.getName())
 					.toStack()
 			);
 	} else {
-    	inventory.setItem(19 , new ItemBuilder("§c" + WaveKit2.ANTISTOMPER.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+    	inventory.setItem(19 , new ItemBuilder("§c" + WaveKit2.ANTISTOMPER.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
     			.lore("§f" + WaveKit2.ANTISTOMPER.getDescription())
     					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
     							ItemFlag.HIDE_DESTROYS,
     							ItemFlag.HIDE_ENCHANTS,
     							ItemFlag.HIDE_PLACED_ON,
-    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+    							
     							ItemFlag.HIDE_UNBREAKABLE)
     					.nbt("kit-visual", WaveKit2.ANTISTOMPER.getName())
     					.toStack()
@@ -267,19 +267,19 @@ public class KitsInventory2 {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui2", WaveKit2.GLADIATOR.getName())
 					.toStack()
 			);
 	} else {
-    	inventory.setItem(20 , new ItemBuilder("§c" + WaveKit2.GLADIATOR.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+    	inventory.setItem(20 , new ItemBuilder("§c" + WaveKit2.GLADIATOR.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
     			.lore("§f" + WaveKit2.GLADIATOR.getDescription())
     					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
     							ItemFlag.HIDE_DESTROYS,
     							ItemFlag.HIDE_ENCHANTS,
     							ItemFlag.HIDE_PLACED_ON,
-    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+    							
     							ItemFlag.HIDE_UNBREAKABLE)
     					.nbt("kit-visual", WaveKit2.GLADIATOR.getName())
     					.toStack()
@@ -292,19 +292,19 @@ public class KitsInventory2 {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+								
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui2", WaveKit2.MAGMA.getName())
 						.toStack()
 				);
 	} else {
-    	inventory.setItem(21 , new ItemBuilder("§c" + WaveKit2.MAGMA.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+    	inventory.setItem(21 , new ItemBuilder("§c" + WaveKit2.MAGMA.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
     			.lore("§f" + WaveKit2.MAGMA.getDescription())
     					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
     							ItemFlag.HIDE_DESTROYS,
     							ItemFlag.HIDE_ENCHANTS,
     							ItemFlag.HIDE_PLACED_ON,
-    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+    							
     							ItemFlag.HIDE_UNBREAKABLE)
     					.nbt("kit-visual", WaveKit2.MAGMA.getName())
     					.toStack()
@@ -317,19 +317,19 @@ public class KitsInventory2 {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui2", WaveKit2.MONK.getName())
 								.toStack()
 						);
 	} else {
-    	inventory.setItem(22 , new ItemBuilder("§c" + WaveKit2.MONK.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+    	inventory.setItem(22 , new ItemBuilder("§c" + WaveKit2.MONK.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
     			.lore("§f" + WaveKit2.MONK.getDescription())
     					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
     							ItemFlag.HIDE_DESTROYS,
     							ItemFlag.HIDE_ENCHANTS,
     							ItemFlag.HIDE_PLACED_ON,
-    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+    							
     							ItemFlag.HIDE_UNBREAKABLE)
     					.nbt("kit-visual", WaveKit2.MONK.getName())
     					.toStack()
@@ -342,19 +342,19 @@ public class KitsInventory2 {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui2", WaveKit2.NEO.getName())
 								.toStack()
 						);
 	} else {
-    	inventory.setItem(23 , new ItemBuilder("§c" + WaveKit2.NEO.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+    	inventory.setItem(23 , new ItemBuilder("§c" + WaveKit2.NEO.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
     			.lore("§f" + WaveKit2.NEO.getDescription())
     					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
     							ItemFlag.HIDE_DESTROYS,
     							ItemFlag.HIDE_ENCHANTS,
     							ItemFlag.HIDE_PLACED_ON,
-    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+    							
     							ItemFlag.HIDE_UNBREAKABLE)
     					.nbt("kit-visual", WaveKit2.NEO.getName())
     					.toStack()
@@ -367,19 +367,19 @@ public class KitsInventory2 {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui2", WaveKit2.NINJA.getName())
 								.toStack()
 						);
 	} else {
-		inventory.setItem(24 , new ItemBuilder("§c" + WaveKit2.NINJA.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+		inventory.setItem(24 , new ItemBuilder("§c" + WaveKit2.NINJA.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
     			.lore("§f" + WaveKit2.NINJA.getDescription())
     					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
     							ItemFlag.HIDE_DESTROYS,
     							ItemFlag.HIDE_ENCHANTS,
     							ItemFlag.HIDE_PLACED_ON,
-    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+    							
     							ItemFlag.HIDE_UNBREAKABLE)
     					.nbt("kit-visual", WaveKit2.NINJA.getName())
     					.toStack()
@@ -393,19 +393,19 @@ public class KitsInventory2 {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui2", WaveKit2.PHANTOM.getName())
 								.toStack()
 						);
 	} else {
-		inventory.setItem(33 , new ItemBuilder("§c" + WaveKit2.PHANTOM.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+		inventory.setItem(33 , new ItemBuilder("§c" + WaveKit2.PHANTOM.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
     			.lore("§f" + WaveKit2.PHANTOM.getDescription())
     					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
     							ItemFlag.HIDE_DESTROYS,
     							ItemFlag.HIDE_ENCHANTS,
     							ItemFlag.HIDE_PLACED_ON,
-    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+    							
     							ItemFlag.HIDE_UNBREAKABLE)
     					.nbt("kit-visual", WaveKit2.PHANTOM.getName())
     					.toStack()
@@ -418,19 +418,19 @@ public class KitsInventory2 {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+								
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui2", WaveKit2.SWITCHER.getName())
 						.toStack()
 				);
 } else {
-inventory.setItem(32 , new ItemBuilder("§c" + WaveKit2.SWITCHER.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+inventory.setItem(32 , new ItemBuilder("§c" + WaveKit2.SWITCHER.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
 		.lore("§f" + WaveKit2.SWITCHER.getDescription())
 				.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 						ItemFlag.HIDE_DESTROYS,
 						ItemFlag.HIDE_ENCHANTS,
 						ItemFlag.HIDE_PLACED_ON,
-						ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+						
 						ItemFlag.HIDE_UNBREAKABLE)
 				.nbt("kit-visual", WaveKit2.SWITCHER.getName())
 				.toStack()
@@ -443,19 +443,19 @@ inventory.setItem(32 , new ItemBuilder("§c" + WaveKit2.SWITCHER.getName(), new 
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui2", WaveKit2.POSEIDON.getName())
 								.toStack()
 						);
 		} else {
-						inventory.setItem(28 , new ItemBuilder("§c" + WaveKit2.POSEIDON.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+						inventory.setItem(28 , new ItemBuilder("§c" + WaveKit2.POSEIDON.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
 				    			.lore("§f" + WaveKit2.POSEIDON.getDescription())
 				    					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 				    							ItemFlag.HIDE_DESTROYS,
 				    							ItemFlag.HIDE_ENCHANTS,
 				    							ItemFlag.HIDE_PLACED_ON,
-				    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+				    							
 				    							ItemFlag.HIDE_UNBREAKABLE)
 				    					.nbt("kit-visual", WaveKit2.POSEIDON.getName())
 				    					.toStack()
@@ -468,20 +468,20 @@ inventory.setItem(32 , new ItemBuilder("§c" + WaveKit2.SWITCHER.getName(), new 
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui2", WaveKit2.SIGHT.getName())
 								.toStack()
 						);
 						
 						} else {
-							inventory.setItem(29 , new ItemBuilder("§c" + WaveKit2.SIGHT.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+							inventory.setItem(29 , new ItemBuilder("§c" + WaveKit2.SIGHT.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
 					    			.lore("§f" + WaveKit2.SIGHT.getDescription())
 					    					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 					    							ItemFlag.HIDE_DESTROYS,
 					    							ItemFlag.HIDE_ENCHANTS,
 					    							ItemFlag.HIDE_PLACED_ON,
-					    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+					    							
 					    							ItemFlag.HIDE_UNBREAKABLE)
 					    					.nbt("kit-visual", WaveKit2.SIGHT.getName())
 					    					.toStack()
@@ -495,19 +495,19 @@ inventory.setItem(32 , new ItemBuilder("§c" + WaveKit2.SWITCHER.getName(), new 
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui2", WaveKit2.TURTLE.getName())
 								.toStack()
 						);
 								} else {
-						inventory.setItem(30 , new ItemBuilder("§c" + WaveKit2.TURTLE.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+						inventory.setItem(30 , new ItemBuilder("§c" + WaveKit2.TURTLE.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
 				    			.lore("§f" + WaveKit2.TURTLE.getDescription())
 				    					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 				    							ItemFlag.HIDE_DESTROYS,
 				    							ItemFlag.HIDE_ENCHANTS,
 				    							ItemFlag.HIDE_PLACED_ON,
-				    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+				    							
 				    							ItemFlag.HIDE_UNBREAKABLE)
 				    					.nbt("kit-visual", WaveKit2.TURTLE.getName())
 				    					.toStack()
@@ -520,19 +520,19 @@ inventory.setItem(32 , new ItemBuilder("§c" + WaveKit2.SWITCHER.getName(), new 
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui2", WaveKit2.AUTOBOWL.getName())
 								.toStack()
 						);
 						} else {
-						inventory.setItem(31 , new ItemBuilder("§c" + WaveKit2.AUTOBOWL.getName(), new ItemStack(Material.RED_STAINED_GLASS_PANE))
+						inventory.setItem(31 , new ItemBuilder("§c" + WaveKit2.AUTOBOWL.getName(), new ItemStack(Material.STAINED_GLASS_PANE, (short)14))
 				    			.lore("§f" + WaveKit2.AUTOBOWL.getDescription())
 				    					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 				    							ItemFlag.HIDE_DESTROYS,
 				    							ItemFlag.HIDE_ENCHANTS,
 				    							ItemFlag.HIDE_PLACED_ON,
-				    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+				    							
 				    							ItemFlag.HIDE_UNBREAKABLE)
 				    					.nbt("kit-visual", WaveKit2.AUTOBOWL.getName())
 				    					.toStack()

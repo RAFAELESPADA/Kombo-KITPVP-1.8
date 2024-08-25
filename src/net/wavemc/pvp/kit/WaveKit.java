@@ -50,13 +50,13 @@ public enum WaveKit {
 
 	NENHUM2("None", 0, 0 , new Nenhum(), new ItemStack(Material.BARRIER), "Sem habilidades" , 1 , 0),
 	PVP("Nenhum", WavePvP.getInstance().getConfig().getInt("PvPPrice"), 0, new PvP(), new ItemStack(Material.BARRIER), "Sem habilidades" , 1, 1),
-	KANGAROO("Kangaroo", WavePvP.getInstance().getConfig().getInt("KangarooPrice"), 0,  new Kangaroo(), new ItemStack( Material.FIREWORK_ROCKET), WavePvP.getInstance().getConfig().getString("KangarooLore") ,1,2),
-	THOR("Thor", WavePvP.getInstance().getConfig().getInt("ThorPrice"), 0, new Thor(), new ItemStack(Material.GOLDEN_AXE), WavePvP.getInstance().getConfig().getString("ThorLore") , 1,3),
+	KANGAROO("Kangaroo", WavePvP.getInstance().getConfig().getInt("KangarooPrice"), 0,  new Kangaroo(), new ItemStack( Material.FIREWORK), WavePvP.getInstance().getConfig().getString("KangarooLore") ,1,2),
+	THOR("Thor", WavePvP.getInstance().getConfig().getInt("ThorPrice"), 0, new Thor(), new ItemStack(Material.GOLD_AXE), WavePvP.getInstance().getConfig().getString("ThorLore") , 1,3),
 	ARCHER("Archer",WavePvP.getInstance().getConfig().getInt("ArcherPrice"), 0, new Archer(), new ItemStack(Material.BOW), WavePvP.getInstance().getConfig().getString("ArcherLore") , 1,4),
     NEO("Neo", WavePvP.getInstance().getConfig().getInt("NeoPrice"), 8000, new AntiStomper(), new ItemStack(Material.BARRIER), WavePvP.getInstance().getConfig().getString("NeoLore"), 1,5),
     AUTOBOWL("AutoBowl", WavePvP.getInstance().getConfig().getInt("QuickDropperPrice"), 0, new QuickDropper(), new ItemStack(Material.BOWL), "Estaque os potes automaticamente" ,1,6),
     ANTISTOMPER("AntiStomper", WavePvP.getInstance().getConfig().getInt("AntiStomperPrice"), 8000, new AntiStomperReal(), new ItemStack(Material.DIAMOND_HELMET), WavePvP.getInstance().getConfig().getString("AntiStomperLore") ,1,7),
-    SIGHT("Sight", 10000, 0, new Sight(), new ItemStack(Material.RED_DYE), "De cegueira a cada hit!" , 1,8),
+    SIGHT("Sight", 10000, 0, new Sight(), new ItemStack(Material.RED_MUSHROOM), "De cegueira a cada hit!" , 1,8),
 	FISHERMAN("Fisherman", WavePvP.getInstance().getConfig().getInt("FishermanPrice"), 150, new Fisherman(), new ItemStack(Material.FISHING_ROD), WavePvP.getInstance().getConfig().getString("FishermanLore"), 1,9),
 	ANCHOR("Anchor", WavePvP.getInstance().getConfig().getInt("AnchorPrice"), 250, new Anchor(), new ItemStack(Material.ANVIL), WavePvP.getInstance().getConfig().getString("AnchorLore"), 1,10),
 	VIPER("Viper", WavePvP.getInstance().getConfig().getInt("ViperPrice"), 150, new Viper(), new ItemStack(Material.SPIDER_EYE), WavePvP.getInstance().getConfig().getString("ViperLore"), 1,11),
@@ -72,13 +72,13 @@ public enum WaveKit {
 	PHANTOM("Phantom", WavePvP.getInstance().getConfig().getInt("PhantomPrice"), 520, new Phantom(), new ItemStack(Material.FEATHER), WavePvP.getInstance().getConfig().getString("PhantomLore"), 2,27),
 	BOXER("Boxer", WavePvP.getInstance().getConfig().getInt("BoxerPrice"), 1500, new Boxer(), new ItemStack(Material.QUARTZ), WavePvP.getInstance().getConfig().getString("BoxerLore"), 2,28),
 	HULK("Hulk", WavePvP.getInstance().getConfig().getInt("HulkPrice"), 420, new Hulk(), new ItemStack(Material.DROPPER), WavePvP.getInstance().getConfig().getString("HulkLore"), 2,29),
-	SWITCHER("Switcher", WavePvP.getInstance().getConfig().getInt("SwitcherPrice"), 0, new Switcher(), new ItemStack(Material.SNOWBALL), WavePvP.getInstance().getConfig().getString("SwitcherLore"), 2,30),
-	FLASH("Flash", 15000, 500, new Flash(), new ItemStack(Material.REDSTONE_TORCH), "Teleporte para onde você clicar", 2,36),
-	REAPER("Reaper", 13000, 500, new Reaper(), new ItemStack(Material.WOODEN_HOE), "De wither com sua foice!", 2,37),
-	METEOR("Meteor", 12000, 0, new MeteorD(), new ItemStack(Material.FIRE_CHARGE), "Vire um meteoro!" , 1,39),
+	SWITCHER("Switcher", WavePvP.getInstance().getConfig().getInt("SwitcherPrice"), 0, new Switcher(), new ItemStack(Material.SNOW_BALL), WavePvP.getInstance().getConfig().getString("SwitcherLore"), 2,30),
+	FLASH("Flash", 15000, 500, new Flash(), new ItemStack(Material.REDSTONE_TORCH_ON), "Teleporte para onde você clicar", 2,36),
+	REAPER("Reaper", 13000, 500, new Reaper(), new ItemStack(Material.WOOD_HOE), "De wither com sua foice!", 2,37),
+	METEOR("Meteor", 12000, 0, new MeteorD(), new ItemStack(Material.FIREBALL), "Vire um meteoro!" , 1,39),
 	PYRO("Pyro", 6000, 0, new Pyro2(), new ItemStack(Material.CHAINMAIL_CHESTPLATE), "Atire bolas de fogo!" , 1,40),
 	
-	GLADIATOR("Gladiator", 15000, 500, new GladiatorListener2(), new ItemStack(Material.IRON_BARS), "Desafie seus inimigos para 1v1",2, 38);
+	GLADIATOR("Gladiator", 15000, 500, new GladiatorListener2(), new ItemStack(Material.IRON_FENCE), "Desafie seus inimigos para 1v1",2, 38);
   
 	private final String name;
 	private final String description;

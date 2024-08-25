@@ -24,8 +24,8 @@ public class EuforiaB2 implements CommandExecutor {
             if (!WavePvP.euforia) {
             	 for (Player player : Bukkit.getOnlinePlayers()) {
 				player.sendTitle("§c§lFÚRIA", "§fTodos ficam fortes");
-				player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, 120*20, 0));
-				player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_BREAK, 1F, 10F);
+				player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 120*20, 0));
+				player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 1F, 10F);
             	 }
 				WavePvP.euforia = true;
 				
@@ -49,7 +49,7 @@ public class EuforiaB2 implements CommandExecutor {
 					 for (Player p1 : Bukkit.getOnlinePlayers()) {
 						
 							
-					      	p1.playSound(p1.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
+					      	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 					        p1.getActivePotionEffects().forEach(potion -> p1.removePotionEffect(potion.getType()));
 					      }
 					 Bukkit.broadcastMessage("§aO evento fúria acabou!");

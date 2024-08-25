@@ -161,7 +161,7 @@ Duels.glad.remove(p1);
 		if (event.getCurrentItem() == null) {
 			return;
 		}
-		if (!(event.getCurrentItem().getType() == Material.IRON_BARS)) {
+		if (!(event.getCurrentItem().getType() == Material.IRON_FENCE)) {
 			return;
 		}
 		if (Sumo.fastChallenge.contains(player) || OneVsOne.fastChallenge.contains(player) || Gladiator.fastChallenge.contains(player)) {

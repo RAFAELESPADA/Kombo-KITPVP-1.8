@@ -142,10 +142,10 @@ public class Jump implements Listener {
 			  }
 			 
 			  for (int i = 0; i < 33; i++) {
-					player.getInventory().addItem(new ItemStack(Material.MUSHROOM_STEW));
+					player.getInventory().addItem(new ItemStack(Material.MUSHROOM_SOUP));
 				}
 			  ItemStack espada = new ItemBuilder("§fEspada", Material.DIAMOND_SWORD).addFlags(ItemFlag.HIDE_ATTRIBUTES).
-						addEnchant(Enchantment.SHARPNESS, 1)
+						addEnchant(Enchantment.DAMAGE_ALL, 1)
 						.nbt("cancel-drop")
 						.toStack();
 				player.getInventory().setItem(0, espada);
@@ -154,7 +154,7 @@ public class Jump implements Listener {
 		if (player.getLocation().getBlockY() < WavePvP.getInstance().getConfig().getInt("SpawnAltura") && (!KitManager.getPlayer(player.getName()).hasKit() && !KitManager2.getPlayer(player.getName()).haskit2()) && !WaveWarp.DUELS.hasPlayer(p.getName()) && !WaveWarp.LOBBY.hasPlayer(p.getName())  && !WaveWarp.ARENABUILD.hasPlayer(p.getName())  && !WaveWarp.FPS.hasPlayer(p.getName()) && !WaveWarp.LAVACHALLENGE.hasPlayer(p.getName()) && !WaveWarp.GLADIATOR.hasPlayer(p.getName()) && !recebeu.containsKey(player.getName()) && !AdminUtil.has(player.getName()) && !VanishUtil.has(player.getName())) {	  
 		Items(player);	
 
-		  ItemStack espada = new ItemBuilder("§fEspada", Material.STONE_SWORD).addFlags(ItemFlag.HIDE_ATTRIBUTES).addEnchant(Enchantment.SHARPNESS, 1)
+		  ItemStack espada = new ItemBuilder("§fEspada", Material.STONE_SWORD).addFlags(ItemFlag.HIDE_ATTRIBUTES).addEnchant(Enchantment.DAMAGE_ALL, 1)
 					.nbt("cancel-drop")
 					.toStack();
 			player.getInventory().setItem(0, espada);
@@ -182,7 +182,7 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 							
 							recebeu.put(player.getName(), true);
 							 final ItemStack ItemMudado = player.getInventory().getItem(2);
-							   player.getInventory().setItem(2, new ItemStack(Material.MUSHROOM_STEW));
+							   player.getInventory().setItem(2, new ItemStack(Material.MUSHROOM_SOUP));
 					           player.getInventory().setHeldItemSlot(1);
 					           player.getInventory().setItem(1, ItemMudado);
 										Bukkit.getConsoleSender().sendMessage(player.getName() + " Escolheu apenas o kit secundário " + KitManager2.getPlayer(player.getName()).getkit2().getName());
@@ -392,8 +392,8 @@ public void Items(Player player) {
 	player.getInventory().setArmorContents(null);
 	player.setAllowFlight(false);
 	player.setFlying(false);
-	player.getInventory().setItem(1 , new ItemStack(Material.MUSHROOM_STEW));
-	player.getInventory().setItem(2 , new ItemStack(Material.MUSHROOM_STEW));
+	player.getInventory().setItem(1 , new ItemStack(Material.MUSHROOM_SOUP));
+	player.getInventory().setItem(2 , new ItemStack(Material.MUSHROOM_SOUP));
 	player.getActivePotionEffects().forEach(potion -> player.removePotionEffect(potion.getType()));
 	player.getInventory().setHeldItemSlot(0);
 	/* 348 */  
@@ -405,7 +405,7 @@ public void Items(Player player) {
 				.nbt("cancel-drop")
 				.toStack());
 				player.getInventory().setItem(10, new ItemBuilder("§aArrow!", Material.ARROW)
-						.nbt("kit-handler", "flecha").addEnchant(Enchantment.SHARPNESS, 1).addEnchant(Enchantment.POWER, 1).amount(20)
+						.nbt("kit-handler", "flecha").addEnchant(Enchantment.DAMAGE_ALL, 1).addEnchant(Enchantment.ARROW_DAMAGE, 1).amount(20)
 						.nbt("cancel-drop").addFlags(
 								ItemFlag.HIDE_ENCHANTS)
 						.toStack()
@@ -439,7 +439,7 @@ public void Items(Player player) {
 						Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed PHANTOM kit!");
 						}
 					if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.FLASH)) {
-						 player.getInventory().setItem(1, new ItemBuilder("§aFlash!", Material.REDSTONE_TORCH)
+						 player.getInventory().setItem(1, new ItemBuilder("§aFlash!", Material.REDSTONE_TORCH_ON)
 					                .addEnchant(Enchantment.KNOCKBACK, 2).addFlags(ItemFlag.HIDE_ENCHANTS)
 					                .nbt("cancel-drop").nbt("kit-handler", "flash")
 					                .toStack());
@@ -455,7 +455,7 @@ public void Items(Player player) {
 					}
 				
 					if (KitManager.getPlayer(player.getName()).hasKit( WaveKit.REAPER)) {
-						player.getInventory().setItem(1, new ItemBuilder("§aCeifador", Material.WOODEN_HOE)
+						player.getInventory().setItem(1, new ItemBuilder("§aCeifador", Material.WOOD_HOE)
 				                .addEnchant(Enchantment.KNOCKBACK, 1)
 				        				.addFlags(ItemFlag.HIDE_ENCHANTS)
 				                .nbt("cancel-drop")
@@ -465,7 +465,7 @@ public void Items(Player player) {
 						}
 
 					if (KitManager.getPlayer(player.getName()).hasKit( WaveKit.METEOR)) {
-						player.getInventory().setItem(1, new ItemBuilder("§aMeteor!", Material.FIRE_CHARGE)
+						player.getInventory().setItem(1, new ItemBuilder("§aMeteor!", Material.FIREBALL)
 				                .addEnchant(Enchantment.KNOCKBACK, 1)
 				        				.addFlags(ItemFlag.HIDE_ENCHANTS)
 				                .nbt("cancel-drop")
@@ -474,7 +474,7 @@ public void Items(Player player) {
 						Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed Meteoro kit!");
 						}
 					if (KitManager.getPlayer(player.getName()).hasKit( WaveKit.GLADIATOR)) {
-						player.getInventory().setItem(1, new ItemBuilder("§bPuxar!", Material.IRON_BARS)
+						player.getInventory().setItem(1, new ItemBuilder("§bPuxar!", Material.IRON_FENCE)
 								.nbt("kit-handler", "glad")
 								.nbt("cancel-drop")
 								.toStack()
@@ -483,7 +483,7 @@ public void Items(Player player) {
 						}
 
 					if (KitManager.getPlayer(player.getName()).hasKit( WaveKit.PYRO)) {
-						player.getInventory().setItem(1, new ItemBuilder("§bAtirar!", Material.FIRE_CHARGE)
+						player.getInventory().setItem(1, new ItemBuilder("§bAtirar!", Material.FIREBALL)
 								.nbt("kit-handler", "pyro")
 								.nbt("cancel-drop")
 								.toStack()
@@ -492,7 +492,7 @@ public void Items(Player player) {
 						}
 	
 					if (KitManager.getPlayer(player.getName()).hasKit( WaveKit.KANGAROO)) {
-						player.getInventory().setItem(1, new ItemBuilder("§aPular!", Material.FIREWORK_ROCKET)
+						player.getInventory().setItem(1, new ItemBuilder("§aPular!", Material.FIREWORK)
 								.nbt("kit-handler", "kangaroo")
 								.nbt("cancel-drop")
 								.toStack()
@@ -519,14 +519,14 @@ public void Items(Player player) {
 					
 					
 					if (KitManager.getPlayer(player.getName()).hasKit( WaveKit.SWITCHER)) {
-						player.getInventory().setItem(1, new ItemBuilder(Material.SNOWBALL)
+						player.getInventory().setItem(1, new ItemBuilder(Material.SNOW_BALL)
 			                     .amount(2)
 			                     .nbt("cancel-drop").nbt("kit-handler", "switcher")
 			                     .toStack());
 						Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed switcher kit!");
 					}
 					if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.THOR)) {
-					player.getInventory().setItem(1, new ItemBuilder("§eCaboom!", Material.GOLDEN_AXE)
+					player.getInventory().setItem(1, new ItemBuilder("§eCaboom!", Material.GOLD_AXE)
 							.nbt("cancel-drop")
 							.nbt("kit-handler", "thor")
 							.toStack()
@@ -540,7 +540,7 @@ public void Items(Player player) {
 									.nbt("cancel-drop")
 									.toStack());
 									player.getInventory().setItem(10, new ItemBuilder("§aFlecha!", Material.ARROW)
-											.nbt("kit-handler", "flecha").addEnchant(Enchantment.SHARPNESS, 1)
+											.nbt("kit-handler", "flecha").addEnchant(Enchantment.ARROW_DAMAGE, 1)
 											.nbt("cancel-drop").amount(20).addFlags(
 													ItemFlag.HIDE_ENCHANTS)
 											.toStack()
@@ -565,7 +565,7 @@ public void Items(Player player) {
 							Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed PHANTOM kit!");
 							}
 								if (KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.GLADIATOR)) {
-									player.getInventory().setItem(2, new ItemBuilder("§bPuxar!", Material.IRON_BARS)
+									player.getInventory().setItem(2, new ItemBuilder("§bPuxar!", Material.IRON_FENCE)
 											.nbt("kit-handler", "glad")
 											.nbt("cancel-drop")
 											.toStack()
@@ -573,7 +573,7 @@ public void Items(Player player) {
 								}
 								
 								if (KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.KANGAROO)) {
-									player.getInventory().setItem(2, new ItemBuilder("§aPular!", Material.FIREWORK_ROCKET)
+									player.getInventory().setItem(2, new ItemBuilder("§aPular!", Material.FIREWORK)
 											.nbt("kit-handler", "kangaroo")
 											.nbt("cancel-drop")
 											.toStack()
@@ -590,7 +590,7 @@ public void Items(Player player) {
 								if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.PVP) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.PVP)) {
 
 									  ItemStack espada = new ItemBuilder("§fEspada", Material.STONE_SWORD).addFlags(ItemFlag.HIDE_ATTRIBUTES)
-												.nbt("cancel-drop").addEnchant(Enchantment.SHARPNESS, 1)
+												.nbt("cancel-drop").addEnchant(Enchantment.DAMAGE_ALL, 1)
 												.toStack();
 										player.getInventory().setItem(0, espada);
 								} else {
@@ -602,21 +602,21 @@ public void Items(Player player) {
 									}
 								
 									if (KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.SWITCHER)) {
-									 player.getInventory().setItem(2, new ItemBuilder(Material.SNOWBALL)
+									 player.getInventory().setItem(2, new ItemBuilder(Material.SNOW_BALL)
 								                .amount(2)
 								                .nbt("cancel-drop").nbt("kit-handler", "switcher")
 								                .toStack()
 								        );
 									}
 									if (KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.REAPER)) {
-										 player.getInventory().setItem(2, new ItemBuilder(Material.WOODEN_HOE)
+										 player.getInventory().setItem(2, new ItemBuilder(Material.WOOD_HOE)
 									     
 									                .nbt("cancel-drop").nbt("kit-handler", "reaper")
 									                .toStack()
 									        );
 										}
 									if (KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.THOR)) {
-										player.getInventory().setItem(2, new ItemBuilder("§eCaboom!", Material.GOLDEN_AXE)
+										player.getInventory().setItem(2, new ItemBuilder("§eCaboom!", Material.GOLD_AXE)
 												.nbt("cancel-drop")
 												.nbt("kit-handler", "thor")
 												.toStack()
@@ -635,14 +635,16 @@ public void Items(Player player) {
 			.nbt("cancel-drop")
 			.toStack());
 	   
-	
+
+    ItemStack cocoa = new ItemStack(Material.INK_SACK, (short)3);
 	player.getInventory().setItem(13, new ItemStack(Material.BOWL, 32));
 	  if (PlayerCache.cacheSoupType.get(player.getName()) == "mush") {
 	player.getInventory().setItem(14, new ItemStack(Material.RED_MUSHROOM, 32));
 	player.getInventory().setItem(15, new ItemStack(Material.BROWN_MUSHROOM, 32));
 	  }
-	else   if (PlayerCache.cacheSoupType.get(player.getName()) == "cocoa") {
-		player.getInventory().setItem(14, new ItemStack(Material.COCOA_BEANS, 32));
+
+	else if (PlayerCache.cacheSoupType.get(player.getName()) == "cocoa") {
+		player.getInventory().setItem(14, cocoa);
 	}
 	else {
 
@@ -650,46 +652,46 @@ public void Items(Player player) {
 		player.getInventory().setItem(15, new ItemStack(Material.BROWN_MUSHROOM, 32));
 	}
 	
-player.getInventory().setItem(3 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(4 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(5 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(6 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(7 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(9 , new ItemStack(Material.MUSHROOM_STEW));
+player.getInventory().setItem(3 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(4 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(5 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(6 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(7 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(9 , new ItemStack(Material.MUSHROOM_SOUP));
 		if (!KitManager.getPlayer(player.getName()).hasKit(WaveKit.ARCHER) && !KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.ARCHER)) {
-		player.getInventory().setItem(10 , new ItemStack(Material.MUSHROOM_STEW));
+		player.getInventory().setItem(10 , new ItemStack(Material.MUSHROOM_SOUP));
 		}
 		
 		if (KitManager.getPlayer(player.getName()).hasKit( WaveKit.PVP) && KitManager2.getPlayer(player.getName()).haskit2( WaveKit2.PVP)) {
 			ItemStack espada = new ItemBuilder("§fEspada", Material.STONE_SWORD).addFlags(ItemFlag.HIDE_ATTRIBUTES).
-					addEnchant(Enchantment.SHARPNESS, 1)
+					addEnchant(Enchantment.DAMAGE_ALL, 1)
 					.nbt("cancel-drop")
 					.toStack();
 			player.getInventory().setItem(0, espada);
 			Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed pvp kit!");
 			}
-		player.getInventory().setItem(11 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(12 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(16 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(17 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(18 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(19 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(20 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(21 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(22 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(23 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(24 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(25 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(26 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(27 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(28 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(29 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(30 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(31 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(32 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(33 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(34 , new ItemStack(Material.MUSHROOM_STEW));
-		player.getInventory().setItem(35 , new ItemStack(Material.MUSHROOM_STEW));
+		player.getInventory().setItem(11 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(12 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(16 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(17 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(18 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(19 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(20 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(21 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(22 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(23 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(24 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(25 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(26 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(27 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(28 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(29 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(30 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(31 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(32 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(33 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(34 , new ItemStack(Material.MUSHROOM_SOUP));
+		player.getInventory().setItem(35 , new ItemStack(Material.MUSHROOM_SOUP));
 		player.updateInventory();
 
 }

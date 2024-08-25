@@ -47,11 +47,11 @@ public class Anchor extends KitHandler {
 	        if (KitManager.getPlayer(player.getName()).hasKit(this) || KitManager.getPlayer(damager.getName()).hasKit(this)) {
 	            player.setVelocity(new Vector());
 	            this.anchoring.add(player.getUniqueId());
-	            player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1f, 1f);
-	            damager.playSound(damager.getLocation(), Sound.BLOCK_ANVIL_LAND, 1f, 1f);
+	            player.playSound(player.getLocation(), Sound.ANVIL_LAND, 1f, 1f);
+	            damager.playSound(damager.getLocation(), Sound.ANVIL_LAND, 1f, 1f);
 	            for (Entity p : damager.getNearbyEntities(12, 20, 20)) {
 	            	if (p instanceof Player) {
-	            		((Player) p).playSound(p.getLocation(), Sound.BLOCK_ANVIL_LAND, 10, 10);
+	            		((Player) p).playSound(p.getLocation(), Sound.ANVIL_LAND, 10, 10);
 	            	}
 	            }
 	            Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), () -> player.setVelocity(new Vector()));

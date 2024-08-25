@@ -47,7 +47,7 @@ public class Lobby2 extends WarpHandle {
 					.nbt("modos", "spawn")
 					.toStack()
 			);
-		 player.getInventory().setItem(4, new ItemBuilder("§bKangarinho §7(Clique)", Material.FIREWORK_ROCKET)
+		 player.getInventory().setItem(4, new ItemBuilder("§bKangarinho §7(Clique)", Material.FIREWORK)
 					.nbt("cancel-drop")
 					.nbt("cancel-click")
 					.nbt("kit-handler", "kangaroo")
@@ -55,7 +55,7 @@ public class Lobby2 extends WarpHandle {
 			);
 	}
 	public static ItemStack getHead(Player player) {
-	      ItemStack item = new ItemStack(Material.PLAYER_HEAD);
+	      ItemStack item = new ItemStack(Material.SKULL);
 	      SkullMeta skull = (SkullMeta) item.getItemMeta();
 	      skull.setDisplayName("§aSeu perfil §7(Clique)");
 	      ArrayList<String> lore = new ArrayList<String>();

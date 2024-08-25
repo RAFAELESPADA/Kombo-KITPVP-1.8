@@ -48,7 +48,7 @@ public class EntityCalculateDamageListener implements Listener {
 	        }
 	        
 	        final Player p = (Player)event.getDamager();
-	        p.getInventory().getItemInMainHand().setDurability((short)0);
+	        p.getInventory().getItemInHand().setDurability((short)0);
 	        final ItemStack item = ((Player)event.getDamager()).getItemInHand();
 					if (!Jump.caiu.containsKey(p.getName())) {
 					Jump.caiu.put(p.getName(), true);
@@ -59,7 +59,7 @@ public class EntityCalculateDamageListener implements Listener {
 		
 	        if (item != null) {
 	    
-	            if (item.getType().equals((Object)Material.WOODEN_SWORD)) {
+	            if (item.getType().equals((Object)Material.WOOD_SWORD)) {
 	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 1.7) : (event.getDamage() / 2.0));
 	            }
 	            else if (item.getType().equals((Object)Material.STONE_SWORD)) {
@@ -71,13 +71,13 @@ public class EntityCalculateDamageListener implements Listener {
 	            else if (item.getType().equals((Object)Material.DIAMOND_SWORD)) {
 	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 1.7) : (event.getDamage() / 2.0));
 	            }
-	            else if (item.getType().equals((Object)Material.GOLDEN_SWORD)) {
+	            else if (item.getType().equals((Object)Material.GOLD_SWORD)) {
 	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 1.8) : (event.getDamage() / 2.0));
 	            }
-	            else if (item.getType().equals((Object)Material.GOLDEN_AXE)) {
+	            else if (item.getType().equals((Object)Material.GOLD_AXE)) {
 	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 2) : (event.getDamage() / 2));
 	            }
-	            else if (item.getType().equals((Object)Material.WOODEN_AXE)) {
+	            else if (item.getType().equals((Object)Material.WOOD_AXE)) {
 	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 2) : (event.getDamage() / 2));
 	            }
 	            else if (item.getType().equals((Object)Material.IRON_AXE)) {

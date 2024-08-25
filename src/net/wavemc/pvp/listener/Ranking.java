@@ -82,7 +82,7 @@ public enum Ranking {
 	        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("UnrankedRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("InicianteRank").toUpperCase());
 	        
 	        for (Player p1 : Bukkit.getOnlinePlayers()) {
-	        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+	        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 	        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para o Ranking " + WavePvP.getInstance().getConfig().getString("InicianteRank").toUpperCase());
 	        }
 			}
@@ -91,7 +91,7 @@ public enum Ranking {
 		        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("InicianteRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("AvancadoRank").toUpperCase());
 		        
 		        for (Player p1 : Bukkit.getOnlinePlayers()) {
-		        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+		        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 		        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para o Ranking " + WavePvP.getInstance().getConfig().getString("AvancadoRank").toUpperCase());
 	        	
 	        }	        
@@ -101,7 +101,7 @@ public enum Ranking {
 	   	        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("AvancadoRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("ExperienteRank").toUpperCase());
 	   	        
 	   	        for (Player p1 : Bukkit.getOnlinePlayers()) {
-	   	        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+	   	        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 	   	        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para o Ranking " + WavePvP.getInstance().getConfig().getString("ExperienteRank").toUpperCase());
 	        }
 	        }
@@ -110,7 +110,7 @@ public enum Ranking {
 		   	        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("ExperienteRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("VeteranoRank").toUpperCase());
 		   	        
 		   	        for (Player p1 : Bukkit.getOnlinePlayers()) {
-		   	        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+		   	        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 		   	        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para o Ranking " + WavePvP.getInstance().getConfig().getString("VeteranoRank").toUpperCase());
 		        }
 	        }
@@ -119,7 +119,7 @@ public enum Ranking {
 		   	        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("VeteranoRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("PrataRank").toUpperCase());
 		   	        
 		   	        for (Player p1 : Bukkit.getOnlinePlayers()) {
-		   	        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+		   	        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 		   	        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para Ranking " + WavePvP.getInstance().getConfig().getString("PrataRank").toUpperCase());
 		        }
 	        }
@@ -128,7 +128,7 @@ public enum Ranking {
 		   	        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("PrataRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("OuroRank").toUpperCase());
 		   	        
 		   	        for (Player p1 : Bukkit.getOnlinePlayers()) {
-		   	        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+		   	        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 		   	        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para o Ranking " + WavePvP.getInstance().getConfig().getString("OuroRank").toUpperCase());
 		        }
 	        }
@@ -137,7 +137,7 @@ public enum Ranking {
 		   	        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("OuroRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("DiamanteRank").toUpperCase());
 		   	        
 		   	        for (Player p1 : Bukkit.getOnlinePlayers()) {
-		   	        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+		   	        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 		   	        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para o Ranking " + WavePvP.getInstance().getConfig().getString("DiamanteRank").toUpperCase());
 		        }
 	        }
@@ -146,7 +146,7 @@ public enum Ranking {
 		   	        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("DiamanteRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("EsmeraldaRank").toUpperCase());
 		   	        
 		   	        for (Player p1 : Bukkit.getOnlinePlayers()) {
-		   	        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+		   	        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 		   	        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para o Ranking " + WavePvP.getInstance().getConfig().getString("EsmeraldaRank").toUpperCase());
 		        }
 	        }
@@ -155,7 +155,7 @@ public enum Ranking {
 		   	        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("EsmeraldaRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("CristalRank").toUpperCase());
 		   	        
 		   	        for (Player p1 : Bukkit.getOnlinePlayers()) {
-		   	        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+		   	        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 		   	        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para o Ranking " + WavePvP.getInstance().getConfig().getString("CristalRank").toUpperCase());
 		        }
 	        }
@@ -164,7 +164,7 @@ public enum Ranking {
 	   	        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("CristalRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("SafiraRank").toUpperCase());
 	   	        
 	   	        for (Player p1 : Bukkit.getOnlinePlayers()) {
-	   	        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+	   	        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 	   	        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para o Ranking " + WavePvP.getInstance().getConfig().getString("SafiraRank").toUpperCase());
 	        }
         }
@@ -173,7 +173,7 @@ public enum Ranking {
 	   	        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("SafiraRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("RubyRank").toUpperCase());
 	   	        
 	   	        for (Player p1 : Bukkit.getOnlinePlayers()) {
-	   	        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+	   	        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 	   	        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para o Ranking " + WavePvP.getInstance().getConfig().getString("RubyRank").toUpperCase());
 	        }
         }
@@ -182,7 +182,7 @@ public enum Ranking {
 	   	        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("RubyRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("LendarioRank").toUpperCase());
 	   	        
 	   	        for (Player p1 : Bukkit.getOnlinePlayers()) {
-	   	        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+	   	        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 	   	        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para o Ranking " + WavePvP.getInstance().getConfig().getString("LendarioRank").toUpperCase());
 	        }
         }
@@ -192,7 +192,7 @@ public enum Ranking {
 	   	        Bukkit.broadcastMessage("§a" + p.getName() + " §fupou do rank " + WavePvP.getInstance().getConfig().getString("LendarioRank").toUpperCase() +  " para o Rank " + WavePvP.getInstance().getConfig().getString("GodRank").toUpperCase());
 	   	        
 	   	        for (Player p1 : Bukkit.getOnlinePlayers()) {
-	   	        	p1.playSound(p1.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10.0f, 1f);
+	   	        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 10.0f, 1f);
 	   	        	  WaveActionBar.send(p1, "§a" + p.getName() + " §fupou para o Ranking " + WavePvP.getInstance().getConfig().getString("GodRank").toUpperCase());
 	        }
         }

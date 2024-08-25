@@ -111,7 +111,7 @@ public abstract class WarpDuoBattleHandle2 extends WarpHandle {
 		if (event.getCurrentItem() == null) {
 			return;
 		}
-		if (!(event.getCurrentItem().getType() == Material.LEAD)) {
+		if (!(event.getCurrentItem().getType() == Material.LEASH)) {
 			return;
 		}
 		if (Sumo.fastChallenge.contains(player) || OneVsOne.fastChallenge.contains(player) || Gladiator.fastChallenge.contains(player)) {

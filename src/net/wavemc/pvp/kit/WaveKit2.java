@@ -44,21 +44,21 @@ public enum WaveKit2  {
 	ARCHER("Archer", 0, 0, new Archer() , new ItemStack(Material.BOW), "Receba arco e flecha!", 1,5),
 	BOXER("Boxer", 15000, 0, new Boxer() , new ItemStack(Material.QUARTZ), "De mais dano e leve menos.", 1,6),
     VIPER("Viper", 10000, 0, new Viper() , new ItemStack(Material.SPIDER_EYE), "De veneno ao hitar", 1,7),
-    SIGHT("Sight", 10000, 0, new Sight(), new ItemStack(Material.RED_DYE), "De cegueira ao hitar!", 1,8),
+    SIGHT("Sight", 10000, 0, new Sight(), new ItemStack(Material.RED_MUSHROOM), "De cegueira ao hitar!", 1,8),
     NEO("Neo", 8000, 0, new net.wavemc.kit2.NEO() , new ItemStack(Material.BARRIER), "Imune a varios kits", 1,9),
 	AUTOBOWL("AutoBowl", 2500, 2500, new QuickDropper() , new ItemStack(Material.BOWL), "Estaque potes automaticamente", 1,10),
-	KANGAROO("Kangaroo", 0, 0, new Kangaroo() , new ItemStack(Material.FIREWORK_ROCKET), "De doublejumps", 1,11),
+	KANGAROO("Kangaroo", 0, 0, new Kangaroo() , new ItemStack(Material.FIREWORK), "De doublejumps", 1,11),
 	STOMPER("Stomper", 15000, 0, new Stomper() , new ItemStack(Material.IRON_BOOTS), "Esmague seus inimigos.", 1,12),
-	THOR("Thor", 2500, 2500, new Thor() , new ItemStack(Material.GOLDEN_AXE), "Invoque raios.", 1,13),
-	GLADIATOR("Gladiator", 15000, 0, new GladiatorListener() , new ItemStack(Material.IRON_BARS), "Desafie seu inimigo para 1v1.", 1,14),
+	THOR("Thor", 2500, 2500, new Thor() , new ItemStack(Material.GOLD_AXE), "Invoque raios.", 1,13),
+	GLADIATOR("Gladiator", 15000, 0, new GladiatorListener() , new ItemStack(Material.IRON_FENCE), "Desafie seu inimigo para 1v1.", 1,14),
 	SNAIL("Snail", 10000, 0, new Snail() , new ItemStack(Material.FERMENTED_SPIDER_EYE), "De lentidão a cada hit", 1,15),
     MAGMA("Magma", 10000, 0, new Fireman() , new ItemStack(Material.LAVA_BUCKET), "De fogo a cada hit.", 1,16),
 	MONK("Monk", 9000, 0, new Monk() , new ItemStack(Material.BLAZE_ROD), "Bagunçe o inventario do inimigo.", 1,17),
 	PHANTOM("Phantom", 9000, 0, new Phantom() , new ItemStack(Material.FEATHER), "Voe pela arena.", 1,18),
-	TURTLE("Turtle", 4000, 0, new net.wavemc.kit2.Turtle() , new ItemStack(Material.GOLDEN_HELMET), "Leve menos dano em shift.", 1,19),
+	TURTLE("Turtle", 4000, 0, new net.wavemc.kit2.Turtle() , new ItemStack(Material.GOLD_HELMET), "Leve menos dano em shift.", 1,19),
 	FISHERMAN("Fisherman", 9000, 0, new Fisherman() , new ItemStack(Material.FISHING_ROD), "Puxe jogadores com sua vara de pesca.", 1,20),
-	SWITCHER("Switcher", 8000, 0, new Switcher() , new ItemStack(Material.SNOWBALL), "Troque de lugar com o inimigo.",  1,21),
-	REAPER("Reaper", 13000, 500, new Reaper(), new ItemStack(Material.WOODEN_HOE), "De wither com sua foice!", 1,22);
+	SWITCHER("Switcher", 8000, 0, new Switcher() , new ItemStack(Material.SNOW_BALL), "Troque de lugar com o inimigo.",  1,21),
+	REAPER("Reaper", 13000, 500, new Reaper(), new ItemStack(Material.WOOD_HOE), "De wither com sua foice!", 1,22);
 	
 	private final String name;
 	private final String description;

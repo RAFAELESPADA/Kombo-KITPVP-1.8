@@ -16,10 +16,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
-import org.bukkit.event.entity.EntityDismountEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.spigotmc.event.entity.EntityDismountEvent;
 
 import net.wavemc.core.bukkit.item.ItemBuilder;
 import net.wavemc.pvp.WavePvP;
@@ -109,7 +109,7 @@ public class Jumper extends KitHandler implements Ejectable {
 					}
 					it.remove();
 					Bukkit.getServer().getPluginManager().callEvent(new net.wavemc.pvp.cooldown2.CooldownFinishEvent(player, cooldown));
-					 player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
+					 player.playSound(player.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
 				}
 
 				if (found != null) {
@@ -168,7 +168,7 @@ public class Jumper extends KitHandler implements Ejectable {
 					}
 					it.remove();
 					Bukkit.getServer().getPluginManager().callEvent(new net.wavemc.pvp.cooldown1.CooldownFinishEvent(player, cooldown));
-					 player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
+					 player.playSound(player.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
 				}
 
 				if (found != null) {

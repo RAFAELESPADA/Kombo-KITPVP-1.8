@@ -178,12 +178,12 @@ public class PlayerDeathListener implements Listener {
              	            .nbt("cancel-drop")
              	            .nbt("cancel-click")
              	            .toStack());
-             	    player.getInventory().setItem(4, (new ItemBuilder("§aKit Díario", Material.CHEST_MINECART))
+             	    player.getInventory().setItem(4, (new ItemBuilder("§aKit Díario", Material.STORAGE_MINECART))
              	            .nbt("spawn-item", "kitdiario")
              	            .nbt("cancel-drop")
              	            .nbt("cancel-click")
              	            .toStack());
-             	    player.getInventory().setItem(7, (new ItemBuilder("§aExtras", Material.COMPARATOR))
+             	    player.getInventory().setItem(7, (new ItemBuilder("§aExtras", Material.REDSTONE_COMPARATOR))
              	            .nbt("spawn-item", "extras")
              	            .nbt("cancel-drop")
              	            .nbt("cancel-click")
@@ -234,12 +234,12 @@ public class PlayerDeathListener implements Listener {
             	            .nbt("cancel-drop")
             	            .nbt("cancel-click")
             	            .toStack());
-            	    player.getInventory().setItem(4, (new ItemBuilder("§aKit Díario", Material.CHEST_MINECART))
+            	    player.getInventory().setItem(4, (new ItemBuilder("§aKit Díario", Material.STORAGE_MINECART))
             	            .nbt("spawn-item", "kitdiario")
             	            .nbt("cancel-drop")
             	            .nbt("cancel-click")
             	            .toStack());
-            	    player.getInventory().setItem(7, (new ItemBuilder("§aExtras", Material.COMPARATOR))
+            	    player.getInventory().setItem(7, (new ItemBuilder("§aExtras", Material.REDSTONE_COMPARATOR))
             	            .nbt("spawn-item", "extras")
             	            .nbt("cancel-drop")
             	            .nbt("cancel-click")
@@ -293,7 +293,7 @@ player.updateInventory();
 	
 	@EventHandler
 	public void onPickup(PlayerPickupItemEvent event) {
-		ItemStack capacete0 = new ItemStack(Material.MUSHROOM_STEW);
+		ItemStack capacete0 = new ItemStack(Material.MUSHROOM_SOUP);
 		ItemStack capacete1 = new ItemStack(Material.BOWL);
 		ItemStack capacete2 = new ItemStack(Material.BROWN_MUSHROOM);
 		ItemStack capacete3 = new ItemStack(Material.RED_MUSHROOM);

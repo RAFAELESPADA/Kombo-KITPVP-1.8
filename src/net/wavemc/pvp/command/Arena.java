@@ -48,7 +48,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
       Bukkit.broadcastMessage("§cEscreva /evento join para entrar");
   	Bukkit.broadcastMessage("§cO evento arena ira iniciar em 5 minutos");
       for (Player p1 : Bukkit.getOnlinePlayers()) {
-      	p1.playSound(p1.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
+      	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
       }
       Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnable() {
 			public void run() {
@@ -58,7 +58,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 					Bukkit.broadcastMessage("§cO evento arena ira iniciar em 4 minutos");
 				Bukkit.broadcastMessage("§cPlayers no evento: " + EventoUtils.getEventoPlayers().size());
 				 for (Player p1 : Bukkit.getOnlinePlayers()) {
-				      	p1.playSound(p1.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
+				      	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 				      }
 			}
 		}, 1200L);
@@ -70,7 +70,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 				Bukkit.broadcastMessage("§cO evento arena ira iniciar em 3 minutos");
 				Bukkit.broadcastMessage("§cPlayers no evento: " + EventoUtils.getEventoPlayers().size());
 				 for (Player p1 : Bukkit.getOnlinePlayers()) {
-				      	p1.playSound(p1.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
+				      	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 				      }
 			}
 		}, 2400L);
@@ -102,7 +102,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 			 	 EventoUtils.getEventoPlayers().forEach(p2 -> {
                  	p2.teleport(evt);
 			      for (Player p1 : Bukkit.getOnlinePlayers()) {
-			        	p1.playSound(p1.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
+			        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 			        }
 			});
 			 	Bukkit.broadcastMessage("§cTeleportando todos para o evento!");
@@ -120,7 +120,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 				Bukkit.broadcastMessage("§c§lBoa sorte!");
 				EventoUtils.getEventoPlayers().forEach(p2 -> {
 		EventoUtils.pvp = true;
-		p2.playSound(p2.getLocation(), Sound.BLOCK_PISTON_EXTEND, 1f, 1f);
+		p2.playSound(p2.getLocation(), Sound.PISTON_EXTEND, 1f, 1f);
      	EventoUtils.damage = true;
      	EventoUtils.build = true;
      	EventoUtils.tp = false;
@@ -132,7 +132,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
     		
     		p2.getInventory().setHeldItemSlot(0);
     		/* 348 */       
-    		p2.getInventory().setItem(0, new ItemBuilder("§7Sword", Material.DIAMOND_SWORD).addEnchant(Enchantment.SHARPNESS, 1)
+    		p2.getInventory().setItem(0, new ItemBuilder("§7Sword", Material.DIAMOND_SWORD).addEnchant(Enchantment.DAMAGE_ALL, 1)
     				.nbt("cancel-drop")
     				.toStack()
     		);
@@ -160,9 +160,9 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
     		p2.getInventory().setItem(24, new ItemStack(Material.LAVA_BUCKET, 1));
     		p2.getInventory().setItem(3, new ItemStack(Material.WATER_BUCKET, 1));
     		p2.getInventory().setItem(4, new ItemStack(Material.LAVA_BUCKET, 1));
-    		p2.getInventory().setItem(16, new ItemStack(Material.COBBLESTONE_WALL, 64));
-    		p2.getInventory().setItem(2, new ItemStack(Material.OAK_PLANKS, 64));
-    		p2.getInventory().setItem(8, new ItemStack(Material.COBWEB, 8));
+    		p2.getInventory().setItem(16, new ItemStack(Material.COBBLE_WALL, 64));
+    		p2.getInventory().setItem(2, new ItemStack(Material.WOOD, 64));
+    		p2.getInventory().setItem(8, new ItemStack(Material.WEB, 8));
     		p2.getInventory().setItem(17, new ItemStack(Material.STONE_PICKAXE, 1));
     		p2.getInventory().setItem(26, new ItemStack(Material.STONE_AXE, 1));
     		p2.getInventory().setItem(10, chest);
@@ -174,7 +174,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
     		p2.getInventory().setItem(21, boost);
     		p2.setGameMode(GameMode.SURVIVAL);
     		for (int i = 0; i < 17; i++) {
-    			p2.getInventory().addItem(new ItemStack(Material.MUSHROOM_STEW));    			
+    			p2.getInventory().addItem(new ItemStack(Material.MUSHROOM_SOUP));    			
     		}
     		p2.updateInventory();
 			}); {

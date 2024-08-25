@@ -45,7 +45,7 @@ public class SignListener implements Listener {
 				
 				if (isSoup) {
 					for (int i = 0; i < inventory.getContents().length; i++) {
-						inventory.setItem(i, new ItemStack(Material.MUSHROOM_STEW));
+						inventory.setItem(i, new ItemStack(Material.MUSHROOM_SOUP));
 					}
 				}else {
 					for (int i = 0; i != 9; i++) {

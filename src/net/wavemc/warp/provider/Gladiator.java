@@ -45,15 +45,15 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 	private ItemStack machado = new ItemBuilder(Material.STONE_AXE).toStack(),
 			picareta = new ItemBuilder(Material.STONE_PICKAXE).toStack(),
 			pote = new ItemBuilder(Material.BOWL).amount(64).toStack(),
-			espada = new ItemBuilder(Material.DIAMOND_SWORD).addEnchant(Enchantment.SHARPNESS, 1).toStack(),
-			muro = new ItemBuilder(Material.COBBLESTONE_WALL).amount(64).toStack(),
+			espada = new ItemBuilder(Material.DIAMOND_SWORD).addEnchant(Enchantment.DAMAGE_ALL, 1).toStack(),
+			muro = new ItemBuilder(Material.COBBLE_WALL).amount(64).toStack(),
 
 			pedra = new ItemBuilder(Material.COBBLESTONE).amount(64).toStack(),
-			sopa = new ItemBuilder(Material.MUSHROOM_STEW).toStack(),
-			cocoa = new ItemBuilder(Material.COCOA_BEANS).amount(64).toStack(),
+			sopa = new ItemBuilder(Material.MUSHROOM_SOUP).toStack(),
+			cocoa = new ItemBuilder(Material.BROWN_MUSHROOM).amount(64).toStack(),
 
-					cocoa2 = new ItemBuilder(Material.COCOA_BEANS).amount(64).toStack(),
-			madeira = new ItemBuilder(Material.OAK_PLANKS).amount(64).toStack(),
+					cocoa2 = new ItemBuilder(Material.RED_MUSHROOM).amount(64).toStack(),
+			madeira = new ItemBuilder(Material.WOOD).amount(64).toStack(),
 			agua = new ItemBuilder(Material.WATER_BUCKET).toStack(),
 			lava = new ItemBuilder(Material.LAVA_BUCKET).toStack(),
 			capacete = new ItemBuilder(Material.IRON_HELMET).toStack(),
@@ -189,7 +189,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 			if (event.getItem() == null) {
 				return;
 			}
-			if (event.getItem().getType().equals(Material.MUSHROOM_STEW)) {
+			if (event.getItem().getType().equals(Material.MUSHROOM_SOUP)) {
 				return;
 			}
 			if (event.getItem().getItemMeta() == null) {
@@ -220,7 +220,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 			if (event.getItem() == null) {
 				return;
 			}
-			if (event.getItem().getType().equals(Material.MUSHROOM_STEW)) {
+			if (event.getItem().getType().equals(Material.MUSHROOM_SOUP)) {
 				return;
 			}
 			if (event.getItem().getItemMeta() == null) {
@@ -239,7 +239,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 				if (event.getItem() == null) {
 					return;
 				}
-				if (event.getItem().getType().equals(Material.MUSHROOM_STEW)) {
+				if (event.getItem().getType().equals(Material.MUSHROOM_SOUP)) {
 					return;
 				}
 				if (event.getItem().getItemMeta() == null) {

@@ -16,8 +16,7 @@ public class WaveActionBar {
 
 public static void send(Player player, String title) {
     try {
-    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(title));
-
+    sendActionBar(player, title);
     }
     catch (Exception e) {
     	e.printStackTrace();

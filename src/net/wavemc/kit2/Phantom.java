@@ -49,7 +49,7 @@ public class Phantom extends KitHandler2 {
     	if (event.getItem() == null) {
 			return;
 		}
-    	if (event.getItem().getType().equals(Material.MUSHROOM_STEW)) {
+    	if (event.getItem().getType().equals(Material.MUSHROOM_SOUP)) {
 			return;
 		}
         if (!event.hasItem() || !ItemBuilder.has(event.getItem(), "kit-handler", "phantom")) return;
@@ -69,22 +69,22 @@ if (!KitManager2.getPlayer(event.getPlayer().getName()).haskit2(this)) {
         /*  89 */       LeatherArmorMeta kCapacete = (LeatherArmorMeta)Capacete.getItemMeta();
         /*  90 */       kCapacete.setColor(Color.WHITE);
         /*  91 */       Capacete.setItemMeta(kCapacete);
-        /*  92 */       Capacete.addEnchantment(Enchantment.PROTECTION, 3);
+        /*  92 */       Capacete.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
         /*  93 */       ItemStack Peitoral = new ItemStack(Material.LEATHER_CHESTPLATE);
         /*  94 */       LeatherArmorMeta kPeitoral = (LeatherArmorMeta)Peitoral.getItemMeta();
         /*  95 */       kPeitoral.setColor(Color.WHITE);
         /*  96 */       Peitoral.setItemMeta(kPeitoral);
-        /*  97 */       Peitoral.addEnchantment(Enchantment.PROTECTION, 3);
+        /*  97 */       Peitoral.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
         /*  98 */       ItemStack Calss = new ItemStack(Material.LEATHER_LEGGINGS);
         /*  99 */       LeatherArmorMeta kCalss = (LeatherArmorMeta)Calss.getItemMeta();
         /* 100 */       kCalss.setColor(Color.WHITE);
         /* 101 */       Calss.setItemMeta(kCalss);
-        /* 102 */       Calss.addEnchantment(Enchantment.PROTECTION, 3);
+        /* 102 */       Calss.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
         /* 103 */       ItemStack Bota = new ItemStack(Material.LEATHER_BOOTS);
         /* 104 */       LeatherArmorMeta kBota = (LeatherArmorMeta)Capacete.getItemMeta();
         /* 105 */       kBota.setColor(Color.WHITE);
         /* 106 */       Bota.setItemMeta(kBota);
-        /* 107 */       Bota.addEnchantment(Enchantment.PROTECTION, 3);
+        /* 107 */       Bota.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
         
         /*     */       
         /* 110 */       event.getPlayer().getInventory().setHelmet(Capacete);

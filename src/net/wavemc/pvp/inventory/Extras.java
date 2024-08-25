@@ -28,7 +28,7 @@ public class Extras implements Listener {
 				.getPlayer(target.getName());
    	PlayerPvP pvp = helixPlayer.getPvp();
 
-		inventory.setItem(12, new ItemBuilder("§aMudar estilo de sopa", Material.MUSHROOM_STEW).nbt("penisgrande")
+		inventory.setItem(12, new ItemBuilder("§aMudar estilo de sopa", Material.MUSHROOM_SOUP).nbt("penisgrande")
 				.toStack()
 		);
 		inventory.setItem(14, new ItemBuilder("§aEstatísticas gerais", Material.DIAMOND_SWORD).nbt("penisgrande2").toStack());

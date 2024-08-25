@@ -38,7 +38,7 @@ public class StatusGUI implements Listener {
     @EventHandler
     private void onPlayerInteract(PlayerInteractAtEntityEvent event) {
         Player player = event.getPlayer();
-        if (player.getItemInHand().getType().equals(Material.PLAYER_HEAD)) {
+        if (player.getItemInHand().getType().equals(Material.SKULL)) {
             if (event.getRightClicked().getType() == EntityType.ARMOR_STAND)
                 event.setCancelled(true);
         }

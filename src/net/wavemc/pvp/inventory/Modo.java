@@ -22,13 +22,13 @@ public class Modo implements Listener {
 		Inventory inventory = Bukkit.createInventory(null, 9, inventoryName);
 		
 
-		inventory.setItem(4, new ItemBuilder("§cSumo", Material.LEAD).nbt("sumoi")
+		inventory.setItem(4, new ItemBuilder("§cSumo", Material.LEASH).nbt("sumoi")
 				.toStack()
 		);
-		inventory.setItem(5, new ItemBuilder("§c1V1", Material.MUSHROOM_STEW).nbt("1v1i")
+		inventory.setItem(5, new ItemBuilder("§c1V1", Material.MUSHROOM_SOUP).nbt("1v1i")
 				.toStack()
 		);
-		inventory.setItem(3, new ItemBuilder("§cGladiator", Material.IRON_BARS).nbt("gladi")
+		inventory.setItem(3, new ItemBuilder("§cGladiator", Material.IRON_FENCE).nbt("gladi")
 				.toStack()
 		);
 		

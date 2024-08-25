@@ -26,7 +26,7 @@ public class ShopInventory {
 
 	public static void open(Player player) {
 		Inventory inventory = Bukkit.createInventory(null, 6 * 9, inventoryName);
-		ItemStack visualItem = new ItemBuilder(WavePvP.getInstance().getConfig().getString("ShopItem").replace("&", "§"), Material.WHITE_STAINED_GLASS_PANE).toStack();
+		ItemStack visualItem = new ItemBuilder(WavePvP.getInstance().getConfig().getString("ShopItem").replace("&", "§"), Material.STAINED_GLASS_PANE).toStack();
 		
 
 		List<WaveKit2> availableKits = WaveKit2.getKits().stream().filter(
@@ -55,20 +55,19 @@ public class ShopInventory {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("shop-kit", warp.getName())
 					.toStack());
 			;
 		});
 		}	else {
-			inventory.setItem(31 , new ItemBuilder("§cNada aqui!", new ItemStack(Material.RED_STAINED_GLASS_PANE))
+			inventory.setItem(31 , new ItemBuilder("§cNada aqui!", new ItemStack(Material.REDSTONE))
 	    			.lore("§7" + "Parece que você já tem todos os Kits")
 	    					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 	    							ItemFlag.HIDE_DESTROYS,
 	    							ItemFlag.HIDE_ENCHANTS,
 	    							ItemFlag.HIDE_PLACED_ON,
-	    							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
 	    							ItemFlag.HIDE_UNBREAKABLE)
 	    					.nbt("kit-visual", WaveKit2.THOR.getName())
 	    					.toStack());

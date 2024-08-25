@@ -88,7 +88,7 @@ public class SelectKitListener implements Listener {
         if (event.getItem() == null) {
 			return;
 		}
-        if (event.getItem().getType().equals(Material.MUSHROOM_STEW)) {
+        if (event.getItem().getType().equals(Material.MUSHROOM_SOUP)) {
 			return;
 		}
         if (!event.hasItem()) {
@@ -287,7 +287,7 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 							return;
 						}
 						
-						if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.HULK && (event.getCurrentItem().getType() == Material.IRON_BARS)) {
+						if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.HULK && (event.getCurrentItem().getType() == Material.IRON_FENCE)) {
 							player.sendMessage("§c" + kitName22 + " é incompatível com Hulk");
 							player.closeInventory();
 							return;
@@ -456,7 +456,7 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 		event.setCancelled(true);
 		if (!player.hasPermission("wave.kit2." + ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName()) ) && event.getCurrentItem().getType() != Material.ARROW) {
 			player.sendMessage(ChatColor.RED + "Você não tem esse kit liberado.");
-			player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 10, 10);
+			player.playSound(player.getLocation(), Sound.ENDERMAN_TELEPORT, 10, 10);
 			event.setCancelled(true);
 			return;
 		
@@ -548,7 +548,7 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 		}
 		if (!player.hasPermission("wave.kit2." + ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName())) && event.getCurrentItem().getType() != Material.ARROW) {
 			player.sendMessage(ChatColor.RED + "Você não tem esse kit liberado.");
-			player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 10, 10);
+			player.playSound(player.getLocation(), Sound.ENDERMAN_TELEPORT, 10, 10);
 			event.setCancelled(true);
 			return;
 		

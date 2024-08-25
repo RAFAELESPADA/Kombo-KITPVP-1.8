@@ -58,13 +58,13 @@ public class BuyKitListener implements Listener {
 		WaveKit2.findKit(kitName).ifPresent(kit -> {
 			player.closeInventory();
 			if (player.hasPermission("wave.kit2." + kit.getName())) {
-				player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 10.0f, 10.0f);
+				player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 10.0f, 10.0f);
 				player.sendMessage("§cVocê ja tem esse kit!");
 				return;
 			}
 			if (helixPlayer.getPvp().getCoins() < kit.getPrice()) {
 				int remaingCoins = kit.getPrice() - helixPlayer.getPvp().getCoins();
-				player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 10.0f, 10.0f);
+				player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 10.0f, 10.0f);
 				player.sendMessage("§cVocê precisa de " + WaveDecimalFormat.format(remaingCoins) + " coins para comprar esse kit!");
 				return;
 			}
@@ -72,7 +72,7 @@ public class BuyKitListener implements Listener {
 			helixPlayer.getPvp().removeCoins(kit.getPrice());
 			WaveBukkit.getInstance().getPlayerManager().getController().save(helixPlayer);
 			
-			player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10.0f, 10.0f);
+			player.playSound(player.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
 			Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + player.getName() + " permission set wave.kit2." + kit.toString().toLowerCase() + " pvp");
 
 			player.sendMessage("§aVocê comprou o kit " + kit.getName() + " por " + kit.getPrice() + " coins");
@@ -189,7 +189,7 @@ public void onInEDdfvvClickti4(InventoryClickEvent event) {
 	if (event.getCurrentItem() == null) {
 		return;
 	}
-	if (!(event.getCurrentItem().getType() == Material.IRON_BARS)) {
+	if (!(event.getCurrentItem().getType() == Material.IRON_FENCE)) {
 		return;
 	}
 	

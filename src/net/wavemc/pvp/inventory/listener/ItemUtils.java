@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ItemUtils {
 
-    public static ItemStack cocoa = new ItemStack(Material.COCOA_BEANS);
+    public static ItemStack cocoa = new ItemStack(Material.INK_SACK, (short)3);
 
     public static ItemStack getCustomItemStack(Material material, String name, String lore) {
         ItemStack itemStack = new ItemStack(material);
@@ -42,7 +42,7 @@ public class ItemUtils {
     }
 
     public static ItemStack getPlayerSkull(String name) {
-        ItemStack itemStack = new ItemStack(Material.PLAYER_HEAD);
+        ItemStack itemStack = new ItemStack(Material.SKULL);
         SkullMeta meta = (SkullMeta) itemStack.getItemMeta();
         meta.setOwner(name);
         itemStack.setItemMeta(meta);

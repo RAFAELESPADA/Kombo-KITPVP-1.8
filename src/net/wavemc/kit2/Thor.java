@@ -18,7 +18,7 @@ public class Thor extends KitHandler2 {
 	public void execute(Player player) {
 		super.execute(player);
 		
-		player.getInventory().setItem(2, new ItemBuilder("§eCaboom!", Material.GOLDEN_AXE)
+		player.getInventory().setItem(2, new ItemBuilder("§eCaboom!", Material.GOLD_AXE)
 				.nbt("cancel-drop")
 				.nbt("kit-handler", "thor")
 				.toStack()
@@ -31,7 +31,7 @@ public class Thor extends KitHandler2 {
 		if (event.getItem() == null) {
 			return;
 		}
-		if (event.getItem().getType().equals(Material.MUSHROOM_STEW)) {
+		if (event.getItem().getType().equals(Material.MUSHROOM_SOUP)) {
 			return;
 		}
 		Player player = event.getPlayer();

@@ -28,7 +28,7 @@ public class KitsInventory {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui", WaveKit.ANCHOR.getName())
 					.toStack()
@@ -39,8 +39,8 @@ public class KitsInventory {
 					.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 							ItemFlag.HIDE_DESTROYS,ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
-							ItemFlag.HIDE_UNBREAKABLE).addEnchant(Enchantment.SHARPNESS, 1)
+							
+							ItemFlag.HIDE_UNBREAKABLE).addEnchant(Enchantment.DAMAGE_ALL, 1)
 					.nbt("kit-gui", WaveKit.PVP.getName())
 					.toStack()
 			);
@@ -50,7 +50,7 @@ public class KitsInventory {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+						
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui", WaveKit.ARCHER.getName())
 					.toStack()
@@ -62,7 +62,7 @@ public class KitsInventory {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui", WaveKit.BOXER.getName())
 					.toStack()
@@ -73,7 +73,7 @@ public class KitsInventory {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui", WaveKit.SNAIL.getName())
 					.toStack()
@@ -84,7 +84,7 @@ public class KitsInventory {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui", WaveKit.KANGAROO.getName())
 					.toStack()
@@ -95,7 +95,7 @@ public class KitsInventory {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui", WaveKit.FISHERMAN.getName())
 					.toStack()
@@ -107,7 +107,7 @@ public class KitsInventory {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui", WaveKit.FLASH.getName())
 					.toStack()
@@ -118,7 +118,7 @@ public class KitsInventory {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui", WaveKit.GLADIATOR.getName())
 					.toStack()
@@ -129,7 +129,7 @@ public class KitsInventory {
 							ItemFlag.HIDE_DESTROYS,
 							ItemFlag.HIDE_ENCHANTS,
 							ItemFlag.HIDE_PLACED_ON,
-							ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+							
 							ItemFlag.HIDE_UNBREAKABLE)
 					.nbt("kit-gui", WaveKit.GRANDPA.getName())
 					.toStack()
@@ -140,7 +140,7 @@ public class KitsInventory {
 								ItemFlag.HIDE_DESTROYS,
 								ItemFlag.HIDE_ENCHANTS,
 								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+								
 								ItemFlag.HIDE_UNBREAKABLE)
 						.nbt("kit-gui", WaveKit.MAGMA.getName())
 						.toStack()
@@ -151,7 +151,7 @@ public class KitsInventory {
 									ItemFlag.HIDE_DESTROYS,
 									ItemFlag.HIDE_ENCHANTS,
 									ItemFlag.HIDE_PLACED_ON,
-									ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+									
 									ItemFlag.HIDE_UNBREAKABLE)
 							.nbt("kit-gui", WaveKit.MILKMAN.getName())
 							.toStack()
@@ -162,7 +162,7 @@ public class KitsInventory {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui", WaveKit.MONK.getName())
 								.toStack()
@@ -173,7 +173,7 @@ public class KitsInventory {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui", WaveKit.NEO.getName())
 								.toStack()
@@ -185,7 +185,7 @@ public class KitsInventory {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui", WaveKit.NINJA.getName())
 								.toStack()
@@ -196,7 +196,7 @@ public class KitsInventory {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui", WaveKit.PHANTOM.getName())
 								.toStack()
@@ -207,7 +207,7 @@ public class KitsInventory {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui", WaveKit.POSEIDON.getName())
 								.toStack()
@@ -218,7 +218,7 @@ public class KitsInventory {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui", WaveKit.SIGHT.getName())
 								.toStack()
@@ -230,7 +230,7 @@ public class KitsInventory {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui", WaveKit.TURTLE.getName())
 								.toStack()
@@ -241,7 +241,7 @@ public class KitsInventory {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui", WaveKit.AUTOBOWL.getName())
 								.toStack()
@@ -253,7 +253,7 @@ public class KitsInventory {
 										ItemFlag.HIDE_DESTROYS,
 										ItemFlag.HIDE_ENCHANTS,
 										ItemFlag.HIDE_PLACED_ON,
-										ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
+										
 										ItemFlag.HIDE_UNBREAKABLE)
 								.nbt("kit-gui", WaveKit.METEOR.getName())
 								.toStack()

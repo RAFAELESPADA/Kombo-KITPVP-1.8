@@ -185,7 +185,7 @@ if (yaml.getString("Mundo-" +warpPos1) == null || yaml.getString("Mundo-" +warpP
 		if (event.getCurrentItem() == null) {
 			return;
 		}
-		if (!(event.getCurrentItem().getType() == Material.MUSHROOM_STEW)) {
+		if (!(event.getCurrentItem().getType() == Material.MUSHROOM_SOUP)) {
 			return;
 		}
 		if (Sumo.fastChallenge.contains(player) || OneVsOne.fastChallenge.contains(player) || Gladiator.fastChallenge.contains(player)) {

@@ -132,7 +132,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
         );
 
         boolean searchPlayers = fastChallenge.contains(player);
-        player.getInventory().setItem(5, new ItemBuilder("§bProcurar jogador: " + (searchPlayers ? "§aON" : "§cOFF"), (searchPlayers ? Material.LIME_DYE : Material.LIGHT_GRAY_DYE))
+        player.getInventory().setItem(5, new ItemBuilder("§bProcurar jogador: " + (searchPlayers ? "§aON" : "§cOFF"), (searchPlayers ? Material.GOLDEN_CARROT : Material.CARROT))
                 .lore("§fClique para procurar")
                 .nbt("cancel-drop")
                 .nbt("cancel-click")
@@ -263,7 +263,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
         WavePlayer killerUser = WaveBukkit.getInstance().getPlayerManager().getPlayer(target.getName());
         int winnerCoins = random.nextInt(80 + 1 - 25) + 25;
         WaveWarp.DUELS.send(target);
-        target.playSound(target.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10.0f, 10.0f);
+        target.playSound(target.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
         target.sendMessage("§6§lSUMO §eVocê ganhou a luta contra " + player.getName());
         killerUser.getPvp().addCoins(winnerCoins);
         killerUser.getPvp().addWinsSumo(1);;
@@ -324,7 +324,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
         WavePlayer killerUser = WaveBukkit.getInstance().getPlayerManager().getPlayer(target.getName());
         int winnerCoins = random.nextInt(80 + 1 - 25) + 25;
         WaveWarp.DUELS.send(target);
-        target.playSound(target.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10.0f, 10.0f);
+        target.playSound(target.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
 
         target.sendMessage("§a§lSUMO §aVocê ganhou a luta contra " + player.getName());
         killerUser.getPvp().addCoins(winnerCoins);

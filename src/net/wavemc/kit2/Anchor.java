@@ -45,7 +45,7 @@ public class Anchor extends KitHandler2 {
         if (KitManager2.getPlayer(player.getName()).haskit2(this) || KitManager2.getPlayer(damager.getName()).haskit2(this)) {
             player.setVelocity(new Vector());
             this.anchoring.add(player.getUniqueId());
-            player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1f, 1f);
+            player.playSound(player.getLocation(), Sound.ANVIL_LAND, 1f, 1f);
             Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), () -> player.setVelocity(new Vector()));
         }
 	}

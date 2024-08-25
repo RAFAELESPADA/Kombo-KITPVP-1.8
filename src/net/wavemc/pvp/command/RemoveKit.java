@@ -46,7 +46,7 @@ public class RemoveKit implements CommandExecutor {
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + target.getName() + " permission unset kombo.kit." + kit.toString());
             target.sendTitle("§c§lTRISTEZA", "§aVocê teve o kit §e" + kit + "§a retirado!");
             Bukkit.broadcast("§4§lKIT §a" + sender.getName() + " §fRemoveu o kit §e" + kit + "§f de §a" + target.getName(), "kombo.cmd.report");
-            target.playSound(target.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_BLAST, 1f, 1f);
+            target.playSound(target.getLocation(), Sound.ANVIL_LAND, 1f, 1f);
           
         }
         return false;

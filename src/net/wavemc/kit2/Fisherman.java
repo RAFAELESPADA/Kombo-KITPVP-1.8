@@ -37,7 +37,7 @@ public class Fisherman extends KitHandler2 {
 		
 		Entity caught = event.getCaught();
 		 if (KitManager.getPlayer(caught.getName()).hasKit(WaveKit.NEO) || KitManager2.getPlayer(caught.getName()).haskit2(WaveKit2.NEO)) {
-			 event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 15.0f, 15.0f);
+			 event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.NOTE_BASS, 15.0f, 15.0f);
 			 event.getPlayer().sendMessage(ChatColor.AQUA + "Você não pode puxar o jogador " + caught.getName() + " porque ele está de kit NEO");
 				return;
 			}

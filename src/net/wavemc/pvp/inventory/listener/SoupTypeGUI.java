@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 public class SoupTypeGUI implements Listener {
 
-    public static final ItemStack ICON = ItemUtils.getCustomItemStack(Material.MUSHROOM_STEW, "§6Mude seu estilo de sopa", (String) null);
+    public static final ItemStack ICON = ItemUtils.getCustomItemStack(Material.MUSHROOM_SOUP, "§6Mude seu estilo de sopa", (String) null);
 
     
 

@@ -55,7 +55,7 @@ public final class GladiatorListener extends KitHandler2
 	public void execute(Player player) {
 		super.execute(player);
 		
-		player.getInventory().setItem(2, new ItemBuilder("§bPuxar!", Material.IRON_BARS)
+		player.getInventory().setItem(2, new ItemBuilder("§bPuxar!", Material.IRON_FENCE)
 				.nbt("kit-handler", "glad")
 				.nbt("cancel-drop")
 				.toStack()
@@ -80,7 +80,7 @@ public final class GladiatorListener extends KitHandler2
         final Player bp = e.getPlayer();
         if (e.getRightClicked() instanceof Player) {
             final Player toGlad = (Player)e.getRightClicked();
-            if (!KitManager2.getPlayer(bp.getName()).haskit2(this) || !ItemBuilder.has(bp.getItemInHand(), "kit-handler", "glad") || bp.getItemInHand().getType() != Material.IRON_BARS) {
+            if (!KitManager2.getPlayer(bp.getName()).haskit2(this) || !ItemBuilder.has(bp.getItemInHand(), "kit-handler", "glad") || bp.getItemInHand().getType() != Material.IRON_FENCE) {
             	return;
             }
                 if (toGlad.getGameMode() == GameMode.CREATIVE) {
@@ -100,7 +100,7 @@ public final class GladiatorListener extends KitHandler2
 					return;
 				}
                 if (KitManager.getPlayer(toGlad.getName()).hasKit(WaveKit.NEO) || KitManager2.getPlayer(toGlad.getName()).haskit2(WaveKit2.NEO)) {
-					bp.playSound(bp.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASEDRUM, 15.0f, 15.0f);
+					bp.playSound(bp.getLocation(), Sound.NOTE_PLING, 15.0f, 15.0f);
 					bp.sendMessage(ChatColor.RED + "Você não pode desafiar " + ChatColor.DARK_RED + toGlad.getName() + ChatColor.RED + " porque ele está com o " + ChatColor.DARK_RED + " kit NEO.");
 					return;
 				}

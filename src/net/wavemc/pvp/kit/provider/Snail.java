@@ -30,7 +30,7 @@ public class Snail extends KitHandler {
 		int percentage = new Random().nextInt(100);
 		
 		if (percentage < 33) {
-			victim.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 4 * 20, 1));
+			victim.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 4 * 20, 1));
 		}
 	}
 }

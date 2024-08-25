@@ -14,8 +14,6 @@ import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.boss.BarColor;
-import org.bukkit.boss.BarStyle;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -140,7 +138,7 @@ public class PlayerJoin implements Listener {
 					player.sendMessage("§6§lKOMBO §7-> §fPara ganhar o dobro de coins e xp");
 					player.sendMessage("§6§lKOMBO §7-> §fE evitar ficar bugado no bloco e mais bugs");
 					player.sendMessage("§6§lKOMBO §7-> §fNão se preocupe. o pvp continuará da 1.8");
-					player.playSound(p.getLocation(), Sound.BLOCK_ANVIL_LAND, 10, 10);
+					player.playSound(p.getLocation(), Sound.ANVIL_LAND, 10, 10);
 					
 			}
 			}}.runTaskTimer(WavePvP.getInstance(), 10 , 7 * 60 * 20);

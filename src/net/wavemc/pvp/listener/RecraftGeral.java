@@ -43,40 +43,41 @@ public class RecraftGeral
   public void inv(PlayerInteractEvent e)
   {
     Player p = e.getPlayer();
-    
-    
+
+    ItemStack cocoa = new ItemStack(Material.INK_SACK, (short)3);
+    cocoa.setAmount(64);
     Inventory inventory = Bukkit.getServer().createInventory(p, 36, "Recraft");
     inventory.setItem(1, new ItemStack(Material.BOWL, 64));
     inventory.setItem(2, new ItemStack(Material.RED_MUSHROOM, 64));
     inventory.setItem(3, new ItemStack(Material.BROWN_MUSHROOM, 64));
     inventory.setItem(5, new ItemStack(Material.BOWL, 64));
-    inventory.setItem(6, new ItemStack(Material.COCOA_BEANS , 64));
-    inventory.setItem(7, new ItemStack(Material.COCOA_BEANS, 64));
+    inventory.setItem(6, cocoa );
+    inventory.setItem(7, cocoa);
     inventory.setItem(10, new ItemStack(Material.BOWL, 64));
     inventory.setItem(11, new ItemStack(Material.RED_MUSHROOM, 64));
     inventory.setItem(12, new ItemStack(Material.BROWN_MUSHROOM, 64));
     inventory.setItem(14, new ItemStack(Material.BOWL, 64));
-    inventory.setItem(15, new ItemStack(Material.COCOA_BEANS, 64));
-    inventory.setItem(16, new ItemStack(Material.COCOA_BEANS, 64));
+    inventory.setItem(15, cocoa);
+    inventory.setItem(16, cocoa);
     inventory.setItem(19, new ItemStack(Material.BOWL, 64));
     inventory.setItem(20, new ItemStack(Material.RED_MUSHROOM, 64));
     inventory.setItem(21, new ItemStack(Material.BROWN_MUSHROOM, 64));
     inventory.setItem(23, new ItemStack(Material.BOWL, 64));
-    inventory.setItem(24, new ItemStack(Material.COCOA_BEANS, 64));
-    inventory.setItem(25, new ItemStack(Material.COCOA_BEANS, 64));
+    inventory.setItem(24, cocoa);
+    inventory.setItem(25, cocoa);
     inventory.setItem(28, new ItemStack(Material.BOWL, 64));
     inventory.setItem(29, new ItemStack(Material.RED_MUSHROOM, 64));
     inventory.setItem(30, new ItemStack(Material.BROWN_MUSHROOM, 64));
     inventory.setItem(32, new ItemStack(Material.BOWL, 64));
-    inventory.setItem(33, new ItemStack(Material.COCOA_BEANS, 64));
-    inventory.setItem(34, new ItemStack(Material.COCOA_BEANS, 64));
+    inventory.setItem(33, cocoa);
+    inventory.setItem(34, cocoa);
 		
 	
 	
 		
 	
     if ((e.getAction() == Action.RIGHT_CLICK_BLOCK) && (e.getClickedBlock() != null) && (
-      (e.getClickedBlock().getType() == Material.OAK_WALL_SIGN) || (e.getClickedBlock().getType() == Material.OAK_SIGN)))
+      (e.getClickedBlock().getType() == Material.WALL_SIGN) || (e.getClickedBlock().getType() == Material.SIGN)))
     {
       Sign s = (Sign)e.getClickedBlock().getState();
       String[] lines = s.getLines();

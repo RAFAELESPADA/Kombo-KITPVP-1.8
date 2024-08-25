@@ -1,5 +1,6 @@
 package net.wavemc.pvp;
 
+
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,7 +23,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.block.Block;
@@ -205,9 +205,9 @@ public class WavePvP extends JavaPlugin implements Listener, PluginMessageListen
 		}
 	 
 	 private void setupRecipes() {
-		 ShapelessRecipe cocoa = new ShapelessRecipe(new NamespacedKey(getInstance(), "soup2"),
-	                new ItemStack(Material.MUSHROOM_STEW));
-	        cocoa.addIngredient(1, Material.COCOA_BEANS);
+		 ShapelessRecipe cocoa = new ShapelessRecipe(
+	                new ItemStack(Material.MUSHROOM_SOUP));
+	        cocoa.addIngredient(1, Material.INK_SACK, (short)3);
 	        cocoa.addIngredient(1, Material.BOWL);
 	        Bukkit.getServer().addRecipe(cocoa);
 	    }
@@ -267,7 +267,7 @@ new BukkitRunnable() {
 				if (euforia) {
 					for (Player player : Bukkit.getOnlinePlayers()) {
 						if (net.wavemc.pvp.warp.WaveWarp.SPAWN.hasPlayer(player.getName()) || net.wavemc.pvp.warp.WaveWarp.FPS.hasPlayer(player.getName()) && !EventoUtils.game.contains(player.getName())) {
-					player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, 120*20, 0));
+					player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 120*20, 0));
 						}
 						else {
 							 player.getActivePotionEffects().forEach(potion -> player.removePotionEffect(potion.getType()));	
@@ -303,8 +303,8 @@ WaveBukkit.getExecutorService().submit(() -> {
 player.sendTitle("§4§lFÚRIA", "§cTodos ficam fortes");
 
 Bukkit.getWorlds().forEach(world -> world.setTime(18000));
-						player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, 120*20, 0));
-						player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_BREAK, 1F, 10F);
+						player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 120*20, 0));
+						player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 1F, 10F);
 						Bukkit.broadcastMessage("§cO evento fúria foi iniciado");
 						Bukkit.broadcastMessage("§cPor dois minutos todos serão fortes");
 						Bukkit.broadcastMessage("§cE o server estará de noite");
@@ -321,7 +321,7 @@ Bukkit.getWorlds().forEach(world -> world.setTime(18000));
 
 									Bukkit.getWorlds().forEach(world -> world.setTime(1000));
 									 for (Player p1 : Bukkit.getOnlinePlayers()) {
-										 p1.playSound(p1.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
+										 p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 									        p1.getActivePotionEffects().forEach(potion -> p1.removePotionEffect(potion.getType()));
 									      }
 								}

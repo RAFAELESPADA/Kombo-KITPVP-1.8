@@ -38,7 +38,7 @@ public class LavaChallenge extends WarpHandle {
 
 		  player.getInventory().setItem(13, item);
 		  for (int i = 0; i < 36; i++) {
-				player.getInventory().addItem(new ItemStack(Material.MUSHROOM_STEW));
+				player.getInventory().addItem(new ItemStack(Material.MUSHROOM_SOUP));
 			}
 		  player.getInventory().setItem(14, vermelho);
 		  player.getInventory().setItem(15, marrom);
@@ -117,7 +117,7 @@ public class LavaChallenge extends WarpHandle {
 			WaveBukkit.getInstance().getPlayerManager().getPlayer(player.getName()).getPvp().setXp(WaveBukkit.getInstance().getPlayerManager().getPlayer(player.getName()).getPvp().getXp() + xp);
 			WaveBukkit.getInstance().getPlayerManager().getController().save(WaveBukkit.getInstance().getPlayerManager().getPlayer(player.getName()));
 			player.sendMessage("§6§l[+] §a " + xp + "XP");
-			player.playSound(player.getLocation(), Sound.BLOCK_GLASS_PLACE, 10.0f, 10.0f);
+			player.playSound(player.getLocation(), Sound.GLASS, 10.0f, 10.0f);
 			player.sendMessage("§6§lCHALLENGE §6Você completou o LEVEL " + level + " e ganhou " + coins + " coins!");
 		}
 	}

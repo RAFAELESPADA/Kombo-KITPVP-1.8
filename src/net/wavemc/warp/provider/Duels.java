@@ -29,7 +29,7 @@ public class Duels extends WarpHandle {
 					.nbt("fila", "challenge")
 					.toStack()
 			);
-	 	 player.getInventory().setItem(8, new ItemBuilder("§bRetornar §7(Clique)", Material.RED_BED)
+	 	 player.getInventory().setItem(8, new ItemBuilder("§bRetornar §7(Clique)", Material.BED)
 					.nbt("cancel-drop")
 					.nbt("cancel-click")
 					.nbt("voltar", "spawn")

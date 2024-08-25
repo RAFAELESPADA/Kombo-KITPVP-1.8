@@ -124,7 +124,7 @@ public class OneVsOne extends WarpDuoBattleHandle {
 	          	        Material itemType = e.getRecipe().getResult().getType();
 	          	    
 	          	  
-	          	        if(itemType==Material.OAK_BOAT) {
+	          	        if(itemType==Material.BOAT) {
 	          	            e.getInventory().setResult(new ItemStack(Material.AIR));
 	          	            for(HumanEntity he:e.getViewers()) {
 	          	                if(he instanceof Player) {
@@ -298,7 +298,7 @@ public class OneVsOne extends WarpDuoBattleHandle {
 		player.getInventory().setBoots(new ItemBuilder("§f§lPVP", Material.IRON_BOOTS).toStack());
 
 		for (int i = 0; i <= 7; i++) {
-			player.getInventory().addItem(new ItemBuilder(Material.MUSHROOM_STEW).toStack());
+			player.getInventory().addItem(new ItemBuilder(Material.MUSHROOM_SOUP).toStack());
 		}
 	}
 

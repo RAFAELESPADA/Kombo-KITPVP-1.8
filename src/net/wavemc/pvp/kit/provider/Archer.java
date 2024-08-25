@@ -25,11 +25,11 @@ import org.bukkit.scheduler.BukkitRunnable;
 		super.execute(player);
 		
 		player.getInventory().setItem(2, new ItemBuilder("§aArco!", Material.BOW)
-				.nbt("kit-handler", "arco").addEnchant(Enchantment.PUNCH, 1)
+				.nbt("kit-handler", "arco").addEnchant(Enchantment.ARROW_KNOCKBACK, 1)
 				.nbt("cancel-drop")
 				.toStack());
 				player.getInventory().setItem(10, new ItemBuilder("§aFlecha!", Material.ARROW)
-						.nbt("kit-handler", "flecha").addEnchant(Enchantment.SHARPNESS, 1)
+						.nbt("kit-handler", "flecha").addEnchant(Enchantment.DAMAGE_ALL, 1)
 						.nbt("cancel-drop").addFlags(
 								ItemFlag.HIDE_ENCHANTS)
 						.toStack()

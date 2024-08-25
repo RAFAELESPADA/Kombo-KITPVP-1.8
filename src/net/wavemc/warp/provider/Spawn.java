@@ -88,12 +88,12 @@ public class Spawn extends WarpHandle {
             .nbt("cancel-drop")
             .nbt("cancel-click")
             .toStack());
-    player.getInventory().setItem(4, (new ItemBuilder("§aKit Díario", Material.CHEST_MINECART))
+    player.getInventory().setItem(4, (new ItemBuilder("§aKit Díario", Material.STORAGE_MINECART))
             .nbt("spawn-item", "kitdiario")
             .nbt("cancel-drop")
             .nbt("cancel-click")
             .toStack());
-    player.getInventory().setItem(7, (new ItemBuilder("§aExtras", Material.COMPARATOR))
+    player.getInventory().setItem(7, (new ItemBuilder("§aExtras", Material.REDSTONE_COMPARATOR))
             .nbt("spawn-item", "extras")
             .nbt("cancel-drop")
             .nbt("cancel-click")
@@ -112,7 +112,7 @@ public class Spawn extends WarpHandle {
 	WavePvP.getInstance().getScoreboardBuilder().build(player);
   }
   public static ItemStack getHead(Player player) {
-      ItemStack item = new ItemStack(Material.PLAYER_HEAD);
+      ItemStack item = new ItemStack(Material.SKULL);
       SkullMeta skull = (SkullMeta) item.getItemMeta();
       skull.setDisplayName("§aSeu perfil");
       ArrayList<String> lore = new ArrayList<String>();

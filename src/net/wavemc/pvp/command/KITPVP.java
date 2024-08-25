@@ -24,7 +24,7 @@ import net.wavemc.pvp.WavePvP;
 /* 24 */     if (cmd.getName().equalsIgnoreCase("kitpvp"))
 /*    */     {
 /*    */ 
-/* 27 */       sender.sendMessage("§6§lARENA v1.2 §9 criado por Rafael Melo");
+/* 27 */       sender.sendMessage("§6§lARENA v2.4 §9 criado por Rafael Melo");
 /* 37 */       
 /*    */       
 /* 39 */       return false;

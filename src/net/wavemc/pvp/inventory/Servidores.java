@@ -22,7 +22,7 @@ public class Servidores implements Listener {
 	public static void open(Player player) {
 		Inventory inventory = Bukkit.createInventory(null, 9 * 3, inventoryName);
 		
-		inventory.setItem(4, new ItemBuilder("§aGladiator", Material.IRON_BARS).nbt("glad22").lore( ChatColor.GRAY + "Tem " + ChatColor.GRAY + WaveWarp.GLADIATOR.getPlayerCount() + " Jogando").toStack());
+		inventory.setItem(4, new ItemBuilder("§aGladiator", Material.IRON_FENCE).nbt("glad22").lore( ChatColor.GRAY + "Tem " + ChatColor.GRAY + WaveWarp.GLADIATOR.getPlayerCount() + " Jogando").toStack());
 		
 		inventory.setItem(12, new ItemBuilder("§aArena", Material.IRON_CHESTPLATE).nbt("arena").lore( ChatColor.GRAY + "Tem " + ChatColor.GRAY + WaveWarp.SPAWN.getPlayerCount() + " Jogando").toStack());
 		inventory.setItem(10, new ItemBuilder("§aDuels", Material.BLAZE_ROD).nbt("duelsbb").lore( ChatColor.GRAY +"Tem " + ChatColor.GRAY + WaveWarp.DUELS.getPlayerCount() + " Jogando").toStack());

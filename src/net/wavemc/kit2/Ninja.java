@@ -64,7 +64,7 @@ public class Ninja extends KitHandler2 {
 					return;
 				}
 				if (KitManager.getPlayer(targetPlayer.getName()).hasKit(WaveKit.NEO) || KitManager2.getPlayer(targetPlayer.getName()).haskit2(WaveKit2.NEO)) {
-					 event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 15.0f, 15.0f);
+					 event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.NOTE_PLING, 15.0f, 15.0f);
 					 event.getPlayer().sendMessage(ChatColor.AQUA + "Você não pode usar o ninja em " + targetPlayer.getName() + " porque ele está de NEO");
 						return;
 					}
@@ -75,7 +75,7 @@ public class Ninja extends KitHandler2 {
 				addCooldown(event.getPlayer(), WavePvP.getInstance().getConfig().getInt("NinjaCooldown"));
 				player.teleport(targetPlayer);
 				player.sendMessage("§aTeleportado para §f" + targetName);
-				player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 10, 10);
+				player.playSound(player.getLocation(), Sound.ENDERMAN_TELEPORT, 10, 10);
 			}
 		}
 	}

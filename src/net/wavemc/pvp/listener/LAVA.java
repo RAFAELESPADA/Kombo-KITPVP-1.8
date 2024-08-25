@@ -38,9 +38,9 @@ public class LAVA implements Listener {
 		List<ItemStack> drops = new ArrayList<>(event.getDrops());
 		Location deathLocation = event.getDeathLocation();
 		if (drops.size() > 0) {
-			deathLocation.getWorld().playEffect(deathLocation, Effect.FIREWORK_SHOOT, 10);
+			deathLocation.getWorld().playEffect(deathLocation, Effect.CLOUD, 10);
 		}
-		ItemStack capacete0 = new ItemStack(Material.MUSHROOM_STEW);
+		ItemStack capacete0 = new ItemStack(Material.MUSHROOM_SOUP);
 		ItemStack capacete1 = new ItemStack(Material.BOWL);
 		ItemStack capacete2 = new ItemStack(Material.BROWN_MUSHROOM);
 		ItemStack capacete3 = new ItemStack(Material.RED_MUSHROOM);

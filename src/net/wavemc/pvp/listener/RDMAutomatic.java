@@ -291,7 +291,7 @@ public class RDMAutomatic implements Listener {
 	            	      EventoUtils.resetEventoClass();
 	            	    		Bukkit.broadcastMessage("§6O Evento 1V1 foi finalizado!");
 	            	    		for (Player pg : Bukkit.getOnlinePlayers()) {
-	            	    			pg.playSound(pg.getLocation(), Sound.ENTITY_GHAST_DEATH, 10f, 10f);
+	            	    			pg.playSound(pg.getLocation(), Sound.GHAST_DEATH, 10f, 10f);
 	            	    		}
 	            	      p.setAllowFlight(false);
     			  return;
@@ -344,17 +344,17 @@ public class RDMAutomatic implements Listener {
     secondPlayer.getInventory().setChestplate(chest);
     secondPlayer.getInventory().setBoots(boost);
     secondPlayer.getInventory().setLeggings(leg);
-    firstPlayer.getInventory().setItem(0, new ItemBuilder("§7Espada de Diamante", Material.DIAMOND_SWORD).addEnchant(Enchantment.SHARPNESS, 1)
+    firstPlayer.getInventory().setItem(0, new ItemBuilder("§7Espada de Diamante", Material.DIAMOND_SWORD).addEnchant(Enchantment.DAMAGE_ALL, 1)
 			.nbt("cancel-drop")
 			.toStack()
 	);
-    secondPlayer.getInventory().setItem(0, new ItemBuilder("§7Espada de Diamante", Material.DIAMOND_SWORD).addEnchant(Enchantment.SHARPNESS, 1)
+    secondPlayer.getInventory().setItem(0, new ItemBuilder("§7Espada de Diamante", Material.DIAMOND_SWORD).addEnchant(Enchantment.DAMAGE_ALL, 1)
 			.nbt("cancel-drop")
 			.toStack()
 	);
     for (int x = 0; x < 8; x++) {
-      firstPlayer.getInventory().addItem(new ItemStack[] { new ItemStack(Material.MUSHROOM_STEW) });
-      secondPlayer.getInventory().addItem(new ItemStack[] { new ItemStack(Material.MUSHROOM_STEW) });
+      firstPlayer.getInventory().addItem(new ItemStack[] { new ItemStack(Material.MUSHROOM_SOUP) });
+      secondPlayer.getInventory().addItem(new ItemStack[] { new ItemStack(Material.MUSHROOM_SOUP) });
     } 
     this.pvp = true;
   }

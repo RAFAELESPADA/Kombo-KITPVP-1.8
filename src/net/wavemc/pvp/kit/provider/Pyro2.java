@@ -50,7 +50,7 @@ public void onInteract(PlayerInteractEvent event) {
 	if (event.getItem() == null) {
 		return;
 	}
-	if (event.getItem().getType().equals(Material.MUSHROOM_STEW)) {
+	if (event.getItem().getType().equals(Material.MUSHROOM_SOUP)) {
 		return;
 	}
 	if (!KitManager.getPlayer(p.getName()).hasKit(this)) {

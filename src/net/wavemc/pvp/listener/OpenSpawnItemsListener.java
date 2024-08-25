@@ -39,7 +39,7 @@ public class OpenSpawnItemsListener implements Listener {
 		if (event.getItem() == null) {
 			return;
 		}
-		if (event.getItem().getType().equals(Material.MUSHROOM_STEW)) {
+		if (event.getItem().getType().equals(Material.MUSHROOM_SOUP)) {
 			return;
 		}
 		if (!event.hasItem() || !ItemBuilder.has(event.getItem(), "spawn-item")) {

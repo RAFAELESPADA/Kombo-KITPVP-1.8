@@ -25,7 +25,7 @@ public class Switcher extends KitHandler {
     public void execute(Player player) {
         super.execute(player);
 
-        player.getInventory().setItem(1, new ItemBuilder(Material.SNOWBALL)
+        player.getInventory().setItem(1, new ItemBuilder(Material.SNOW_BALL)
                 .amount(2)
                 .nbt("cancel-drop").nbt("kit-handler", "switcher")
                 .toStack()
@@ -37,7 +37,7 @@ public void snowball(final ProjectileLaunchEvent e) {
     if (e.getEntity() instanceof Snowball) {
     	if (e.getEntity().getShooter() instanceof Player) {
         final Player p = (Player) e.getEntity().getShooter();
-        if (!KitManager.getPlayer(p.getName()).hasKit(this)  || !p.getItemInHand().equals(new ItemStack(Material.SNOWBALL))) {
+        if (!KitManager.getPlayer(p.getName()).hasKit(this)  || !p.getItemInHand().equals(new ItemStack(Material.SNOW_BALL))) {
         	return;
         }
         if (GladiatorListener2.combateGlad.containsKey(p) || net.wavemc.kit2.GladiatorListener.combateGlad.containsKey(p)) {
@@ -48,7 +48,7 @@ public void snowball(final ProjectileLaunchEvent e) {
         if (inCooldown(p)) {
         	e.setCancelled(true);
             sendMessageCooldown(p);
-            p.getInventory().addItem(new ItemBuilder(Material.SNOWBALL)
+            p.getInventory().addItem(new ItemBuilder(Material.SNOW_BALL)
                     .amount(1)
                     .nbt("cancel-drop").nbt("kit-handler", "switcher")
                     .toStack());
@@ -58,13 +58,13 @@ public void snowball(final ProjectileLaunchEvent e) {
             if (inCooldown(p) && KitManager.getPlayer(p.getName()).hasKit(this)) {
              e.setCancelled(true);
              sendMessageCooldown(p);
-             p.getInventory().addItem(new ItemBuilder(Material.SNOWBALL)
+             p.getInventory().addItem(new ItemBuilder(Material.SNOW_BALL)
                      .amount(1)
                      .nbt("cancel-drop").nbt("kit-handler", "switcher")
                      .toStack());
              return;
             }
-            p.getInventory().addItem(new ItemBuilder(Material.SNOWBALL)
+            p.getInventory().addItem(new ItemBuilder(Material.SNOW_BALL)
                     .amount(1)
                     .nbt("cancel-drop").nbt("kit-handler", "switcher")
                     .toStack());
@@ -94,7 +94,7 @@ if (inCooldown(shooter)) {
                 }
     	        Player p = (Player)e.getEntity();
     	        if (KitManager.getPlayer(p.getName()).hasKit(WaveKit.NEO) || KitManager2.getPlayer(p.getName()).haskit2(WaveKit2.NEO)) {
-					p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 15.0f, 15.0f);
+					p.playSound(p.getLocation(), Sound.NOTE_BASS, 15.0f, 15.0f);
 					shooter.sendMessage(ChatColor.AQUA + "Você não pode usar o switcher em " + p.getName() + " porque ele está de kit NEO.");
 					return;
 				}
@@ -104,8 +104,8 @@ if (inCooldown(shooter)) {
     	        Location shooterLoc = shooter.getLocation();
     	        shooter.teleport(e.getEntity().getLocation());
     	        p.teleport(shooterLoc);
-    	        shooter.playSound(shooter.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 10.0F, 10.0F);
-    	        p.playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 10.0F, 10.0F);
+    	        shooter.playSound(shooter.getLocation(), Sound.ENDERMAN_TELEPORT, 10.0F, 10.0F);
+    	        p.playSound(p.getLocation(), Sound.ENDERMAN_TELEPORT, 10.0F, 10.0F);
     	      } 
     }
 }

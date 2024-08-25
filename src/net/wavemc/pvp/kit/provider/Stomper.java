@@ -89,7 +89,7 @@ public class Stomper extends KitHandler {
 		/*     */             }
 		/*     */           }
 		/*     */         }
-		/*  71 */         player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0F, 1.0F);
+		/*  71 */         player.playSound(player.getLocation(), Sound.ANVIL_LAND, 1.0F, 1.0F);
 		/*  72 */         event.setDamage(4.0D);
 		/*  73 */         return;
 		/*     */       }

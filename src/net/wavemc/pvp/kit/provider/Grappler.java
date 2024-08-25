@@ -66,14 +66,14 @@ public class Grappler extends KitHandler{
 			KitManager.getPlayer(p.getName()).removeKit();
 			KitManager2.getPlayer(target.getName()).removekit2();
 			p.sendMessage("§cNão volte de kit pro spawn por favor!");
-			p.playSound(p.getLocation(), Sound.ENTITY_GHAST_SCREAM, 10, 10);
+			p.playSound(p.getLocation(), Sound.GHAST_SCREAM, 10, 10);
 		}
 	}
 
 	@EventHandler
 	public void usarf(PlayerMoveEvent e) {
 		Player p = e.getPlayer();
-		if ((p.getItemInHand().getType().equals(Material.LEAD))) {
+		if ((p.getItemInHand().getType().equals(Material.LEASH))) {
 			if (KitManager.getPlayer(e.getPlayer().getName()).hasKit(this)) {
 				Player target = p;
 				if ((p.getLocation().getY() > WavePvP.getInstance().getConfig().getInt("SpawnAltura") - 12)

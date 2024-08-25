@@ -36,7 +36,7 @@ public class Kangaroo extends KitHandler {
 	public void execute(Player player) {
 		super.execute(player);
 		
-		player.getInventory().setItem(1, new ItemBuilder("§aPular!", Material.FIREWORK_ROCKET)
+		player.getInventory().setItem(1, new ItemBuilder("§aPular!", Material.FIREWORK)
 				.nbt("kit-handler", "kangaroo")
 				.nbt("cancel-drop")
 				.toStack()
@@ -54,7 +54,7 @@ public class Kangaroo extends KitHandler {
 		if (event.getItem() == null) {
 			return;
 		}
-		if (event.getItem().getType().equals(Material.MUSHROOM_STEW)) {
+		if (event.getItem().getType().equals(Material.MUSHROOM_SOUP)) {
 			return;
 		}
 		/*  57 */     if (
@@ -64,7 +64,7 @@ public class Kangaroo extends KitHandler {
 		if (!KitManager.getPlayer(p.getName()).hasKit(this) && !WaveWarp.LOBBY.hasPlayer(p.getName())) {
 			return;
 		}
-		if (!event.getItem().getType().equals(Material.FIREWORK_ROCKET)) {
+		if (!event.getItem().getType().equals(Material.FIREWORK)) {
 			return;
 		}
 		else if (p.getLocation().getY() > WavePvP.getInstance().getConfig().getInt("SpawnAltura") && EnderMageReal.isSpawn(p.getLocation()) && !WaveWarp.LOBBY.hasPlayer(event.getPlayer().getName())) {
@@ -130,7 +130,7 @@ public class Kangaroo extends KitHandler {
 		/* 113 */       Player player = (Player)e;
 		/* 114 */       if (((event.getEntity() instanceof Player)) && 
 		/* 115 */         (event.getCause() == EntityDamageEvent.DamageCause.FALL) && 
-		/* 116 */         (player.getInventory().contains(Material.FIREWORK_ROCKET)) && 
+		/* 116 */         (player.getInventory().contains(Material.FIREWORK)) && 
 		/* 117 */         (event.getDamage() >= 7.0D)) {
 		/* 118 */         event.setDamage(7.0D);
 		/*     */       }
@@ -175,7 +175,7 @@ public class Kangaroo extends KitHandler {
 		/*     */     {
 		/* 145 */       Player p = (Player)event.getDamager();
 		/* 146 */       if (((kangaroo instanceof Player)) && ((p instanceof Player)) && 
-		/* 147 */         (kangaroo.getInventory().contains(Material.FIREWORK_ROCKET)))
+		/* 147 */         (kangaroo.getInventory().contains(Material.FIREWORK)))
 		/*     */       {
 		/* 149 */         this.naofugir.add(kangaroo.getName());
 		/* 150 */         org.bukkit.Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnable()

@@ -90,7 +90,7 @@ else if (kit == null && jogador.hasPermission("wave.kit2.stomper")) {
 					}
 					setandokit.add(jogador.getName());
 					playFirework(jogador.getLocation(), Color.MAROON, jogador);
-					jogador.getWorld().playSound(jogador.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10F, 10F);
+					jogador.getWorld().playSound(jogador.getLocation(), Sound.LEVEL_UP, 10F, 10F);
 					jogador.sendMessage(ChatColor.GREEN + "Você ganhou o kit " + kit);
 					Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + jogador.getName() + " permission settemp wave.kit2." + kit + " true 1d server=pvp");
 				}
@@ -114,22 +114,21 @@ else if (kit == null && jogador.hasPermission("wave.kit2.stomper")) {
 		if (evento.getItem() == null) {
 			return;
 		}
-		if (evento.getItem().getType().equals(Material.MUSHROOM_STEW)) {
+		if (evento.getItem().getType().equals(Material.MUSHROOM_SOUP)) {
 			return;
 		}
 		final Player jogador = evento.getPlayer();
-		if (jogador.getItemInHand().getType() == Material.CHEST_MINECART) {
+		if (jogador.getItemInHand().getType() == Material.STORAGE_MINECART) {
 			if (WaveWarp.SPAWN.hasPlayer(jogador.getName()) && EnderMageReal.isSpawn(jogador.getLocation())) {
 			if ((evento.getAction() == Action.RIGHT_CLICK_AIR) || (evento.getAction() == Action.RIGHT_CLICK_BLOCK)) {
 				if (setandokit.contains(jogador.getName())) {
 					jogador.sendMessage("§aVoce já recebeu seu Kit!");
-					jogador.playSound(jogador.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 10, 10);
+					
 					evento.setCancelled(true);
 					return;
 				}
 				if (jogador.hasPermission("wave.kit2.*")) {
 					jogador.sendMessage("§aVoce já possui todos os kits!");
-					jogador.playSound(jogador.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASEDRUM, 10, 10);
 					evento.setCancelled(true);
 					return;
 				}

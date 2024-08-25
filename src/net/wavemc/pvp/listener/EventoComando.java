@@ -162,9 +162,7 @@ public class EventoComando implements CommandExecutor {
                     Bukkit.broadcastMessage("§cA event started.");
                     Bukkit.broadcastMessage("§cUse /evento join");
                     Bukkit.broadcastMessage("§cTo join.");
-                    for (Player p : Bukkit.getOnlinePlayers()) {
-                    	p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
-                    }
+                   
                     player.setGameMode(GameMode.CREATIVE);
                 }
                 else if (args[0].equalsIgnoreCase("stop")) {

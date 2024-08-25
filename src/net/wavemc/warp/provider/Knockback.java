@@ -21,10 +21,10 @@ public class Knockback extends WarpHandle {
 		);
 		KitManager.getPlayer(player.getName()).removeKit();
 		KitManager2.getPlayer(player.getName()).removekit2();
-		player.getInventory().setBoots(new ItemBuilder("§6§lWARP KNOCKBACK", Material.DIAMOND_BOOTS).addEnchant(org.bukkit.enchantments.Enchantment.FEATHER_FALLING, 4).toStack());
+		player.getInventory().setBoots(new ItemBuilder("§6§lWARP KNOCKBACK", Material.DIAMOND_BOOTS).addEnchant(org.bukkit.enchantments.Enchantment.PROTECTION_FALL, 4).toStack());
 		
 		for (int i = 0; i < 36; i++) {
-			player.getInventory().addItem(new ItemStack(Material.MUSHROOM_STEW));
+			player.getInventory().addItem(new ItemStack(Material.MUSHROOM_SOUP));
 		}
 	}
 }

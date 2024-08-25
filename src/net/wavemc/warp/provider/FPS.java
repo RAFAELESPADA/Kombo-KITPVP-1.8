@@ -27,7 +27,7 @@ public class FPS extends WarpHandle {
 	        }
 		KitManager.getPlayer(player.getName()).removeKit();
 		KitManager2.getPlayer(player.getName()).removekit2();
-		 player.getInventory().setItem(8, new ItemBuilder("§bRetornar §7(Clique)", Material.RED_BED)
+		 player.getInventory().setItem(8, new ItemBuilder("§bRetornar §7(Clique)", Material.BED)
 					.nbt("cancel-drop")
 					.nbt("cancel-click")
 					.nbt("voltar", "spawn")
@@ -53,7 +53,7 @@ public void onInteract22(EntityDamageByEntityEvent event) {
 		
 		Player player = event.getPlayer();
 			
-		if (WaveWarp.LOBBY.hasPlayer(player.getName()) && (event.getItemDrop().getItemStack().getType() == Material.PLAYER_HEAD || event.getItemDrop().getItemStack().getType() == Material.COMPASS)) {
+		if (WaveWarp.LOBBY.hasPlayer(player.getName()) && (event.getItemDrop().getItemStack().getType() == Material.SKULL || event.getItemDrop().getItemStack().getType() == Material.COMPASS)) {
 			event.setCancelled(true);
 		}
 		}

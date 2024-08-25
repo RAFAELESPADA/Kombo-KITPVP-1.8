@@ -22,15 +22,15 @@ public class AutoSoup implements CommandExecutor, Listener {
   
   public static HashMap<String, ItemStack[]> armadura = (HashMap)new HashMap<>();
   
-  ItemStack sopa = new ItemStack(Material.MUSHROOM_STEW);
+  ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
   
   ItemMeta msopa = this.sopa.getItemMeta();
   
-  ItemStack sopa1 = new ItemStack(Material.MUSHROOM_STEW);
+  ItemStack sopa1 = new ItemStack(Material.MUSHROOM_SOUP);
   
   ItemMeta msopa1 = this.sopa.getItemMeta();
   
-  ItemStack sopa2 = new ItemStack(Material.MUSHROOM_STEW);
+  ItemStack sopa2 = new ItemStack(Material.MUSHROOM_SOUP);
   
   ItemMeta msopa2 = this.sopa.getItemMeta();
   
@@ -47,7 +47,7 @@ public class AutoSoup implements CommandExecutor, Listener {
       p.openInventory((Inventory)testando.getInventory());
       saveinv.put(testando.getName(), testando.getInventory().getContents());
       armadura.put(testando.getName(), testando.getInventory().getArmorContents());
-      testando.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 70, 999));
+      testando.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 70, 999));
       testando.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 70, 999));
       this.sopa.setItemMeta(this.msopa);
       Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin)WavePvP.getInstance(), new Runnable() {

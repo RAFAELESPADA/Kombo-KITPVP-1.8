@@ -17,7 +17,7 @@ public class PvP extends KitHandler2 {
 		
 		if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.PVP)) {
 		player.getInventory().setItem(0, new ItemBuilder("§fEspada", Material.STONE_SWORD)
-				.addEnchant(Enchantment.SHARPNESS, 1)
+				.addEnchant(Enchantment.DAMAGE_ALL, 1)
 				.nbt("cancel-drop")
 				.toStack()
 		);

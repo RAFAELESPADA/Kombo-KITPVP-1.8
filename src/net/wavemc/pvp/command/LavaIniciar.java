@@ -41,7 +41,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
       Bukkit.broadcastMessage("§cUse /evento join to join");
       Bukkit.broadcastMessage("§cThe event will start in 5 minutes");
       for (Player p1 : Bukkit.getOnlinePlayers()) {
-      	p1.playSound(p1.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
+      	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
       }
       Bukkit.getScheduler().scheduleSyncDelayedTask(WavePvP.getInstance(), new Runnable() {
 			public void run() {
@@ -51,7 +51,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 				Bukkit.broadcastMessage("§cThe event will start in 4 minutes");
 				Bukkit.broadcastMessage("§cPlayers in event: " + EventoUtils.getEventoPlayers().size());
 				 for (Player p1 : Bukkit.getOnlinePlayers()) {
-				      	p1.playSound(p1.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
+				      	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 				      }
 			}
 		}, 1200L);
@@ -63,7 +63,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 				Bukkit.broadcastMessage("§cThe event will start in 3 minutes");
 				Bukkit.broadcastMessage("§cPlayers in event: " + EventoUtils.getEventoPlayers().size());
 				 for (Player p1 : Bukkit.getOnlinePlayers()) {
-				      	p1.playSound(p1.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
+				      	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 				      }
 			}
 		}, 2400L);
@@ -95,7 +95,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 			 	 EventoUtils.getEventoPlayers().forEach(p2 -> {
                  	p2.teleport(evt);
 			      for (Player p1 : Bukkit.getOnlinePlayers()) {
-			        	p1.playSound(p1.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
+			        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 			        }
 			});
 			 	Bukkit.broadcastMessage("§cTeleporting people to the event!");
@@ -132,7 +132,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 		  p2.getInventory().setItem(24, marrom);
 		  p2.getInventory().setItem(22, item);
   		  for (int i = 0; i < 33; i++) {
-  				p2.getInventory().addItem(new ItemStack(Material.MUSHROOM_STEW));
+  				p2.getInventory().addItem(new ItemStack(Material.MUSHROOM_SOUP));
   			}
     		p2.updateInventory();
 			}); {
