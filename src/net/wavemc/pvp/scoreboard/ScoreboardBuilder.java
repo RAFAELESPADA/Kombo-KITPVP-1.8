@@ -19,7 +19,7 @@ import net.wavemc.pvp.kit.WaveKit;
 import net.wavemc.pvp.kit.provider.GladiatorListener2;
 import net.wavemc.pvp.listener.EventoUtils;
 import net.wavemc.pvp.listener.Ranking;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class ScoreboardBuilder {
 
@@ -108,31 +108,31 @@ public static void init() {
               Objective objective = score.getObjective(DisplaySlot.SIDEBAR);
               if (objective == null)
                 continue; 
-              if (WaveWarp.SPAWN.hasPlayer(onlines.getName())) {
+              if (WaveWarp2.SPAWN.hasPlayer(onlines.getName())) {
               objective.setDisplayName(ScoreboardBuilder.text);
               }
-              else if (WaveWarp.FPS.hasPlayer(onlines.getName())) {
+              else if (WaveWarp2.FPS.hasPlayer(onlines.getName())) {
                   objective.setDisplayName(ScoreboardBuilder.text3);
                   }
-              else if (WaveWarp.DUELS.hasPlayer(onlines.getName()) && !GladiatorListener2.combateGlad.containsKey(onlines)) {
+              else if (WaveWarp2.DUELS.hasPlayer(onlines.getName()) && !GladiatorListener2.combateGlad.containsKey(onlines)) {
                   objective.setDisplayName(ScoreboardBuilder.text4);
                   }
-              else if (WaveWarp.LOBBY.hasPlayer(onlines.getName()) && !EventoUtils.game.contains(onlines.getName())) {
+              else if (WaveWarp2.LOBBY.hasPlayer(onlines.getName()) && !EventoUtils.game.contains(onlines.getName())) {
                   objective.setDisplayName(ScoreboardBuilder.textlobby);
                   }
               else if (GladiatorListener2.combateGlad.containsKey(onlines)) {
                   objective.setDisplayName(ScoreboardBuilder.textg);
                   }
-              else if (WaveWarp.ARENABUILD.hasPlayer(onlines.getName())) {
+              else if (WaveWarp2.ARENABUILD.hasPlayer(onlines.getName())) {
                   objective.setDisplayName(ScoreboardBuilder.textB);
                   }
-              else if (WaveWarp.GLADIATOR.hasPlayer(onlines.getName())) {
+              else if (WaveWarp2.GLADIATOR.hasPlayer(onlines.getName())) {
                   objective.setDisplayName(ScoreboardBuilder.textGG);
                   }
-              else if (WaveWarp.LAVACHALLENGE.hasPlayer(onlines.getName())) {
+              else if (WaveWarp2.LAVACHALLENGE.hasPlayer(onlines.getName())) {
                   objective.setDisplayName(ScoreboardBuilder.text5);
                   }
-              else  if (EventoUtils.game.contains(onlines.getName()) && WaveWarp.LOBBY.hasPlayer(onlines.getName())) {
+              else  if (EventoUtils.game.contains(onlines.getName()) && WaveWarp2.LOBBY.hasPlayer(onlines.getName())) {
             	  objective.setDisplayName(ScoreboardBuilder.text2); 
               }
               
@@ -146,7 +146,7 @@ public static void init() {
 	public void build(Player player) {
 		 {
 			 
-			 if (WaveWarp.SPAWN.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
+			 if (WaveWarp2.SPAWN.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
 				 player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
 					Scoreboard scoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
 					Objective objective = scoreboard.registerNewObjective("pvp", "dummy");
@@ -198,7 +198,7 @@ public static void init() {
 					update(player);
 					
 			 } 
-			 if (WaveWarp.ARENABUILD.hasPlayer(player.getName())) {
+			 if (WaveWarp2.ARENABUILD.hasPlayer(player.getName())) {
 				 player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
 					Scoreboard scoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
 					Objective objective = scoreboard.registerNewObjective("pvpb", "dummyb");
@@ -244,7 +244,7 @@ public static void init() {
 					update(player);
 					
 			 } 
-		  else if (EventoUtils.game.contains(player.getName()) && WaveWarp.LOBBY.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
+		  else if (EventoUtils.game.contains(player.getName()) && WaveWarp2.LOBBY.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
 				player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
 			 Scoreboard scoreboard2 = Bukkit.getScoreboardManager().getNewScoreboard();
 				Objective objective2 = scoreboard2.registerNewObjective("pvp2", "dummy2");
@@ -280,7 +280,7 @@ public static void init() {
 				update(player);
 			
 		 }
-			 else if (WaveWarp.FPS.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
+			 else if (WaveWarp2.FPS.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
 					player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
 				 Scoreboard scoreboard2 = Bukkit.getScoreboardManager().getNewScoreboard();
 					Objective objective2 = scoreboard2.registerNewObjective("pvp3", "dummy3");
@@ -316,7 +316,7 @@ public static void init() {
 					update(player);
 				
 			 }
-			 else if (WaveWarp.LOBBY.hasPlayer(player.getName()) && !EventoUtils.game.contains(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
+			 else if (WaveWarp2.LOBBY.hasPlayer(player.getName()) && !EventoUtils.game.contains(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
 					player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
 				 Scoreboard scoreboard2 = Bukkit.getScoreboardManager().getNewScoreboard();
 					Objective objective2 = scoreboard2.registerNewObjective("pvpl", "dummy3");
@@ -378,7 +378,7 @@ public static void init() {
 				
 			 }
 			 
-			 else if (WaveWarp.LAVACHALLENGE.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
+			 else if (WaveWarp2.LAVACHALLENGE.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
 					player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
 				 Scoreboard scoreboard2 = Bukkit.getScoreboardManager().getNewScoreboard();
 					Objective objective2 = scoreboard2.registerNewObjective("pvp4", "dummy4");
@@ -415,7 +415,7 @@ public static void init() {
 					update(player);
 				
 			 }
-			 else if (WaveWarp.DUELS.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
+			 else if (WaveWarp2.DUELS.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
 					player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
 				 Scoreboard scoreboard2 = Bukkit.getScoreboardManager().getNewScoreboard();
 					Objective objective2 = scoreboard2.registerNewObjective("pvp5", "dummy5");
@@ -454,7 +454,7 @@ public static void init() {
 					update(player);
 			
 			 }
-			 else if (WaveWarp.GLADIATOR.hasPlayer(player.getName())) {
+			 else if (WaveWarp2.GLADIATOR.hasPlayer(player.getName())) {
 					player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
 				 Scoreboard scoreboard2 = Bukkit.getScoreboardManager().getNewScoreboard();
 					Objective objective2 = scoreboard2.registerNewObjective("pvp7", "dummy7");
@@ -496,7 +496,7 @@ public static void init() {
             if (GladiatorListener2.combateGlad.containsKey(player)) {
     	 		return;
             }
-		  else if (WaveWarp.SPAWN.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
+		  else if (WaveWarp2.SPAWN.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
 			 WavePlayer wavePlayer = WaveBukkit.getInstance().getPlayerManager()
 						.getPlayer(player.getName());
 				net.wavemc.core.bukkit.account.provider.PlayerPvP pvp = wavePlayer.getPvp();
@@ -525,7 +525,7 @@ public static void init() {
 				
 				scoreboard.getTeam("xp").setSuffix(WaveDecimalFormat.format(pvp.getXp()));
 				scoreboard.getTeam("rank").setSuffix((String.valueOf(Ranking.getRank(wavePlayer).getColoredName())));
-					}	else if (WaveWarp.FPS.hasPlayer(player.getName())) {
+					}	else if (WaveWarp2.FPS.hasPlayer(player.getName())) {
 			 
 			 WavePlayer wavePlayer = WaveBukkit.getInstance().getPlayerManager()
 						.getPlayer(player.getName());
@@ -539,7 +539,7 @@ public static void init() {
 				scoreboard.getTeam("xp").setSuffix(WaveDecimalFormat.format(pvp.getXp()));
 				scoreboard.getTeam("rank").setSuffix((String.valueOf(Ranking.getRank(wavePlayer).getColoredName())));
 				}
-					  else if (WaveWarp.ARENABUILD.hasPlayer(player.getName())) {
+					  else if (WaveWarp2.ARENABUILD.hasPlayer(player.getName())) {
 							 WavePlayer wavePlayer = WaveBukkit.getInstance().getPlayerManager()
 										.getPlayer(player.getName());
 								net.wavemc.core.bukkit.account.provider.PlayerPvP pvp = wavePlayer.getPvp();
@@ -559,7 +559,7 @@ public static void init() {
 								
 								scoreboard.getTeam("xp").setSuffix(WaveDecimalFormat.format(pvp.getXp()));
 								scoreboard.getTeam("rank").setSuffix((String.valueOf(Ranking.getRank(wavePlayer).getColoredName())));
-									}	else if (WaveWarp.FPS.hasPlayer(player.getName())) {
+									}	else if (WaveWarp2.FPS.hasPlayer(player.getName())) {
 							 
 							 WavePlayer wavePlayer = WaveBukkit.getInstance().getPlayerManager()
 										.getPlayer(player.getName());
@@ -573,7 +573,7 @@ public static void init() {
 								scoreboard.getTeam("xp").setSuffix(WaveDecimalFormat.format(pvp.getXp()));
 								scoreboard.getTeam("rank").setSuffix((String.valueOf(Ranking.getRank(wavePlayer).getColoredName())));
 								}
-	 	else if (WaveWarp.LAVACHALLENGE.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
+	 	else if (WaveWarp2.LAVACHALLENGE.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
 	 		WavePlayer wavePlayer = WaveBukkit.getInstance().getPlayerManager()
 					.getPlayer(player.getName());
 	 		net.wavemc.core.bukkit.account.provider.PlayerPvP pvp = wavePlayer.getPvp();
@@ -584,16 +584,16 @@ public static void init() {
 			scoreboard.getTeam("passou").setSuffix(WaveDecimalFormat.format(pvp.getPassouchallenge()));
 			scoreboard.getTeam("rank").setSuffix((String.valueOf(Ranking.getRank(wavePlayer).getColoredName())));
 	 	} 
-	 	else if (WaveWarp.LOBBY.hasPlayer(player.getName()) && !EventoUtils.game.contains(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
+	 	else if (WaveWarp2.LOBBY.hasPlayer(player.getName()) && !EventoUtils.game.contains(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
 	 		WavePlayer wavePlayer = WaveBukkit.getInstance().getPlayerManager()
 					.getPlayer(player.getName());
 	 		net.wavemc.core.bukkit.account.provider.PlayerPvP pvp = wavePlayer.getPvp();
 			Scoreboard scoreboard = player.getScoreboard();
-	 		scoreboard.getTeam("game").setSuffix(WaveDecimalFormat.format(WaveWarp.SPAWN.getPlayerCount() + WaveWarp.DUELS.getPlayerCount() + WaveWarp.FPS.getPlayerCount() + WaveWarp.LAVACHALLENGE.getPlayerCount()  + WaveWarp.ARENABUILD.getPlayerCount()  + WaveWarp.GLADIATOR.getPlayerCount()));
+	 		scoreboard.getTeam("game").setSuffix(WaveDecimalFormat.format(WaveWarp2.SPAWN.getPlayerCount() + WaveWarp2.DUELS.getPlayerCount() + WaveWarp2.FPS.getPlayerCount() + WaveWarp2.LAVACHALLENGE.getPlayerCount()  + WaveWarp2.ARENABUILD.getPlayerCount()  + WaveWarp2.GLADIATOR.getPlayerCount()));
 			scoreboard.getTeam("coins").setSuffix(WaveDecimalFormat.format(pvp.getCoins()));
 			scoreboard.getTeam("online").setSuffix(WaveDecimalFormat.format(Bukkit.getOnlinePlayers().size()));
 	 	} 
-		 else if (EventoUtils.game.contains(player.getName()) && WaveWarp.LOBBY.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
+		 else if (EventoUtils.game.contains(player.getName()) && WaveWarp2.LOBBY.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
 			WavePlayer helixPlayer = WaveBukkit.getInstance().getPlayerManager()
 						.getPlayer(player.getName());
 				net.wavemc.core.bukkit.account.provider.PlayerPvP pvp = helixPlayer.getPvp();
@@ -604,7 +604,7 @@ public static void init() {
 			scoreboard.getTeam("pvp").setSuffix((String.valueOf((EventoUtils.pvp ? "§aAtivado" : "§cDesativado"))));
 			scoreboard.getTeam("rank").setSuffix((String.valueOf(Ranking.getRank(helixPlayer).getColoredName())));
 		 }
-		 else if (WaveWarp.DUELS.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
+		 else if (WaveWarp2.DUELS.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
 				WavePlayer wavePlayer = WaveBukkit.getInstance().getPlayerManager()
 						.getPlayer(player.getName());
 				net.wavemc.core.bukkit.account.provider.PlayerPvP pvp = wavePlayer.getPvp();
@@ -617,7 +617,7 @@ public static void init() {
 				scoreboard.getTeam("ws1").setSuffix(WaveDecimalFormat.format(pvp.getWinstreakx1()));
 		} 
 
-		 else if (WaveWarp.GLADIATOR.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
+		 else if (WaveWarp2.GLADIATOR.hasPlayer(player.getName()) && !GladiatorListener2.combateGlad.containsKey(player)) {
 				WavePlayer wavePlayer = WaveBukkit.getInstance().getPlayerManager()
 						.getPlayer(player.getName());
 				net.wavemc.core.bukkit.account.provider.PlayerPvP pvp = wavePlayer.getPvp();

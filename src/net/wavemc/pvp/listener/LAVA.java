@@ -11,7 +11,7 @@ import java.util.Random;
 import net.wavemc.pvp.WavePvP;
 import net.wavemc.pvp.event.WavePlayerDeathEvent;
 import net.wavemc.pvp.event.WavePlayerDeathEvent.Reason;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
@@ -58,7 +58,7 @@ public class LAVA implements Listener {
 		new BukkitRunnable() {
 			@Override
 			public void run() {
-				WaveWarp.LAVACHALLENGE.send(player, true);			
+				WaveWarp2.LAVACHALLENGE.send(player, true);			
 				player.setFireTicks(0);
 				player.spigot().respawn();
 			}

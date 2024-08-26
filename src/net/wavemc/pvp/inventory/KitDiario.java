@@ -31,7 +31,7 @@ import net.wavemc.pvp.kit.KitManager2;
 import net.wavemc.pvp.kit.WaveKit;
 import net.wavemc.pvp.kit.WaveKit2;
 import net.wavemc.pvp.kit.provider.EnderMageReal;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class KitDiario implements Listener {
 
@@ -119,7 +119,7 @@ else if (kit == null && jogador.hasPermission("wave.kit2.stomper")) {
 		}
 		final Player jogador = evento.getPlayer();
 		if (jogador.getItemInHand().getType() == Material.STORAGE_MINECART) {
-			if (WaveWarp.SPAWN.hasPlayer(jogador.getName()) && EnderMageReal.isSpawn(jogador.getLocation())) {
+			if (WaveWarp2.SPAWN.hasPlayer(jogador.getName()) && EnderMageReal.isSpawn(jogador.getLocation())) {
 			if ((evento.getAction() == Action.RIGHT_CLICK_AIR) || (evento.getAction() == Action.RIGHT_CLICK_BLOCK)) {
 				if (setandokit.contains(jogador.getName())) {
 					jogador.sendMessage("§aVoce já recebeu seu Kit!");

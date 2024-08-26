@@ -19,7 +19,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import net.wavemc.pvp.WavePvP;
 import net.wavemc.pvp.kit.provider.EnderMageReal;
 import net.wavemc.pvp.kit.provider.GladiatorListener2;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class EntityCalculateDamageListener implements Listener {
 	 @EventHandler(priority = EventPriority.HIGHEST)
@@ -114,7 +114,7 @@ public class EntityCalculateDamageListener implements Listener {
 	    		if (EventoUtils.game.contains(e.getEntity().getName())) {
 			    	return;
 			    }
-	    		if (WaveWarp.DUELS.hasPlayer(e.getEntity().getName())) {
+	    		if (WaveWarp2.DUELS.hasPlayer(e.getEntity().getName())) {
 	    			return;
 	    		}
 	    		
@@ -128,13 +128,13 @@ public class EntityCalculateDamageListener implements Listener {
 	return;
 		    }
 		    Player p = (Player)e.getEntity();
-			    if (!WaveWarp.SPAWN.hasPlayer(p.getName())) {
+			    if (!WaveWarp2.SPAWN.hasPlayer(p.getName())) {
 			    	return;
 			    }
 			    if (EventoUtils.game.contains(p.getName())) {
 			    	return;
 			    }
-			    if (WaveWarp.DUELS.hasPlayer(e.getEntity().getName())) {
+			    if (WaveWarp2.DUELS.hasPlayer(e.getEntity().getName())) {
 	    			return;
 	    		}
 			    	if (p.getLocation().getY() > WavePvP.getInstance().getConfig().getInt("SpawnAltura") && EnderMageReal.isSpawn(e.getEntity().getLocation()) && !GladiatorListener2.combateGlad.containsKey(e.getEntity()) && !net.wavemc.kit2.GladiatorListener.combateGlad.containsKey(e.getEntity())) {

@@ -11,7 +11,7 @@ import org.bukkit.event.Listener;
 import net.wavemc.core.bukkit.WaveBukkit;
 import net.wavemc.core.bukkit.account.WavePlayer;
 import net.wavemc.pvp.event.WavePlayerDeathEvent;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 
 public class OnevsOneKS implements Listener {
@@ -23,7 +23,7 @@ public class OnevsOneKS implements Listener {
 		}
 		
 		Player killer = event.getKiller();
-		if (!WaveWarp.DUELS.hasPlayer(killer.getName())) {
+		if (!WaveWarp2.DUELS.hasPlayer(killer.getName())) {
 			return;
 		}
 		WavePlayer killerAccount = WaveBukkit.getInstance().getPlayerManager().getPlayer(killer.getName());

@@ -10,7 +10,7 @@ import net.wavemc.pvp.kit.KitHandler;
 import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
 import net.wavemc.pvp.listener.Jump;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -62,7 +62,7 @@ public class Grappler extends KitHandler{
 				return;
 			}
 			
-			WaveWarp.SPAWN.send(p, true);
+			WaveWarp2.SPAWN.send(p, true);
 			KitManager.getPlayer(p.getName()).removeKit();
 			KitManager2.getPlayer(target.getName()).removekit2();
 			p.sendMessage("§cNão volte de kit pro spawn por favor!");

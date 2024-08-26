@@ -24,7 +24,7 @@ import net.wavemc.core.bukkit.item.ItemBuilder;
 import net.wavemc.pvp.WavePvP;
 import net.wavemc.pvp.kit.KitHandler;
 import net.wavemc.pvp.kit.KitManager;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class Kangaroo extends KitHandler {
 	
@@ -61,13 +61,13 @@ public class Kangaroo extends KitHandler {
 				!event.hasItem() || !ItemBuilder.has(event.getItem(), "kit-handler", "kangaroo")) {
 			return;
 		}
-		if (!KitManager.getPlayer(p.getName()).hasKit(this) && !WaveWarp.LOBBY.hasPlayer(p.getName())) {
+		if (!KitManager.getPlayer(p.getName()).hasKit(this) && !WaveWarp2.LOBBY.hasPlayer(p.getName())) {
 			return;
 		}
 		if (!event.getItem().getType().equals(Material.FIREWORK)) {
 			return;
 		}
-		else if (p.getLocation().getY() > WavePvP.getInstance().getConfig().getInt("SpawnAltura") && EnderMageReal.isSpawn(p.getLocation()) && !WaveWarp.LOBBY.hasPlayer(event.getPlayer().getName())) {
+		else if (p.getLocation().getY() > WavePvP.getInstance().getConfig().getInt("SpawnAltura") && EnderMageReal.isSpawn(p.getLocation()) && !WaveWarp2.LOBBY.hasPlayer(event.getPlayer().getName())) {
 			p.sendMessage("§cNão use o kangaroo no spawn!");
 			event.setCancelled(true);
 			return;
@@ -75,7 +75,7 @@ public class Kangaroo extends KitHandler {
 		/*     */     
 		/*  60 */      
 
-		/*  61 */         if (GladiatorListener2.combateGlad.containsKey(p) || net.wavemc.kit2.GladiatorListener.combateGlad.containsKey(p) && !WaveWarp.LOBBY.hasPlayer(event.getPlayer().getName())) {
+		/*  61 */         if (GladiatorListener2.combateGlad.containsKey(p) || net.wavemc.kit2.GladiatorListener.combateGlad.containsKey(p) && !WaveWarp2.LOBBY.hasPlayer(event.getPlayer().getName())) {
 	  		/*  62 */         p.sendMessage(String.valueOf("§7Você está no Gladiator e recebeu um efeito de speed."));
 	  		/*     */         event.setCancelled(true);
 	  		/*  64 */        Kangaroo.darEfeito(p, org.bukkit.potion.PotionEffectType.SPEED, 10, 1);
@@ -146,7 +146,7 @@ public class Kangaroo extends KitHandler {
 		 @EventHandler
 		 /*     */   public void onDrop2(PlayerDropItemEvent event)
 		 /*     */   {
-		 /* 116 */     if (event.getItemDrop().getItemStack().getType() == Material.DIAMOND_SWORD && WaveWarp.DUELS.hasPlayer(event.getPlayer().getName())) {
+		 /* 116 */     if (event.getItemDrop().getItemStack().getType() == Material.DIAMOND_SWORD && WaveWarp2.DUELS.hasPlayer(event.getPlayer().getName())) {
 		 /* 117 */       event.setCancelled(true);
 		 /*     */     }
 		 }

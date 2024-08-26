@@ -16,7 +16,7 @@ import net.wavemc.pvp.WavePvP;
 import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
 import net.wavemc.pvp.kit.WaveKit2;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class ShopInventory {
 	

@@ -15,7 +15,7 @@ import net.wavemc.pvp.listener.Ranking;
 import net.wavemc.pvp.warp.WarpDuoBattleHandle;
 import net.wavemc.pvp.warp.WarpDuoBattleHandle2;
 import net.wavemc.pvp.warp.WarpDuoBattleHandle3;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 	
 	/**
@@ -169,19 +169,19 @@ import net.wavemc.pvp.warp.WaveWarp;
 		    }
 	    if (indentifier.equals("players_arena")) {
 	    	  
-		      return String.valueOf(WaveWarp.SPAWN.getPlayerCount());
+		      return String.valueOf(WaveWarp2.SPAWN.getPlayerCount());
 		    }
 	    if (indentifier.equals("players_duels")) {
 	    	  
-		      return String.valueOf(WaveWarp.DUELS.getPlayerCount());
+		      return String.valueOf(WaveWarp2.DUELS.getPlayerCount());
 		    }
 	    if (indentifier.equals("players_lava")) {
 	    	  
-		      return String.valueOf(WaveWarp.LAVACHALLENGE.getPlayerCount());
+		      return String.valueOf(WaveWarp2.LAVACHALLENGE.getPlayerCount());
 		    }
 	    if (indentifier.equals("players_fps")) {
 	    	  
-		      return String.valueOf(WaveWarp.FPS.getPlayerCount());
+		      return String.valueOf(WaveWarp2.FPS.getPlayerCount());
 		    }
 	    if (indentifier.equals("players_batalhando_gladiator")) {
 	    	  

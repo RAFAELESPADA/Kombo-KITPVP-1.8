@@ -30,7 +30,7 @@ import net.wavemc.warp.provider.OneVsOne;
 import net.wavemc.warp.provider.Spawn;
 import net.wavemc.warp.provider.Sumo;
 
-public enum WaveWarp {
+public enum WaveWarp2 {
 
 	SPAWN("Spawn", new Spawn(),new ItemStack( Material.AIR)),
 
@@ -56,11 +56,11 @@ public enum WaveWarp {
 	private final ItemStack icon;
 	private final Set<String> players;
 	
-	public static List<WaveWarp> getWarps() {
+	public static List<WaveWarp2> getWarps() {
 		return Arrays.asList(values());
 	}
 	
-	public static Optional<WaveWarp> findWarp(String warpName) {
+	public static Optional<WaveWarp2> findWarp(String warpName) {
 		return getWarps().stream().filter(
 				warp -> warp.getName().equalsIgnoreCase(warpName)
 		).findFirst();
@@ -71,7 +71,7 @@ public enum WaveWarp {
         Bukkit.getConsoleSender().sendMessage("[DEBUG] " + "Removendo " + username + " das warps");
         }
 	
-	WaveWarp(String name, WarpHandle handle, ItemStack icon) {
+	WaveWarp2(String name, WarpHandle handle, ItemStack icon) {
 		this.name = name;
 		this.handler = handle;
 		this.icon = icon;
@@ -119,10 +119,9 @@ public enum WaveWarp {
 		}
 		else {
 			Bukkit.getConsoleSender().sendMessage(player.getName()+ " se teleportou para a warp " + name.toLowerCase());
-			
-			 Location l2 = new Location(Bukkit.getWorld("lobbypvp2"), 416111, 64, 61616);
-			 l2.setPitch(2.2f);
-l2.setYaw(-92.3f);
+			Location l2 = new Location(Bukkit.getWorld("lobbypvp"), 24.0D, 69.0D, 0.0D);
+		      l2.setPitch(1.0F);
+		      l2.setYaw(-270.0F);
 if (!l2.getWorld().isChunkLoaded(l2.getChunk())) {
 l2.getWorld().loadChunk(l2.getChunk());
 }

@@ -14,7 +14,7 @@ import net.wavemc.pvp.inventory.StatusGUI;
 import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
 import net.wavemc.pvp.kit.provider.GladiatorListener2;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 import net.wavemc.pvp.warp.WarpDuoBattleHandle3;
 
 import org.bukkit.ChatColor;
@@ -119,7 +119,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 		findOpponent(target);
 		finalizeBattle(target);
 		GladiatorListener2.resetGladiatorListenerByQuit(target, player);
-		WaveWarp.DUELS.send(target);
+		WaveWarp2.DUELS.send(target);
 		target.sendMessage("§2Seu oponente deslogou e a batalha acabou automaticamente.");
 
 	}
@@ -132,7 +132,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 	        
 	        Player player = event.getPlayer();
 
-	        if (!WaveWarp.DUELS.hasPlayer(player.getName())) return;
+	        if (!WaveWarp2.DUELS.hasPlayer(player.getName())) return;
 	        blocksV.add(event.getBlock().getLocation());
 	    }    
 
@@ -142,7 +142,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 	        
 	        Player player = event.getPlayer();
 
-	        if (!WaveWarp.DUELS.hasPlayer(player.getName())) return;
+	        if (!WaveWarp2.DUELS.hasPlayer(player.getName())) return;
 	        blocksV.add(event.getBlockClicked().getRelative(event.getBlockFace()).getLocation());
 	    } 
 	        
@@ -165,7 +165,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 			return;
 		}
 	Player target = (Player)event.getRightClicked();
-		if (event.getPlayer().getItemInHand().hasItemMeta() && event.getPlayer().getItemInHand().getItemMeta().getDisplayName().equals("§bDesafiar §7(Clique)") && WaveWarp.DUELS.hasPlayer(player.getName()) && event.getRightClicked() != null && event.getPlayer().getItemInHand().getItemMeta().getDisplayName() != null) {
+		if (event.getPlayer().getItemInHand().hasItemMeta() && event.getPlayer().getItemInHand().getItemMeta().getDisplayName().equals("§bDesafiar §7(Clique)") && WaveWarp2.DUELS.hasPlayer(player.getName()) && event.getRightClicked() != null && event.getPlayer().getItemInHand().getItemMeta().getDisplayName() != null) {
 			if (WaveCooldown.inCooldown(player.getName(), "1v1g-challenge-" + target.getName()) || WaveCooldown.inCooldown(player.getName(), "1v1-challenge-" + target.getName()) || WaveCooldown.inCooldown(player.getName(), "1v1s-challenge-" + target.getName())) {
 				player.sendMessage("§eVocê já convidou esse jogador recentemente");
 				return;
@@ -201,7 +201,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 			if (event.getItem().getItemMeta().getDisplayName() == null) {
 				return;
 			}
-			if (event.getItem().hasItemMeta() && event.getItem().getItemMeta().getDisplayName().equals("§bRetornar §7(Clique)") && (WaveWarp.FPS.hasPlayer(player.getName()) || WaveWarp.DUELS.hasPlayer(player.getName()) || WaveWarp.GLADIATOR.hasPlayer(player.getName())) && event.hasItem() && event.getItem() != null && event.getItem().getItemMeta().getDisplayName() != null) {
+			if (event.getItem().hasItemMeta() && event.getItem().getItemMeta().getDisplayName().equals("§bRetornar §7(Clique)") && (WaveWarp2.FPS.hasPlayer(player.getName()) || WaveWarp2.DUELS.hasPlayer(player.getName()) || WaveWarp2.GLADIATOR.hasPlayer(player.getName())) && event.hasItem() && event.getItem() != null && event.getItem().getItemMeta().getDisplayName() != null) {
 				 if (Sumo.fastChallenge.contains(player)) {
 					 Sumo.fastChallenge.remove(player);
 					 player.sendMessage(ChatColor.GREEN + "Você saiu da fila da sumo");
@@ -214,7 +214,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 					 Gladiator.fastChallenge.remove(player);
 					 player.sendMessage(ChatColor.DARK_RED + "Você saiu da fila do gladiator");
 				 }
-			WaveWarp.LOBBY.send(player , true);
+			WaveWarp2.LOBBY.send(player , true);
 		}
 	}
 		@EventHandler
@@ -232,7 +232,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 			if (event.getItem().getItemMeta().getDisplayName() == null) {
 				return;
 			}
-			if (event.getItem().hasItemMeta() && event.getItem().getItemMeta().getDisplayName().equals("§bModos de jogo §7(Clique)") && (WaveWarp.LOBBY.hasPlayer(player.getName())) && event.hasItem() && event.getItem() != null && event.getItem().getItemMeta().getDisplayName() != null) {
+			if (event.getItem().hasItemMeta() && event.getItem().getItemMeta().getDisplayName().equals("§bModos de jogo §7(Clique)") && (WaveWarp2.LOBBY.hasPlayer(player.getName())) && event.hasItem() && event.getItem() != null && event.getItem().getItemMeta().getDisplayName() != null) {
 				Servidores.open(player);
 		}
 		
@@ -252,7 +252,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 				if (event.getItem().getItemMeta().getDisplayName() == null) {
 					return;
 				}
-				if (event.getItem().hasItemMeta() && event.getItem().getItemMeta().getDisplayName().equals("§aSeu perfil §7(Clique)") && (WaveWarp.LOBBY.hasPlayer(player.getName())) && event.hasItem() && event.getItem() != null && event.getItem().getItemMeta().getDisplayName() != null) {
+				if (event.getItem().hasItemMeta() && event.getItem().getItemMeta().getDisplayName().equals("§aSeu perfil §7(Clique)") && (WaveWarp2.LOBBY.hasPlayer(player.getName())) && event.hasItem() && event.getItem() != null && event.getItem().getItemMeta().getDisplayName() != null) {
 					StatusGUI.openGUI(player, player);
 			}
 	}
@@ -261,8 +261,8 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 		Player player = event.getPlayer();
 		
 		if (!(event.getRightClicked() instanceof Player)
-				|| !WaveWarp.GLADIATOR.hasPlayer(player.getName()) 
-				|| !WaveWarp.GLADIATOR.hasPlayer(event.getRightClicked().getName())
+				|| !WaveWarp2.GLADIATOR.hasPlayer(player.getName()) 
+				|| !WaveWarp2.GLADIATOR.hasPlayer(event.getRightClicked().getName())
 				|| player.getItemInHand() == null
 				|| !ItemBuilder.has(player.getItemInHand(), "1v1g", "challenge")) {
 			return;
@@ -274,7 +274,10 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 			player.sendMessage("§c§lGLAD §cEsse jogador já está lutando");
 			return;
 		}
-		
+		if (WaveCooldown.inCooldown(player.getName(), "1v1g-challenge2-" + player.getName())) {
+			player.sendMessage(ChatColor.RED + "Aguarde para desafiar de novo!");
+			return;
+		}
 		if (WaveCooldown.inCooldown(target.getName(), "1v1g-challenge-" + player.getName())) {
 			startBattle(player, target);
 			 GladiatorListener2.combateGlad.put(player, target);
@@ -283,6 +286,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 		}
 		
 		
+		WaveCooldown.create(player.getName(), "1v1g-challenge2-" + player.getName(), TimeUnit.SECONDS, 7);
 		
 		WaveCooldown.create(player.getName(), "1v1g-challenge-" + target.getName(), TimeUnit.SECONDS, 15);
 		target.sendMessage("§e§lGLAD §eVocê foi desafiado por " + player.getName() + " para uma luta");
@@ -306,7 +310,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 
 	@EventHandler
 	public void onDeath(WavePlayerDeathEvent event) {
-		if (!WaveWarp.DUELS.hasPlayer(event.getPlayer().getName()) || !findOpponent(event.getPlayer()).isPresent()) {
+		if (!WaveWarp2.DUELS.hasPlayer(event.getPlayer().getName()) || !findOpponent(event.getPlayer()).isPresent()) {
 			return;
 		}
 		Player loser = event.getPlayer();
@@ -335,8 +339,8 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 		new BukkitRunnable() {
 			@Override
 			public void run() {
-				WaveWarp.DUELS.send(loser, true);
-				WaveWarp.DUELS.send(winner, true);
+				WaveWarp2.DUELS.send(loser, true);
+				WaveWarp2.DUELS.send(winner, true);
 			}
 		}.runTaskLater(WavePvP.getInstance(), 10);
 		winner.setHealth(winner.getMaxHealth());
@@ -362,7 +366,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 	}
 	@EventHandler
 	public void onDeath2(WavePlayerDeathEvent event) {
-		if (!WaveWarp.GLADIATOR.hasPlayer(event.getPlayer().getName()) || !findOpponent(event.getPlayer()).isPresent()) {
+		if (!WaveWarp2.GLADIATOR.hasPlayer(event.getPlayer().getName()) || !findOpponent(event.getPlayer()).isPresent()) {
 			return;
 		}
 		Player loser = event.getPlayer();
@@ -394,8 +398,8 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 			@Override
 			public void run() {
 				loser.spigot().respawn();
-				WaveWarp.GLADIATOR.send(loser, true);
-				WaveWarp.GLADIATOR.send(winner, true);
+				WaveWarp2.GLADIATOR.send(loser, true);
+				WaveWarp2.GLADIATOR.send(winner, true);
 			}
 		}.runTaskLater(WavePvP.getInstance(), 10);
 		winner.setHealth(winner.getMaxHealth());

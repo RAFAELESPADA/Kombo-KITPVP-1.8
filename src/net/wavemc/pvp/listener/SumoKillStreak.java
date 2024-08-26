@@ -9,7 +9,7 @@ import org.bukkit.event.Listener;
 import net.wavemc.core.bukkit.WaveBukkit;
 import net.wavemc.core.bukkit.account.WavePlayer;
 import net.wavemc.pvp.event.WavePlayerDeathEvent;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 
 public class SumoKillStreak implements Listener {
@@ -25,7 +25,7 @@ public class SumoKillStreak implements Listener {
 	@EventHandler(priority = EventPriority.MONITOR)
 	public void destrlçoySumo(Player killer) {
 
-		if (!WaveWarp.DUELS.hasPlayer(killer.getName())) {
+		if (!WaveWarp2.DUELS.hasPlayer(killer.getName())) {
 			return;
 		}
 		

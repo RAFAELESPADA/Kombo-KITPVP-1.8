@@ -26,7 +26,7 @@ import net.wavemc.pvp.kit.provider.EnderMageReal;
 import net.wavemc.pvp.kit.provider.GladiatorListener2;
 import net.wavemc.pvp.listener.Jump;
 import net.wavemc.pvp.listener.PlayerJoin;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 import net.wavemc.pvp.warp.WarpDuoBattleHandle;
 import net.wavemc.warp.provider.Gladiator;
 import net.wavemc.warp.provider.OneVsOne;
@@ -48,23 +48,23 @@ public class SpawnCMD extends WarpDuoBattleHandle implements Listener, CommandEx
 		}
 		Player p = (Player) sender;
 		Player player = (Player) sender;
-		if (WaveWarp.FPS.hasPlayer(player.getName())) {
-			WaveWarp.FPS.send(player);
+		if (WaveWarp2.FPS.hasPlayer(player.getName())) {
+			WaveWarp2.FPS.send(player);
 			return true;
 		}
-		if (WaveWarp.DUELS.hasPlayer(player.getName()) || WaveWarp.LOBBY.hasPlayer(player.getName())) {
+		if (WaveWarp2.DUELS.hasPlayer(player.getName()) || WaveWarp2.LOBBY.hasPlayer(player.getName())) {
 			p.sendMessage("Comando desconhecido.");
 			return true;
 		}
-		if (WaveWarp.LAVACHALLENGE.hasPlayer(player.getName())) {
-			WaveWarp.LAVACHALLENGE.send(player);
+		if (WaveWarp2.LAVACHALLENGE.hasPlayer(player.getName())) {
+			WaveWarp2.LAVACHALLENGE.send(player);
 			return true;
 		}
-		if (WaveWarp.ARENABUILD.hasPlayer(player.getName())) {
-			WaveWarp.ARENABUILD.send(player);
+		if (WaveWarp2.ARENABUILD.hasPlayer(player.getName())) {
+			WaveWarp2.ARENABUILD.send(player);
 			return true;
 		}
-		if (WaveWarp.SPAWN.hasPlayer(p.getName()) && !KitManager.getPlayer(p.getName()).hasKit() && !KitManager2.getPlayer(p.getName()).haskit2() && !Jump.recebeu.containsKey(player.getName())) {
+		if (WaveWarp2.SPAWN.hasPlayer(p.getName()) && !KitManager.getPlayer(p.getName()).hasKit() && !KitManager2.getPlayer(p.getName()).haskit2() && !Jump.recebeu.containsKey(player.getName())) {
 			p.sendMessage(ChatColor.RED + "Você já está no spawn.");
 			return true;
 		}
@@ -96,7 +96,7 @@ public class SpawnCMD extends WarpDuoBattleHandle implements Listener, CommandEx
 		 }
 		 
 		Habilidade.removeAbility(p);
-		WaveWarp.SPAWN.send(p, true);
+		WaveWarp2.SPAWN.send(p, true);
 		p.setFlying(false);
 		if (!PlayerJoin.fall.contains(p)) {
 	    	PlayerJoin.fall.add(p);

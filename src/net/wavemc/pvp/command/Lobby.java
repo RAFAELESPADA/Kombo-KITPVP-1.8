@@ -30,7 +30,7 @@ import net.wavemc.pvp.kit.provider.GladiatorListener2;
 import net.wavemc.pvp.listener.ArenaBuild;
 import net.wavemc.pvp.listener.Jump;
 import net.wavemc.pvp.listener.PlayerJoin;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 import net.wavemc.pvp.warp.WarpDuoBattleHandle;
 import net.wavemc.warp.provider.Duels;
 import net.wavemc.warp.provider.Gladiator;
@@ -60,8 +60,8 @@ public class Lobby implements CommandExecutor {
 				return true;
       }
 		 try {
-		if (WaveWarp.SPAWN.hasPlayer(p.getName()) || WaveWarp.FPS.hasPlayer(p.getName()) || WaveWarp.DUELS.hasPlayer(p.getName()) || WaveWarp.LAVACHALLENGE.hasPlayer(p.getName()) || WaveWarp.ARENABUILD.hasPlayer(p.getName())) {
-			WaveWarp.LOBBY.send(player);
+		if (WaveWarp2.SPAWN.hasPlayer(p.getName()) || WaveWarp2.FPS.hasPlayer(p.getName()) || WaveWarp2.DUELS.hasPlayer(p.getName()) || WaveWarp2.LAVACHALLENGE.hasPlayer(p.getName()) || WaveWarp2.ARENABUILD.hasPlayer(p.getName())) {
+			WaveWarp2.LOBBY.send(player);
 		}
 		 }
 		  catch (NullPointerException e) {
@@ -110,7 +110,7 @@ public class Lobby implements CommandExecutor {
 		}
 		
 		
-		else if (WaveWarp.LOBBY.hasPlayer(p.getName())) {
+		else if (WaveWarp2.LOBBY.hasPlayer(p.getName())) {
 			
 			player.sendMessage(ChatColor.GREEN + "Clique no NPC de voltar ao lobby para voltar.");
 		}

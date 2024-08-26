@@ -24,7 +24,7 @@ import net.wavemc.pvp.WavePvP;
 import net.wavemc.pvp.listener.EventoType;
 import net.wavemc.pvp.listener.EventoUtils;
 import net.wavemc.pvp.listener.RDMAutomatic;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 
 public class OneVsOneIniciar2
@@ -113,7 +113,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 			EventoUtils.getEventoPlayers().forEach(p ->  {
 				if (p != null && EventoUtils.getEventoPlayers().size() != 0) {
             	EventoUtils.setEvento(false, p);
-                WaveWarp.SPAWN.send(p);
+                WaveWarp2.SPAWN.send(p);
                 p.chat("/spawn");
                 p.getActivePotionEffects().forEach(ef -> p.removePotionEffect(ef.getType()));
                 

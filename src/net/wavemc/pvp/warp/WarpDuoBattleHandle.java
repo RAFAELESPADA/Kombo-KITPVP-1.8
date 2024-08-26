@@ -126,8 +126,8 @@ Duels.glad.remove(p2);
 Duels.glad.remove(p1);
 if (yaml.getString("Mundo-" +warpPos1) == null || yaml.getString("Mundo-" +warpPos2) == null) {
     p1.sendMessage("§cOcorreu um erro ao iniciar a batalha. (LOC-404)");
-    WaveWarp.DUELS.send(p2);
-    WaveWarp.DUELS.send(p1);
+    WaveWarp2.DUELS.send(p2);
+    WaveWarp2.DUELS.send(p1);
     p2.sendMessage("§cOcorreu um erro ao iniciar a batalha. (LOC-404)");
     return;
 }

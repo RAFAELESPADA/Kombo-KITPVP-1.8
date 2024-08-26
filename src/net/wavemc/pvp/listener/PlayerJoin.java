@@ -44,7 +44,7 @@ import net.wavemc.pvp.command.DarKit;
 import net.wavemc.pvp.command.VanishUtil;
 import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class PlayerJoin implements Listener {
 	  public static ArrayList<String> game = new ArrayList();
@@ -69,19 +69,19 @@ public class PlayerJoin implements Listener {
 	  public void onMove(PlayerMoveEvent e) {
 	   
 	    Player p = e.getPlayer();
-	    if (p.getLocation().getY() < -2 && !KitManager.getPlayer(p.getName()).hasKit() && WaveWarp.SPAWN.hasPlayer(p.getName())) {
-	      WaveWarp.SPAWN.send(p, true);
+	    if (p.getLocation().getY() < -2 && !KitManager.getPlayer(p.getName()).hasKit() && WaveWarp2.SPAWN.hasPlayer(p.getName())) {
+	      WaveWarp2.SPAWN.send(p, true);
 	      p.sendMessage(ChatColor.GREEN + " Eu te trouxe de volta a segurança.");
 	      return;
 	    }
-	    if (p.getLocation().getY() < -2 && !KitManager.getPlayer(p.getName()).hasKit() && !KitManager2.getPlayer(p.getName()).haskit2() && WaveWarp.SPAWN.hasPlayer(p.getName())) {
-		      WaveWarp.SPAWN.send(p, true);
+	    if (p.getLocation().getY() < -2 && !KitManager.getPlayer(p.getName()).hasKit() && !KitManager2.getPlayer(p.getName()).haskit2() && WaveWarp2.SPAWN.hasPlayer(p.getName())) {
+		      WaveWarp2.SPAWN.send(p, true);
 
 		      p.sendMessage(ChatColor.GREEN + " Eu te trouxe de volta a segurança.");
 		      return;
 		    }
-	    else if (p.getLocation().getY() < -2 && !KitManager.getPlayer(p.getName()).hasKit() && WaveWarp.LOBBY.hasPlayer(p.getName())) {
-		      WaveWarp.LOBBY.send(p, true);
+	    else if (p.getLocation().getY() < -2 && !KitManager.getPlayer(p.getName()).hasKit() && WaveWarp2.LOBBY.hasPlayer(p.getName())) {
+		      WaveWarp2.LOBBY.send(p, true);
 
 		      p.sendMessage(ChatColor.GREEN + " Eu te trouxe de volta a segurança.");
 		      return;
@@ -92,7 +92,7 @@ public class PlayerJoin implements Listener {
 	    if (!(e.getEntity() instanceof Player))
 	      return; 
 	    Player p = (Player)e.getEntity();
-	    if (e.getCause() == EntityDamageEvent.DamageCause.FALL && WaveWarp.SPAWN.hasPlayer(p.getName())) {
+	    if (e.getCause() == EntityDamageEvent.DamageCause.FALL && WaveWarp2.SPAWN.hasPlayer(p.getName())) {
 	    	if (!fall.contains(p)) {
 	    		return;
 	    	}
@@ -160,13 +160,13 @@ public class PlayerJoin implements Listener {
 	    	    player.sendTitle("", "");
 	    	    player.getInventory().clear();
 	    	    player.getInventory().setArmorContents(null);
-	    	    player.setGameMode(GameMode.ADVENTURE);
+	    	    player.setGameMode(GameMode.SURVIVAL);
 	    	    player.setMaxHealth(20.0D);
 	    	    e.setJoinMessage(null);
 	    	    if (!fall.contains(p)) {
 	    	    	fall.add(p);
 	    	    }
-	    	    WaveWarp.LOBBY.send(player);
+	    	    WaveWarp2.LOBBY.send(player);
 	    	    player.setHealth(player.getMaxHealth());
 	    	    player.getActivePotionEffects().forEach(potion -> player.removePotionEffect(potion.getType()));
 	    	    player.setFireTicks(0);
@@ -205,7 +205,7 @@ public class PlayerJoin implements Listener {
 	    			new BukkitRunnable() {
 	    				@Override
 	    				public void run() {
-	    		    	    WaveWarp.LOBBY.send(player);
+	    		    	    WaveWarp2.LOBBY.send(player);
 	    			     
 	    				}}.runTaskLater(WavePvP.getInstance(), 20l);
 	    		});

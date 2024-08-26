@@ -25,7 +25,7 @@ import net.wavemc.pvp.inventory.KitsInventory;
 import net.wavemc.pvp.inventory.KitsInventory2;
 import net.wavemc.pvp.inventory.ShopInventory;
 import net.wavemc.pvp.kit.provider.EnderMageReal;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 
 public class OpenSpawnItemsListener implements Listener {
@@ -63,7 +63,7 @@ public class OpenSpawnItemsListener implements Listener {
 				
 				break;
 	        case "voltar":
-	        WaveWarp.LOBBY.send(player);
+	        WaveWarp2.LOBBY.send(player);
 		    
 		    break;		
 	        
@@ -73,14 +73,14 @@ public class OpenSpawnItemsListener implements Listener {
 @EventHandler
 public void onInteractt(PlayerPickupItemEvent event) {
 	Player player = event.getPlayer();
-	if (WaveWarp.SPAWN.hasPlayer(player.getName()) && EnderMageReal.isSpawn(player.getLocation()) && player.getLocation().getY() > WavePvP.getInstance().getConfig().getInt("SpawnAltura")) {
+	if (WaveWarp2.SPAWN.hasPlayer(player.getName()) && EnderMageReal.isSpawn(player.getLocation()) && player.getLocation().getY() > WavePvP.getInstance().getConfig().getInt("SpawnAltura")) {
 	event.setCancelled(true);
 	}
 }
 	@EventHandler
 	public void onInteracttf(PlayerDropItemEvent event) {
 		Player player = event.getPlayer();
-		if (WaveWarp.SPAWN.hasPlayer(player.getName()) && EnderMageReal.isSpawn(player.getLocation()) && player.getLocation().getY() > WavePvP.getInstance().getConfig().getInt("SpawnAltura") && PlayerJoin.fall.contains(player)) {
+		if (WaveWarp2.SPAWN.hasPlayer(player.getName()) && EnderMageReal.isSpawn(player.getLocation()) && player.getLocation().getY() > WavePvP.getInstance().getConfig().getInt("SpawnAltura") && PlayerJoin.fall.contains(player)) {
 		event.setCancelled(true);
 		}
 	}

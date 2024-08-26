@@ -175,8 +175,8 @@ public class WavePvP extends JavaPlugin implements Listener, PluginMessageListen
 	}
 	public static boolean euforia;
 	public JDABuilder bot;
-	public final String TOKEN = "SEU TOKEN AQUI";
-
+	public final String TOKEN = "seu bot token";
+	  
 	
 	public ArrayList<EnchantingInventory> inventories;
 	private ScoreboardBuilder scoreboardBuilder;
@@ -266,7 +266,7 @@ new BukkitRunnable() {
 			public void run() {
 				if (euforia) {
 					for (Player player : Bukkit.getOnlinePlayers()) {
-						if (net.wavemc.pvp.warp.WaveWarp.SPAWN.hasPlayer(player.getName()) || net.wavemc.pvp.warp.WaveWarp.FPS.hasPlayer(player.getName()) && !EventoUtils.game.contains(player.getName())) {
+						if (net.wavemc.pvp.warp.WaveWarp2.SPAWN.hasPlayer(player.getName()) || net.wavemc.pvp.warp.WaveWarp2.FPS.hasPlayer(player.getName()) && !EventoUtils.game.contains(player.getName())) {
 					player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 120*20, 0));
 						}
 						else {
@@ -419,7 +419,7 @@ net.wavemc.pvp.listener.RTP.broadcast(ChatColor.RED + "A arena BUILD está sendo
 						return;
 					}
 					if (!p.isOnline()) {
-						net.wavemc.pvp.warp.WaveWarp.removeHandle(p.getName());
+						net.wavemc.pvp.warp.WaveWarp2.removeHandle(p.getName());
 					}
 					}
 					

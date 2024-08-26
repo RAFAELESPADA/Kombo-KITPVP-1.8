@@ -36,7 +36,7 @@ import net.wavemc.pvp.WavePvP;
 import net.wavemc.pvp.kit.provider.GladiatorListener2;
 import net.wavemc.pvp.listener.ArenaBuild;
 import net.wavemc.pvp.listener.EventoUtils;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public final class NoBreakEvent
   implements Listener, CommandExecutor
@@ -102,7 +102,7 @@ public final class NoBreakEvent
 	  		  e.setCancelled(false);
 	  		return;
 	  	}
-		if (WaveWarp.ARENABUILD.hasPlayer(e.getPlayer().getName())) {
+		if (WaveWarp2.ARENABUILD.hasPlayer(e.getPlayer().getName())) {
 		
 		  		return;
 		  		
@@ -120,7 +120,7 @@ public final class NoBreakEvent
     		  e.setCancelled(false);
     		return;
     	}
-    	if (WaveWarp.ARENABUILD.hasPlayer(e.getPlayer().getName())) {
+    	if (WaveWarp2.ARENABUILD.hasPlayer(e.getPlayer().getName())) {
 			  
 		  		return;
 		  		
@@ -138,7 +138,7 @@ public final class NoBreakEvent
     		  e.setCancelled(false);
     		return;
     	}
-    	if (WaveWarp.ARENABUILD.hasPlayer(e.getPlayer().getName())) {
+    	if (WaveWarp2.ARENABUILD.hasPlayer(e.getPlayer().getName())) {
 			  
 		  		return;
 		  		
@@ -158,7 +158,7 @@ public final class NoBreakEvent
   		  e.setCancelled(false);
   		return;
   	}
-    	else if (WaveWarp.ARENABUILD.hasPlayer(e.getPlayer().getName()) && e.getPlayer().getLocation().getY() < yaml.getInt("Y-arenabuild") - 1) {
+    	else if (WaveWarp2.ARENABUILD.hasPlayer(e.getPlayer().getName()) && e.getPlayer().getLocation().getY() < yaml.getInt("Y-arenabuild") - 1) {
     		if (ArenaBuild.placed_blocks.get(e.getPlayer()) == null) {
     			e.setCancelled(true);
     			e.getPlayer().sendMessage("COLOQUE ALGUM BLOCO ANTES E QUEBRAR ALGUM OUTRO!");

@@ -42,7 +42,7 @@ import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
 import net.wavemc.pvp.kit.provider.EnderMageReal;
 import net.wavemc.pvp.kit.provider.GladiatorListener2;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class PlayerDeathListener implements Listener {
 	
@@ -161,8 +161,8 @@ public class PlayerDeathListener implements Listener {
              GladiatorListener2.resetGladiatorListenerByKill(winner, loser);
              GladiatorListener2.combateGlad.remove(winner);
              GladiatorListener2.combateGlad.remove(loser);
-             if (WaveWarp.SPAWN.hasPlayer(winner.getName())) {
-                 WaveWarp.SPAWN.send(loser);
+             if (WaveWarp2.SPAWN.hasPlayer(winner.getName())) {
+                 WaveWarp2.SPAWN.send(loser);
                  new BukkitRunnable() {
          			@Override
          			public void run() {
@@ -217,8 +217,8 @@ public class PlayerDeathListener implements Listener {
              net.wavemc.kit2.GladiatorListener.resetGladiatorListenerByKill(winner, loser);
              net.wavemc.kit2.GladiatorListener.combateGlad.remove(winner);
              net.wavemc.kit2.GladiatorListener.combateGlad.remove(loser);
-             if (WaveWarp.SPAWN.hasPlayer(winner.getName())) {
-             WaveWarp.SPAWN.send(loser);
+             if (WaveWarp2.SPAWN.hasPlayer(winner.getName())) {
+             WaveWarp2.SPAWN.send(loser);
              new BukkitRunnable() {
       			@Override
       			public void run() {
@@ -267,23 +267,23 @@ player.updateInventory();
             	    return;
              }
          }
-		 else if (WaveWarp.FPS.hasPlayer(player.getName())) {
+		 else if (WaveWarp2.FPS.hasPlayer(player.getName())) {
 			 Bukkit.getPluginManager().callEvent(wavePlayerDeathEvent5);	 
 		 }
-		 else if (WaveWarp.LOBBY.hasPlayer(player.getName())) {
+		 else if (WaveWarp2.LOBBY.hasPlayer(player.getName())) {
 			 Bukkit.getPluginManager().callEvent(wavePlayerDeathEventDd);	 
 		 }
-		 else if (WaveWarp.ARENABUILD.hasPlayer(player.getName())) {
+		 else if (WaveWarp2.ARENABUILD.hasPlayer(player.getName())) {
 			 Bukkit.getPluginManager().callEvent(ritual);	 
 		 }
 		 
-		 else if (WaveWarp.LAVACHALLENGE.hasPlayer(player.getName())) {
+		 else if (WaveWarp2.LAVACHALLENGE.hasPlayer(player.getName())) {
 			 Bukkit.getPluginManager().callEvent(wavePlayerDeathEvent4);	 
 		 }
-		 else if (WaveWarp.DUELS.hasPlayer(player.getName())) {
+		 else if (WaveWarp2.DUELS.hasPlayer(player.getName())) {
 			 Bukkit.getPluginManager().callEvent(wavePlayerDeathEventD);	 
 		 }
-		 else if (WaveWarp.GLADIATOR.hasPlayer(player.getName())) {
+		 else if (WaveWarp2.GLADIATOR.hasPlayer(player.getName())) {
 			 Bukkit.getPluginManager().callEvent(wavePlaye2);	 
 		 }
 		 
@@ -328,7 +328,7 @@ player.updateInventory();
 	                p.getWorld().strikeLightning(p.getLocation());
 	            	p.getWorld().strikeLightning(p.getLocation());
 	            	p.getWorld().strikeLightning(p.getLocation());
-	        		WaveWarp.SPAWN.send(p);
+	        		WaveWarp2.SPAWN.send(p);
 	        		EventoUtils.resetEventoClass();
 		       });
 	 }
@@ -354,7 +354,7 @@ player.updateInventory();
 		                p.getWorld().strikeLightning(p.getLocation());
 		            	p.getWorld().strikeLightning(p.getLocation());
 		            	p.getWorld().strikeLightning(p.getLocation());
-		        		WaveWarp.SPAWN.send(p);
+		        		WaveWarp2.SPAWN.send(p);
 		        		EventoUtils.resetEventoClass();
 			       });
 			}
@@ -376,7 +376,7 @@ player.updateInventory();
 		            	   
 		            	      p.setAllowFlight(false);
 		            	      p.setFlying(false);
-		            	      WaveWarp.SPAWN.send(p , true);
+		            	      WaveWarp2.SPAWN.send(p , true);
 		            	      p.setFlying(false);
 		            	      WavePvP.getInstance().getEventManager().getRdmAutomatic().setGameType(RDMAutomatic.GameType.STOPPED);
 		            	      RDMAutomatic.iniciou = false;
@@ -420,7 +420,7 @@ player.updateInventory();
 					            	   
 					            	      p.setAllowFlight(false);
 					            	      p.setFlying(false);
-					            	      WaveWarp.SPAWN.send(p , true);
+					            	      WaveWarp2.SPAWN.send(p , true);
 					            	      p.setFlying(false);
 					            	      RDMAutomatic.iniciou = false;
 					            	      RDMAutomatic.star = false;

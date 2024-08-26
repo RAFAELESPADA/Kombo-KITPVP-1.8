@@ -26,7 +26,7 @@ import net.wavemc.core.bukkit.account.WavePlayer;
 import net.wavemc.pvp.WavePvP;
 import net.wavemc.pvp.event.WavePlayerDeathEvent;
 import net.wavemc.pvp.event.WavePlayerDeathEvent.Reason;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class PlayerDieArenaListener implements Listener {
 	
@@ -55,7 +55,7 @@ public class PlayerDieArenaListener implements Listener {
 		new BukkitRunnable() {
 			@Override
 			public void run() {
-				WaveWarp.SPAWN.send(player, true);
+				WaveWarp2.SPAWN.send(player, true);
 			}
 		}.runTaskLater(WavePvP.getInstance(), 3);
 		
@@ -146,7 +146,7 @@ public class PlayerDieArenaListener implements Listener {
 		new BukkitRunnable() {
 			@Override
 			public void run() {
-				WaveWarp.FPS.send(player, true);
+				WaveWarp2.FPS.send(player, true);
 			}
 		}.runTaskLater(WavePvP.getInstance(), 3);
 		
@@ -231,7 +231,7 @@ w.dropItemNaturally(deathLocation, capacete3);
 		new BukkitRunnable() {
 			@Override
 			public void run() {
-				WaveWarp.ARENABUILD.send(player, true);
+				WaveWarp2.ARENABUILD.send(player, true);
 			}
 		}.runTaskLater(WavePvP.getInstance(), 3);
 		
@@ -315,7 +315,7 @@ w.dropItemNaturally(deathLocation, capacete3);
 		new BukkitRunnable() {
 			@Override
 			public void run() {
-				WaveWarp.SPAWN.send(player, true);
+				WaveWarp2.SPAWN.send(player, true);
 			}
 		}.runTaskLater(WavePvP.getInstance(), 3);
 		

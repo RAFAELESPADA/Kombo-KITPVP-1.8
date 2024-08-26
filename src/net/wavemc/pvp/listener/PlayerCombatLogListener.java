@@ -27,7 +27,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import net.wavemc.core.util.WaveCooldown;
 import net.wavemc.pvp.WavePvP;
 import net.wavemc.pvp.command.VanishUtil;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 
 public class PlayerCombatLogListener implements Listener {
@@ -44,7 +44,7 @@ public class PlayerCombatLogListener implements Listener {
 		}
 		Player victim = (Player) event.getEntity();
 		Player damager = (Player) event.getDamager();
-		if (WaveWarp.DUELS.hasPlayer(damager.getName())) {
+		if (WaveWarp2.DUELS.hasPlayer(damager.getName())) {
 			return;
 		}
 		if (victim.getGameMode().equals(GameMode.CREATIVE) || damager.getGameMode().equals(GameMode.CREATIVE)) {
@@ -77,7 +77,7 @@ public class PlayerCombatLogListener implements Listener {
         final Player p = e.getPlayer();
         if (WaveCooldown.inCooldown(p.getName(), "combat")) {
             p.setLastDamage(p.getHealth());
-            WaveWarp.SPAWN.send(p);
+            WaveWarp2.SPAWN.send(p);
             WaveCooldown.delete(p.getName(), "combat");
         }
 	}
@@ -128,7 +128,7 @@ public class PlayerCombatLogListener implements Listener {
 		if  (WaveCooldown.inCooldown(player.getName(), "combat")) {
 			WaveCooldown.delete(player.getName(), "combat");
 			player.setHealth(0);
-			WaveWarp.SPAWN.send(player);
+			WaveWarp2.SPAWN.send(player);
 			Bukkit.broadcastMessage(ChatColor.RED + player.getName() + " deslogou em combate e levou kill.");
 		}
 	

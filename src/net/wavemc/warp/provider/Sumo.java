@@ -8,7 +8,7 @@ import net.wavemc.pvp.WavePvP;
 import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
 import net.wavemc.pvp.listener.RTP;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 import net.wavemc.pvp.warp.WarpDuoBattleHandle2;
 
 import org.bukkit.Bukkit;
@@ -117,7 +117,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
 		if (event.getPlayer().getItemInHand().getItemMeta().getDisplayName() == null) {
 			return;
 		}
-		if (event.getPlayer().getItemInHand().hasItemMeta() && event.getPlayer().getItemInHand().getItemMeta().getDisplayName().equals("§bDesafiar §7(Clique)") && WaveWarp.DUELS.hasPlayer(player.getName()) && event.getRightClicked() != null && event.getPlayer().getItemInHand().getItemMeta().getDisplayName() != null) {
+		if (event.getPlayer().getItemInHand().hasItemMeta() && event.getPlayer().getItemInHand().getItemMeta().getDisplayName().equals("§bDesafiar §7(Clique)") && WaveWarp2.DUELS.hasPlayer(player.getName()) && event.getRightClicked() != null && event.getPlayer().getItemInHand().getItemMeta().getDisplayName() != null) {
         if (Duels.b.containsKey(player)) {
             	startBattle(player , (Player)event.getRightClicked());
         }
@@ -150,7 +150,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
 			return;
 		}
 		Player player =  (Player)event.getEntity();
-		if (WaveWarp.DUELS.hasPlayer(player.getName()) && !findOpponent(player).isPresent()) {
+		if (WaveWarp2.DUELS.hasPlayer(player.getName()) && !findOpponent(player).isPresent()) {
 			if (event.getCause() == DamageCause.FALL) {
 				event.setCancelled(true);
 			}
@@ -164,8 +164,8 @@ public class Sumo extends WarpDuoBattleHandle2 {
         Player player = event.getPlayer();
 
         if (!(event.getRightClicked() instanceof Player)
-                || !WaveWarp.DUELS.hasPlayer(player.getName())
-                || !WaveWarp.DUELS.hasPlayer(event.getRightClicked().getName())
+                || !WaveWarp2.DUELS.hasPlayer(player.getName())
+                || !WaveWarp2.DUELS.hasPlayer(event.getRightClicked().getName())
                 || player.getItemInHand() == null
                 || !ItemBuilder.has(player.getItemInHand(), "sumo", "challenge")) {
             return;
@@ -237,7 +237,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
         Player player = event.getPlayer();
       
 
-        if (!WaveWarp.DUELS.hasPlayer(player.getName())) {
+        if (!WaveWarp2.DUELS.hasPlayer(player.getName())) {
             return;
         }
 
@@ -253,7 +253,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
 
         WavePlayer loserUser = WaveBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
         WavePlayer victimHelixPlayer = WaveBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
-        WaveWarp.DUELS.send(player);
+        WaveWarp2.DUELS.send(player);
 
         
         if ((victimHelixPlayer.getPvp().getXp() - 10) >= 0) {
@@ -265,7 +265,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
 		}
         WavePlayer killerUser = WaveBukkit.getInstance().getPlayerManager().getPlayer(target.getName());
         int winnerCoins = random.nextInt(80 + 1 - 25) + 25;
-        WaveWarp.DUELS.send(target);
+        WaveWarp2.DUELS.send(target);
         target.playSound(target.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
         target.sendMessage("§6§lSUMO §eVocê ganhou a luta contra " + player.getName());
         killerUser.getPvp().addCoins(winnerCoins);
@@ -300,7 +300,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
         Player player = event.getPlayer();
         Block block = player.getLocation().getBlock().getRelative(BlockFace.DOWN);
 
-        if (!WaveWarp.DUELS.hasPlayer(player.getName())) {
+        if (!WaveWarp2.DUELS.hasPlayer(player.getName())) {
             return;
         }
 
@@ -314,7 +314,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
 
         WavePlayer loserUser = WaveBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
         WavePlayer victimHelixPlayer = WaveBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
-        WaveWarp.DUELS.send(player);
+        WaveWarp2.DUELS.send(player);
 
         
         if ((victimHelixPlayer.getPvp().getXp() - 10) >= 0) {
@@ -326,7 +326,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
 		}
         WavePlayer killerUser = WaveBukkit.getInstance().getPlayerManager().getPlayer(target.getName());
         int winnerCoins = random.nextInt(80 + 1 - 25) + 25;
-        WaveWarp.DUELS.send(target);
+        WaveWarp2.DUELS.send(target);
         target.playSound(target.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
 
         target.sendMessage("§a§lSUMO §aVocê ganhou a luta contra " + player.getName());
@@ -368,7 +368,7 @@ WavePlayer killerAccount = WaveBukkit.getInstance().getPlayerManager().getPlayer
         Player target = targetOptional.get();
         finalizeBattle(player);
 
-        WaveWarp.DUELS.send(target);
+        WaveWarp2.DUELS.send(target);
         target.sendMessage("§2Seu oponente deslogou");
     }
 }

@@ -20,7 +20,7 @@ import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
 import net.wavemc.pvp.listener.Jump;
 import net.wavemc.pvp.warp.WarpHandle;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class Lobby2 extends WarpHandle {
 	
@@ -73,7 +73,7 @@ public void onInteract22(EntityDamageByEntityEvent event) {
 	}
 	Player player =  (Player)event.getEntity();
 		
-	if (WaveWarp.LOBBY.hasPlayer(player.getName()) && !player.getWorld().equals(Bukkit.getWorld(WavePvP.getInstance().getConfig().getString("EVENTOSPAWNMUNDO")))) {
+	if (WaveWarp2.LOBBY.hasPlayer(player.getName()) && !player.getWorld().equals(Bukkit.getWorld(WavePvP.getInstance().getConfig().getString("EVENTOSPAWNMUNDO")))) {
 		event.setCancelled(true);
 	}
 		}
@@ -86,7 +86,7 @@ public void onInteract22V(EntityDamageEvent event) {
 	}
 	Player player =  (Player)event.getEntity();
 		
-	if (WaveWarp.LOBBY.hasPlayer(player.getName()) && !player.getWorld().equals(Bukkit.getWorld(WavePvP.getInstance().getConfig().getString("EVENTOSPAWNMUNDO")))) {
+	if (WaveWarp2.LOBBY.hasPlayer(player.getName()) && !player.getWorld().equals(Bukkit.getWorld(WavePvP.getInstance().getConfig().getString("EVENTOSPAWNMUNDO")))) {
 		event.setCancelled(true);
 	}
 		}

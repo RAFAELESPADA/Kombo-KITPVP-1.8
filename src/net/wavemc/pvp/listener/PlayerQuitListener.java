@@ -19,7 +19,7 @@ import net.wavemc.pvp.command.NoBreakEvent;
 import net.wavemc.pvp.kit.Habilidade;
 import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.provider.GladiatorListener2;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 import net.wavemc.warp.provider.Duels;
 
 public class PlayerQuitListener implements Listener {
@@ -29,7 +29,7 @@ public class PlayerQuitListener implements Listener {
 		Player player = event.getPlayer();
 		event.setQuitMessage(null);
 
-		WaveWarp.removeHandle(player.getName());
+		WaveWarp2.removeHandle(player.getName());
 	  NoBreakEvent.embuild.remove(player);
 	KitManager.remove(player.getName());
 	Habilidade.removeAbility(player);

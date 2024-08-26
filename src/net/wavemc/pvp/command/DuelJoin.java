@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import net.wavemc.core.util.WaveCooldown;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 import net.wavemc.warp.provider.Gladiator;
 import net.wavemc.warp.provider.OneVsOne;
 import net.wavemc.warp.provider.Sumo;
@@ -30,7 +30,7 @@ public class DuelJoin implements CommandExecutor {
 				sender.sendMessage("§cUso correto: /dueljoin <1v1, sumo , glad>");
 				return true;
 			}
-			else if (!WaveWarp.DUELS.hasPlayer(player.getName())) {
+			else if (!WaveWarp2.DUELS.hasPlayer(player.getName())) {
 				player.sendMessage("§cVocê não está no duelos");
 				return true;
 			}

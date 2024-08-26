@@ -28,7 +28,7 @@ import net.wavemc.core.bukkit.account.WavePlayer;
 import net.wavemc.core.bukkit.item.ItemBuilder;
 import net.wavemc.pvp.WavePvP;
 import net.wavemc.pvp.cooldown2.UpdateEvent;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class RDMAutomatic implements Listener {
   private WavePvP main;
@@ -257,7 +257,7 @@ public class RDMAutomatic implements Listener {
     		  if (players.size() == 1) {
     			  System.out.println("[EVENTO] " + firstPlayer.getName() + " é o ganhador!");
     			  destroy();
-    			  WaveWarp.SPAWN.send(firstPlayer);
+    			  WaveWarp2.SPAWN.send(firstPlayer);
     			  EventoUtils.setEvento(false, firstPlayer);
     			  EventoUtils.resetEventoClass();
     			  Player p = firstPlayer;
@@ -274,7 +274,7 @@ public class RDMAutomatic implements Listener {
 	            	   
 	            	      p.setAllowFlight(false);
 	            	      p.setFlying(false);
-	            	      WaveWarp.SPAWN.send(p , true);
+	            	      WaveWarp2.SPAWN.send(p , true);
 	            	      p.setFlying(false);
 	            	      RDMAutomatic.iniciou = false;
 	            	      RDMAutomatic.star = false;

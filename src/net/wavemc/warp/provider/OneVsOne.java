@@ -9,7 +9,7 @@ import net.wavemc.pvp.event.WavePlayerDeathEvent;
 import net.wavemc.pvp.inventory.Modo;
 import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 import net.wavemc.pvp.warp.WarpDuoBattleHandle;
 import net.wavemc.pvp.warp.WarpDuoBattleHandle2;
 import net.wavemc.pvp.warp.WarpDuoBattleHandle3;
@@ -87,7 +87,7 @@ public class OneVsOne extends WarpDuoBattleHandle {
 		findOpponent(target);
 		finalizeBattle(target);
 
-		WaveWarp.DUELS.send(target);
+		WaveWarp2.DUELS.send(target);
 		target.sendMessage("§2Seu oponente deslogou e a partida foi finalizada.");
 
 	}
@@ -105,7 +105,7 @@ public class OneVsOne extends WarpDuoBattleHandle {
 	            e.getInventory().setResult(new ItemStack(Material.AIR));
 	            for(HumanEntity he:e.getViewers()) {
 	                if(he instanceof Player) {
-	                	if (WaveWarp.DUELS.hasPlayer(he.getName())) {
+	                	if (WaveWarp2.DUELS.hasPlayer(he.getName())) {
 	                    ((Player)he).sendMessage(ChatColor.RED+"Não crafte isso!");
 	                }
 	                }
@@ -128,7 +128,7 @@ public class OneVsOne extends WarpDuoBattleHandle {
 	          	            e.getInventory().setResult(new ItemStack(Material.AIR));
 	          	            for(HumanEntity he:e.getViewers()) {
 	          	                if(he instanceof Player) {
-	          	                	if (WaveWarp.DUELS.hasPlayer(he.getName())) {
+	          	                	if (WaveWarp2.DUELS.hasPlayer(he.getName())) {
 	          	                    ((Player)he).sendMessage(ChatColor.RED+"Não crafte isso!");
 	          	                }
 	          	                }
@@ -142,10 +142,10 @@ public class OneVsOne extends WarpDuoBattleHandle {
 				return;
 			}
 			Player player =  (Player)event.getEntity();
-			if (WaveWarp.LAVACHALLENGE.hasPlayer(player.getName())) {
+			if (WaveWarp2.LAVACHALLENGE.hasPlayer(player.getName())) {
 				event.setCancelled(true);
 			}
-			if (WaveWarp.LAVACHALLENGE.hasPlayer(event.getDamager().getName())) {
+			if (WaveWarp2.LAVACHALLENGE.hasPlayer(event.getDamager().getName())) {
 				event.setCancelled(true);
 			}
 		}
@@ -179,7 +179,7 @@ public class OneVsOne extends WarpDuoBattleHandle {
 		if (event.getPlayer().getItemInHand() == null) {
 			return;
 		}
-		if (event.getPlayer().getItemInHand().hasItemMeta() && event.getPlayer().getItemInHand().getItemMeta().getDisplayName().equals("§bDesafiar §7(Clique)") && WaveWarp.DUELS.hasPlayer(player.getName()) && event.getRightClicked() != null && event.getPlayer().getItemInHand().getItemMeta().getDisplayName() != null) {
+		if (event.getPlayer().getItemInHand().hasItemMeta() && event.getPlayer().getItemInHand().getItemMeta().getDisplayName().equals("§bDesafiar §7(Clique)") && WaveWarp2.DUELS.hasPlayer(player.getName()) && event.getRightClicked() != null && event.getPlayer().getItemInHand().getItemMeta().getDisplayName() != null) {
         if (Duels.c.containsKey(player)) {
             	startBattle(player , (Player)event.getRightClicked());
         }
@@ -190,8 +190,8 @@ public class OneVsOne extends WarpDuoBattleHandle {
 		Player player = event.getPlayer();
 		
 		if (!(event.getRightClicked() instanceof Player)
-				|| !WaveWarp.DUELS.hasPlayer(player.getName()) 
-				|| !WaveWarp.DUELS.hasPlayer(event.getRightClicked().getName())
+				|| !WaveWarp2.DUELS.hasPlayer(player.getName()) 
+				|| !WaveWarp2.DUELS.hasPlayer(event.getRightClicked().getName())
 				|| player.getItemInHand() == null
 				|| !ItemBuilder.has(player.getItemInHand(), "1v1", "challenge")) {
 			return;
@@ -222,7 +222,7 @@ public class OneVsOne extends WarpDuoBattleHandle {
 	
 	@EventHandler
 	public void onDeath(WavePlayerDeathEvent event) {
-		if (!WaveWarp.DUELS.hasPlayer(event.getPlayer().getName()) || !findOpponent(event.getPlayer()).isPresent()) {
+		if (!WaveWarp2.DUELS.hasPlayer(event.getPlayer().getName()) || !findOpponent(event.getPlayer()).isPresent()) {
 			return;
 		}
 		Player loser = event.getPlayer();
@@ -252,13 +252,13 @@ public class OneVsOne extends WarpDuoBattleHandle {
 		new BukkitRunnable() {
 			@Override
 			public void run() {
-				WaveWarp.DUELS.send(loser, true);
+				WaveWarp2.DUELS.send(loser, true);
 			}
 		}.runTaskLater(WavePvP.getInstance(), 10);
 
 		winner.setHealth(winner.getMaxHealth());
 		winner.sendMessage("§aVocê ganhou o 1v1 contra " + loser.getName() + " §7(" + (event.isValidKill() ? "Conta" : "Não Conta") + ")");
-		WaveWarp.DUELS.send(winner, true);
+		WaveWarp2.DUELS.send(winner, true);
 
 		if (event.isValidKill()) {
 			WavePlayer winnerHelixPlayer = WaveBukkit.getInstance().getPlayerManager().getPlayer(winner.getName());

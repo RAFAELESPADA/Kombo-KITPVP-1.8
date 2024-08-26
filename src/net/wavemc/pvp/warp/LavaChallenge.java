@@ -3,7 +3,7 @@ package net.wavemc.pvp.warp;
 import net.wavemc.core.bukkit.WaveBukkit;
 import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 import net.wavemc.pvp.warp.WarpHandle;
 
 import java.util.ArrayList;
@@ -110,7 +110,7 @@ public class LavaChallenge extends WarpHandle {
 			int xp = level * 20;
 			Bukkit.broadcastMessage("§5§lCHALLENGE §7" + player.getName() + " passou o Lava Challenge! §5§l(LEVEL " + level + ")");
            
-			WaveWarp.LAVACHALLENGE.send(player);
+			WaveWarp2.LAVACHALLENGE.send(player);
 
 			WaveBukkit.getInstance().getPlayerManager().getPlayer(player.getName()).getPvp().addChallege(1);
 		WaveBukkit.getInstance().getPlayerManager().getPlayer(player.getName()).getPvp().addCoins(coins);

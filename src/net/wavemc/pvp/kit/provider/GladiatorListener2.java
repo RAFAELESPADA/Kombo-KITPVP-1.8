@@ -45,7 +45,7 @@ import net.wavemc.pvp.kit.WaveKit2;
 import net.wavemc.pvp.kit.KitHandler;
 import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 
 public final class GladiatorListener2 extends KitHandler
@@ -320,9 +320,9 @@ public final class GladiatorListener2 extends KitHandler
     }
     
     public static final void resetGladiatorListenerByScreenshare(final Player winner, final Player loser) {
-    	if (WaveWarp.DUELS.hasPlayer(winner.getName())) {
-    		WaveWarp.DUELS.send(winner, true);
-    		WaveWarp.DUELS.send(loser, true);
+    	if (WaveWarp2.DUELS.hasPlayer(winner.getName())) {
+    		WaveWarp2.DUELS.send(winner, true);
+    		WaveWarp2.DUELS.send(loser, true);
     		return;
     	}
         for (int i = 1; i < 5; ++i) {
@@ -350,9 +350,9 @@ public final class GladiatorListener2 extends KitHandler
     
     public static final void resetGladiatorListenerByQuit(final Player winner, final Player loser) {
       {
-    	  if (WaveWarp.DUELS.hasPlayer(winner.getName())) {
-      		WaveWarp.DUELS.send(winner, true);
-      		WaveWarp.DUELS.send(loser, true);
+    	  if (WaveWarp2.DUELS.hasPlayer(winner.getName())) {
+      		WaveWarp2.DUELS.send(winner, true);
+      		WaveWarp2.DUELS.send(loser, true);
       		return;
       	}
         	if (winner != null) {
@@ -437,9 +437,9 @@ public final class GladiatorListener2 extends KitHandler
     
     
     public static final void resetGladiatorListenerBySpawn(final Player winner, final Player loser) {
-    	if (WaveWarp.DUELS.hasPlayer(winner.getName())) {
-    		WaveWarp.DUELS.send(winner, true);
-    		WaveWarp.DUELS.send(loser, true);
+    	if (WaveWarp2.DUELS.hasPlayer(winner.getName())) {
+    		WaveWarp2.DUELS.send(winner, true);
+    		WaveWarp2.DUELS.send(loser, true);
     		return;
     	}
         for (int i = 1; i < 5; ++i) {

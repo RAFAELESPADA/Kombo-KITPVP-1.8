@@ -27,7 +27,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import net.wavemc.pvp.WavePvP;
 import net.wavemc.pvp.command.NoBreakEvent;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class ArenaBuild implements Listener {
 
@@ -46,7 +46,7 @@ public void onBlockPlace(BlockPlaceEvent event){
   // HashSet is like Array. HashSet is a unordered list that allows not duplicates. I think that this is a bit faster and better for performance and uses less ram than a arraylist
   Player player = event.getPlayer();
 
-  if (!WaveWarp.ARENABUILD.hasPlayer(player.getName())) return;
+  if (!WaveWarp2.ARENABUILD.hasPlayer(player.getName())) return;
   if(placed_blocks.containsKey(player)){
     temp_list = placed_blocks.get(player);
     temp_list.add(event.getBlock());
@@ -72,7 +72,7 @@ public void BlockPlaceV(BlockPlaceEvent event) {
     
     Player player = event.getPlayer();
 
-    if (!WaveWarp.ARENABUILD.hasPlayer(player.getName())) return;
+    if (!WaveWarp2.ARENABUILD.hasPlayer(player.getName())) return;
     blocks.add(event.getBlock().getLocation());
 }    
 
@@ -82,7 +82,7 @@ public void BlockPlaceV(PlayerBucketEmptyEvent event) {
     
     Player player = event.getPlayer();
 
-    if (!WaveWarp.ARENABUILD.hasPlayer(player.getName())) return;
+    if (!WaveWarp2.ARENABUILD.hasPlayer(player.getName())) return;
     blocks.add(event.getBlockClicked().getRelative(event.getBlockFace()).getLocation());
 } 
 @EventHandler

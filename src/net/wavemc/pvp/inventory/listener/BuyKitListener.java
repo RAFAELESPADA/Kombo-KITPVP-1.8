@@ -26,7 +26,7 @@ import net.wavemc.pvp.inventory.ShopInventory;
 import net.wavemc.pvp.kit.WaveKit;
 import net.wavemc.pvp.kit.WaveKit2;
 import net.wavemc.pvp.kit.provider.GladiatorListener2;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 import net.wavemc.warp.provider.Duels;
 import net.wavemc.warp.provider.Gladiator;
 import net.wavemc.warp.provider.OneVsOne;
@@ -124,7 +124,7 @@ public void onIndfvvClicki4(InventoryClickEvent event) {
 	
 	player.sendMessage(ChatColor.GREEN + "Enviando você para a Arena.");
 	player.closeInventory();
-	WaveWarp.SPAWN.send(player);
+	WaveWarp2.SPAWN.send(player);
 }
 @EventHandler
 public void onIndfvvCliHGcki4(InventoryClickEvent event) {
@@ -149,7 +149,7 @@ public void onIndfvvCliHGcki4(InventoryClickEvent event) {
 	
 	player.sendMessage(ChatColor.GREEN + "Enviando você para a FPS.");
 	player.closeInventory();
-	WaveWarp.FPS.send(player);
+	WaveWarp2.FPS.send(player);
 }
 
 @EventHandler
@@ -175,7 +175,7 @@ public void onInEDdfvvClicki4(InventoryClickEvent event) {
 	
 	player.sendMessage(ChatColor.GREEN + "Enviando você para o Duels.");
 	player.closeInventory();
-	WaveWarp.DUELS.send(player);
+	WaveWarp2.DUELS.send(player);
 }
 @EventHandler
 public void onInEDdfvvClickti4(InventoryClickEvent event) {
@@ -200,7 +200,7 @@ public void onInEDdfvvClickti4(InventoryClickEvent event) {
 	
 	player.sendMessage(ChatColor.GREEN + "Enviando você para o Gladiator.");
 	player.closeInventory();
-	WaveWarp.GLADIATOR.send(player);
+	WaveWarp2.GLADIATOR.send(player);
 }
 @EventHandler
 public void onInEDdGfvvClicki4(InventoryClickEvent event) {
@@ -225,7 +225,7 @@ public void onInEDdGfvvClicki4(InventoryClickEvent event) {
 	
 	player.sendMessage(ChatColor.GREEN + "Enviando você para o LavaChallenge.");
 	player.closeInventory();
-	WaveWarp.LAVACHALLENGE.send(player);
+	WaveWarp2.LAVACHALLENGE.send(player);
 }
 @EventHandler
 public void onInEDdGfbvvClicki4(InventoryClickEvent event) {
@@ -250,6 +250,6 @@ public void onInEDdGfbvvClicki4(InventoryClickEvent event) {
 	
 	player.sendMessage(ChatColor.GREEN + "Enviando você para a Arena com Build.");
 	player.closeInventory();
-	WaveWarp.ARENABUILD.send(player);
+	WaveWarp2.ARENABUILD.send(player);
 }
 }

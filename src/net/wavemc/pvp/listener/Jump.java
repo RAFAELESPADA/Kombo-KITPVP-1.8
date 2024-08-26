@@ -45,7 +45,7 @@ import net.wavemc.pvp.kit.KitHandler;
 import net.wavemc.pvp.kit.KitHandler2;
 import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 
 
@@ -86,7 +86,7 @@ public class Jump implements Listener {
 	
 	@EventHandler
 	private void Jumps(PlayerDropItemEvent e) {
-		if (!WaveWarp.FPS.hasPlayer(e.getPlayer().getName())) {
+		if (!WaveWarp2.FPS.hasPlayer(e.getPlayer().getName())) {
 			return;
 		}
 		if (e.getItemDrop().getItemStack().getType() == Material.IRON_HELMET || e.getItemDrop().getItemStack().getType() == Material.IRON_CHESTPLATE || e.getItemDrop().getItemStack().getType() == Material.IRON_LEGGINGS || e.getItemDrop().getItemStack().getType() == Material.IRON_BOOTS) {
@@ -103,7 +103,7 @@ public class Jump implements Listener {
 		if (e.getCause() != DamageCause.FALL) {
 			return;
 		}
-		if (!WaveWarp.FPS.hasPlayer(p.getName())) {
+		if (!WaveWarp2.FPS.hasPlayer(p.getName())) {
 			return;
 		}
 		else if (!recebeu.containsKey(p.getName())) {
@@ -117,7 +117,7 @@ public class Jump implements Listener {
 		Player player = e.getPlayer();
 		Atirar(p);
 		Atirar2(p);	
-		if (WaveWarp.FPS.hasPlayer(p.getName()) && p.getLocation().getY() <=  yaml.getInt("Y-fps") - 2 && !recebeu.containsKey(p.getName())) { 
+		if (WaveWarp2.FPS.hasPlayer(p.getName()) && p.getLocation().getY() <=  yaml.getInt("Y-fps") - 2 && !recebeu.containsKey(p.getName())) { 
 			p.getInventory().clear();
 			player.getInventory().setHelmet(new ItemBuilder(Material.IRON_HELMET).toStack());
 			player.getInventory().setChestplate(new ItemBuilder(Material.IRON_CHESTPLATE).toStack());
@@ -151,7 +151,7 @@ public class Jump implements Listener {
 				player.getInventory().setItem(0, espada);
 			  
 		}
-		if (player.getLocation().getBlockY() < WavePvP.getInstance().getConfig().getInt("SpawnAltura") && (!KitManager.getPlayer(player.getName()).hasKit() && !KitManager2.getPlayer(player.getName()).haskit2()) && !WaveWarp.DUELS.hasPlayer(p.getName()) && !WaveWarp.LOBBY.hasPlayer(p.getName())  && !WaveWarp.ARENABUILD.hasPlayer(p.getName())  && !WaveWarp.FPS.hasPlayer(p.getName()) && !WaveWarp.LAVACHALLENGE.hasPlayer(p.getName()) && !WaveWarp.GLADIATOR.hasPlayer(p.getName()) && !recebeu.containsKey(player.getName()) && !AdminUtil.has(player.getName()) && !VanishUtil.has(player.getName())) {	  
+		if (player.getLocation().getBlockY() < WavePvP.getInstance().getConfig().getInt("SpawnAltura") && (!KitManager.getPlayer(player.getName()).hasKit() && !KitManager2.getPlayer(player.getName()).haskit2()) && !WaveWarp2.DUELS.hasPlayer(p.getName()) && !WaveWarp2.LOBBY.hasPlayer(p.getName())  && !WaveWarp2.ARENABUILD.hasPlayer(p.getName())  && !WaveWarp2.FPS.hasPlayer(p.getName()) && !WaveWarp2.LAVACHALLENGE.hasPlayer(p.getName()) && !WaveWarp2.GLADIATOR.hasPlayer(p.getName()) && !recebeu.containsKey(player.getName()) && !AdminUtil.has(player.getName()) && !VanishUtil.has(player.getName())) {	  
 		Items(player);	
 
 		  ItemStack espada = new ItemBuilder("§fEspada", Material.STONE_SWORD).addFlags(ItemFlag.HIDE_ATTRIBUTES).addEnchant(Enchantment.DAMAGE_ALL, 1)
@@ -161,7 +161,7 @@ public class Jump implements Listener {
 Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (Pulou do spawn) - 2");
 						recebeu.put(player.getName(), true);
 						}			
-						else if (player.getLocation().getBlockY() < WavePvP.getInstance().getConfig().getInt("SpawnAltura") && (KitManager.getPlayer(player.getName()).hasKit() && !KitManager2.getPlayer(player.getName()).haskit2())  && !WaveWarp.DUELS.hasPlayer(p.getName()) && !WaveWarp.LOBBY.hasPlayer(p.getName()) && !WaveWarp.ARENABUILD.hasPlayer(p.getName()) && !WaveWarp.FPS.hasPlayer(p.getName()) && !WaveWarp.DUELS.hasPlayer(p.getName()) && !WaveWarp.GLADIATOR.hasPlayer(p.getName()) && !WaveWarp.LAVACHALLENGE.hasPlayer(p.getName())  && !recebeu.containsKey(player.getName()) && !AdminUtil.has(player.getName()) && !VanishUtil.has(player.getName())) {
+						else if (player.getLocation().getBlockY() < WavePvP.getInstance().getConfig().getInt("SpawnAltura") && (KitManager.getPlayer(player.getName()).hasKit() && !KitManager2.getPlayer(player.getName()).haskit2())  && !WaveWarp2.DUELS.hasPlayer(p.getName()) && !WaveWarp2.LOBBY.hasPlayer(p.getName()) && !WaveWarp2.ARENABUILD.hasPlayer(p.getName()) && !WaveWarp2.FPS.hasPlayer(p.getName()) && !WaveWarp2.DUELS.hasPlayer(p.getName()) && !WaveWarp2.GLADIATOR.hasPlayer(p.getName()) && !WaveWarp2.LAVACHALLENGE.hasPlayer(p.getName())  && !recebeu.containsKey(player.getName()) && !AdminUtil.has(player.getName()) && !VanishUtil.has(player.getName())) {
 							WaveKit2.findKit("PvP").ifPresent(kit -> {
 								player.closeInventory();
 								kit.send(player);
@@ -170,7 +170,7 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 	recebeu.put(player.getName(), true);					
 }
 		
-						else if (player.getLocation().getBlockY() < WavePvP.getInstance().getConfig().getInt("SpawnAltura") && (!KitManager.getPlayer(player.getName()).hasKit() && KitManager2.getPlayer(player.getName()).haskit2()) && !WaveWarp.ARENABUILD.hasPlayer(p.getName())  && !WaveWarp.FPS.hasPlayer(p.getName()) && !WaveWarp.DUELS.hasPlayer(p.getName())  && !WaveWarp.GLADIATOR.hasPlayer(p.getName()) && !WaveWarp.LAVACHALLENGE.hasPlayer(p.getName()) && !WaveWarp.LOBBY.hasPlayer(p.getName())  && !recebeu.containsKey(player.getName()) && !AdminUtil.has(player.getName()) && !VanishUtil.has(player.getName())) {
+						else if (player.getLocation().getBlockY() < WavePvP.getInstance().getConfig().getInt("SpawnAltura") && (!KitManager.getPlayer(player.getName()).hasKit() && KitManager2.getPlayer(player.getName()).haskit2()) && !WaveWarp2.ARENABUILD.hasPlayer(p.getName())  && !WaveWarp2.FPS.hasPlayer(p.getName()) && !WaveWarp2.DUELS.hasPlayer(p.getName())  && !WaveWarp2.GLADIATOR.hasPlayer(p.getName()) && !WaveWarp2.LAVACHALLENGE.hasPlayer(p.getName()) && !WaveWarp2.LOBBY.hasPlayer(p.getName())  && !recebeu.containsKey(player.getName()) && !AdminUtil.has(player.getName()) && !VanishUtil.has(player.getName())) {
 							
 							WaveKit.findKit("PvP").ifPresent(kit -> {
 								player.closeInventory();
@@ -187,32 +187,32 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 					           player.getInventory().setItem(1, ItemMudado);
 										Bukkit.getConsoleSender().sendMessage(player.getName() + " Escolheu apenas o kit secundário " + KitManager2.getPlayer(player.getName()).getkit2().getName());
 						}
-						else if (player.getLocation().getBlockY() < WavePvP.getInstance().getConfig().getInt("SpawnAltura") && (KitManager.getPlayer(player.getName()).hasKit() && KitManager2.getPlayer(player.getName()).haskit2())  && !WaveWarp.DUELS.hasPlayer(p.getName()) && !WaveWarp.FPS.hasPlayer(p.getName()) && !WaveWarp.ARENABUILD.hasPlayer(p.getName()) && !WaveWarp.GLADIATOR.hasPlayer(p.getName()) && !WaveWarp.LAVACHALLENGE.hasPlayer(p.getName()) && !WaveWarp.LOBBY.hasPlayer(p.getName()) && !recebeu.containsKey(player.getName()) && !AdminUtil.has(player.getName()) && !VanishUtil.has(player.getName())) {
+						else if (player.getLocation().getBlockY() < WavePvP.getInstance().getConfig().getInt("SpawnAltura") && (KitManager.getPlayer(player.getName()).hasKit() && KitManager2.getPlayer(player.getName()).haskit2())  && !WaveWarp2.DUELS.hasPlayer(p.getName()) && !WaveWarp2.FPS.hasPlayer(p.getName()) && !WaveWarp2.ARENABUILD.hasPlayer(p.getName()) && !WaveWarp2.GLADIATOR.hasPlayer(p.getName()) && !WaveWarp2.LAVACHALLENGE.hasPlayer(p.getName()) && !WaveWarp2.LOBBY.hasPlayer(p.getName()) && !recebeu.containsKey(player.getName()) && !AdminUtil.has(player.getName()) && !VanishUtil.has(player.getName())) {
 		                Items(player);
 		                
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.NEO) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.STOMPER)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.STOMPER) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.PHANTOM)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.PHANTOM) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.STOMPER)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).getKit().getName() == KitManager2.getPlayer(player.getName()).getkit2().getName()) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	p.sendMessage(ChatColor.RED + "Você não pode usar dois kits do mesmo tipo ao mesmo tempo!");
 		                	p.sendMessage(ChatColor.RED + "Você escolheu dois kits: " + KitManager.getPlayer(player.getName()).getKit().getName()); 
 		                	KitManager.getPlayer(player.getName()).removeKit();
@@ -220,7 +220,7 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.STOMPER) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.NEO)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
@@ -228,7 +228,7 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 		                }
 		                
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.STOMPER) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.KANGAROO)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
@@ -236,14 +236,14 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 		                }
 		           
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.GLADIATOR) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.NINJA)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.NINJA) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.GLADIATOR)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
@@ -251,7 +251,7 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 		                }
 		                
 		                if (KitManager.getPlayer(player.getName()).getKit().name() == KitManager2.getPlayer(player.getName()).getkit2().name() && KitManager.getPlayer(player.getName()).getKit() != WaveKit.PVP) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.GOLD + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
@@ -259,28 +259,28 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 		                }
 		               
 		                if (KitManager.getPlayer(player.getName()).getKit().name() == KitManager2.getPlayer(player.getName()).getkit2().name() && KitManager.getPlayer(player.getName()).getKit() != WaveKit.PVP) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.GOLD + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.ANCHOR) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.BOXER)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.MAGMA) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.VIPER)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.BOXER) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.ANCHOR)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
@@ -288,35 +288,35 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 		                }
 		                
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.KANGAROO) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.STOMPER)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.STOMPER) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.NINJA)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.METEOR) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.STOMPER)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.METEOR) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.PHANTOM)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.NINJA) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.STOMPER)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
@@ -325,35 +325,35 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 		                
 		                
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.HULK) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.GLADIATOR)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.ANTISTOMPER) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.STOMPER)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.STOMPER) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.ANTISTOMPER)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.PHANTOM) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.STOMPER)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.PHANTOM) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.STOMPER)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
@@ -363,7 +363,7 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 		                
 		               
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.FLASH) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.STOMPER)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
@@ -371,7 +371,7 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 		                }
 		                
 		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.FLASH) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.KANGAROO)) {
-		                	WaveWarp.SPAWN.send(player);
+		                	WaveWarp2.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");

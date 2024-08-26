@@ -17,7 +17,7 @@ import org.bukkit.potion.PotionEffectType;
 import net.wavemc.pvp.kit.Habilidade;
 import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 
 
@@ -83,7 +83,7 @@ public class EventoComando implements CommandExecutor {
                             return true;
                         }
                      
-                        if (!WaveWarp.LOBBY.hasPlayer(player.getName())) {
+                        if (!WaveWarp2.LOBBY.hasPlayer(player.getName())) {
                             player.sendMessage("§cVocê precisa estar no lobbypvp.");
                             player.sendMessage("§cEscreva /lobby.");
                             return true;
@@ -119,7 +119,7 @@ public class EventoComando implements CommandExecutor {
                             return true;
                         }
                         EventoUtils.setEvento(false, player); // OLHA DC
-                        WaveWarp.SPAWN.send(player);
+                        WaveWarp2.SPAWN.send(player);
                         player.sendMessage("§cYou leave the event.");
                         break;
                     case "spec":
@@ -174,7 +174,7 @@ public class EventoComando implements CommandExecutor {
                     player.sendMessage("§aVocê fechou a sala de eventos.");
                     EventoUtils.getEventoPlayers().forEach(p -> {
                     EventoUtils.setEvento(false, p);
-                        WaveWarp.SPAWN.send(p);
+                        WaveWarp2.SPAWN.send(p);
                         p.sendMessage("§cThe event ended.");
                         p.chat("/spawn");
                         p.getActivePotionEffects().forEach(ef -> p.removePotionEffect(ef.getType()));
@@ -192,7 +192,7 @@ public class EventoComando implements CommandExecutor {
                                 player.sendMessage("§cVocê já está no evento.");
                                 return true;
                             }
-                            if (!WaveWarp.LOBBY.hasPlayer(player.getName())) {
+                            if (!WaveWarp2.LOBBY.hasPlayer(player.getName())) {
                                 player.sendMessage("§cVocê precisa estar no lobbypvp.");
                                 player.sendMessage("§cEscreva /lobby.");
                                 return true;
@@ -224,7 +224,7 @@ public class EventoComando implements CommandExecutor {
                                 return true;
                             }
                             EventoUtils.setEvento(false, player);
-                            WaveWarp.SPAWN.send(player);
+                            WaveWarp2.SPAWN.send(player);
                             player.sendMessage("§cYou left the event.");
                             break;
                         case "spec":

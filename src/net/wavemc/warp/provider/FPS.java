@@ -13,7 +13,7 @@ import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
 import net.wavemc.pvp.listener.Jump;
 import net.wavemc.pvp.warp.WarpHandle;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class FPS extends WarpHandle {
 	
@@ -44,7 +44,7 @@ public void onInteract22(EntityDamageByEntityEvent event) {
 		if (Jump.recebeu.containsKey(player.getName())) {
 			return;
 		}
-		else if (WaveWarp.FPS.hasPlayer(player.getName())) {
+		else if (WaveWarp2.FPS.hasPlayer(player.getName())) {
 		event.setCancelled(true);
 	}
 }
@@ -53,7 +53,7 @@ public void onInteract22(EntityDamageByEntityEvent event) {
 		
 		Player player = event.getPlayer();
 			
-		if (WaveWarp.LOBBY.hasPlayer(player.getName()) && (event.getItemDrop().getItemStack().getType() == Material.SKULL_ITEM || event.getItemDrop().getItemStack().getType() == Material.COMPASS)) {
+		if (WaveWarp2.LOBBY.hasPlayer(player.getName()) && (event.getItemDrop().getItemStack().getType() == Material.SKULL_ITEM || event.getItemDrop().getItemStack().getType() == Material.COMPASS)) {
 			event.setCancelled(true);
 		}
 		}

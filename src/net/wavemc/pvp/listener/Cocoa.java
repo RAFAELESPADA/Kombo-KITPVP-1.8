@@ -49,7 +49,7 @@ public class Cocoa
     ItemStack lapis;
     d.setColor(DyeColor.BROWN);
     lapis = d.toItemStack();
-    lapis.setAmount(1);
+    lapis.setAmount(64);
     ItemStack cocoa = lapis;
     Inventory inventory = Bukkit.getServer().createInventory(p, 36, "§bCocoa");
     for (int i = 0; i != 9; i++) {

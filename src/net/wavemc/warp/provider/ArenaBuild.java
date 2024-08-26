@@ -14,7 +14,7 @@ import net.wavemc.pvp.kit.KitManager;
 import net.wavemc.pvp.kit.KitManager2;
 import net.wavemc.pvp.listener.Jump;
 import net.wavemc.pvp.warp.WarpHandle;
-import net.wavemc.pvp.warp.WaveWarp;
+import net.wavemc.pvp.warp.WaveWarp2;
 
 public class ArenaBuild extends WarpHandle {
 	
