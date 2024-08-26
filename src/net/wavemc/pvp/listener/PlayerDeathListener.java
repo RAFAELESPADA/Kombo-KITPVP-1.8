@@ -62,7 +62,10 @@ public class PlayerDeathListener implements Listener {
 		WaveCooldown2.removeCooldown(player , "Kit");
 		
 		player.getActivePotionEffects().forEach(it -> player.removePotionEffect(it.getType()));
-		
+		if (!player.getWorld().isChunkLoaded(player.getLocation().getChunk())) {
+			player.getWorld().loadChunk(player.getLocation().getChunk());
+			Bukkit.getConsoleSender().sendMessage("RECARREGANDO CHUNK DE MORTE PARA: " + player.getName());
+			}
 		player.spigot().respawn();
 		event.setDeathMessage(null);
 		event.getDrops().clear();

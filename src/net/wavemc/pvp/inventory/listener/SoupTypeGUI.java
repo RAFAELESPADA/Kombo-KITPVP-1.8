@@ -2,6 +2,7 @@ package net.wavemc.pvp.inventory.listener;
 
 
 import org.bukkit.Bukkit;
+import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -10,6 +11,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.material.Dye;
 
 import java.util.Arrays;
 
@@ -22,7 +24,13 @@ public class SoupTypeGUI implements Listener {
     @EventHandler
     private void onInventoryClick(InventoryClickEvent event) {
         Player player = (Player) event.getWhoClicked();
-       
+
+        Dye d = new Dye();
+        ItemStack lapis;
+        d.setColor(DyeColor.BROWN);
+        lapis = d.toItemStack();
+        lapis.setAmount(1);
+        ItemStack cocoa = lapis;
         if (event.getCurrentItem() != null && event.getCurrentItem().getItemMeta() != null && event.getView().getTitle().contains("§eMude seu estilo de sopa")) {
             if (event.getCurrentItem().getType() != Material.AIR) {
                 event.setCancelled(true);
@@ -60,10 +68,10 @@ public class SoupTypeGUI implements Listener {
         final Inventory inv = Bukkit.createInventory(null, 9, "§eMude seu estilo de sopa");
         if (PlayerCache.cacheSoupType.get(player.getName()) == "mush") {
             inv.setItem(3, ItemUtils.getCustomItemStack(Material.RED_MUSHROOM, "§aCogumelos", Arrays.asList("§7Você receberá cogumelos.", " ", "§a§oSelecionado")));
-            inv.setItem(5, ItemUtils.editItemStack(ItemUtils.cocoa, "§cCocoa Beans", Arrays.asList("§7Você receberá cocoa beans.", " ", "§c§oNão selecionado")));
+            inv.setItem(5, ItemUtils.editItemStack(ItemUtils.getCocoa2(), "§cCocoa Beans", Arrays.asList("§7Você receberá cocoa beans.", " ", "§c§oNão selecionado")));
         } else {
             inv.setItem(3, ItemUtils.getCustomItemStack(Material.RED_MUSHROOM, "§cCogumelos", Arrays.asList("§7Você receberá cogumelos.", " ", "§c§oNão selecionado")));
-            inv.setItem(5, ItemUtils.editItemStack(ItemUtils.cocoa, "§aCocoa Beans", Arrays.asList("§7Você receberá cocoa beans.", " ", "§a§oSelecionado")));
+            inv.setItem(5, ItemUtils.editItemStack(ItemUtils.getCocoa2(), "§aCocoa Beans", Arrays.asList("§7Você receberá cocoa beans.", " ", "§a§oSelecionado")));
         }
         player.openInventory(inv);
     }

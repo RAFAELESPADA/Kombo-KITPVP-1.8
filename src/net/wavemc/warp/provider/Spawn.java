@@ -12,6 +12,7 @@ import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.scoreboard.DisplaySlot;
 
@@ -111,15 +112,14 @@ public class Spawn extends WarpHandle {
     }
 	WavePvP.getInstance().getScoreboardBuilder().build(player);
   }
-  public static ItemStack getHead(Player player) {
-      ItemStack item = new ItemStack(Material.SKULL);
-      SkullMeta skull = (SkullMeta) item.getItemMeta();
-      skull.setDisplayName("§aSeu perfil");
-      ArrayList<String> lore = new ArrayList<String>();
-      lore.add("§7Clique para ver seu perfil");
-      skull.setLore(lore);
-      skull.setOwner(player.getName());
-      item.setItemMeta(skull);
-      return item;
-  }
+	public static ItemStack getHead(Player player) {
+	      ItemStack item = new ItemStack(Material.SKULL_ITEM);
+	      ItemMeta i = item.getItemMeta();
+	      i.setDisplayName("§aSeu perfil §7(Clique)");
+	      ArrayList<String> lore = new ArrayList<String>();
+	      lore.add("§7Clique para ver seu perfil");
+	      i.setLore(lore);
+	      item.setItemMeta(i);
+	      return item;
+	  }
 }

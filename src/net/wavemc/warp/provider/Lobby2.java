@@ -9,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import net.wavemc.core.bukkit.api.ActionBar;
@@ -55,14 +56,13 @@ public class Lobby2 extends WarpHandle {
 			);
 	}
 	public static ItemStack getHead(Player player) {
-	      ItemStack item = new ItemStack(Material.SKULL);
-	      SkullMeta skull = (SkullMeta) item.getItemMeta();
-	      skull.setDisplayName("§aSeu perfil §7(Clique)");
+	      ItemStack item = new ItemStack(Material.SKULL_ITEM);
+	      ItemMeta i = item.getItemMeta();
+	      i.setDisplayName("§aSeu perfil §7(Clique)");
 	      ArrayList<String> lore = new ArrayList<String>();
 	      lore.add("§7Clique para ver seu perfil");
-	      skull.setLore(lore);
-	      skull.setOwner(player.getName());
-	      item.setItemMeta(skull);
+	      i.setLore(lore);
+	      item.setItemMeta(i);
 	      return item;
 	  }
 

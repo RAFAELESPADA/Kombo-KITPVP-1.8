@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
@@ -18,6 +19,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 
 import net.wavemc.core.bukkit.WaveBukkit;
 import net.wavemc.core.bukkit.account.WavePlayer;
+import net.wavemc.core.bukkit.item.ItemBuilder;
 import net.wavemc.pvp.WavePvP;
 import net.wavemc.pvp.cooldown2.WaveCooldown2;
 import net.wavemc.pvp.kit.Habilidade;
@@ -30,7 +32,9 @@ import net.wavemc.pvp.listener.Jump;
 import net.wavemc.pvp.listener.PlayerJoin;
 import net.wavemc.pvp.warp.WaveWarp;
 import net.wavemc.pvp.warp.WarpDuoBattleHandle;
+import net.wavemc.warp.provider.Duels;
 import net.wavemc.warp.provider.Gladiator;
+import net.wavemc.warp.provider.Lobby2;
 import net.wavemc.warp.provider.OneVsOne;
 import net.wavemc.warp.provider.Sumo;
 
@@ -55,8 +59,46 @@ public class Lobby implements CommandExecutor {
 				p.sendMessage("§eComando bloqueado no Gladiator!");
 				return true;
       }
+		 try {
 		if (WaveWarp.SPAWN.hasPlayer(p.getName()) || WaveWarp.FPS.hasPlayer(p.getName()) || WaveWarp.DUELS.hasPlayer(p.getName()) || WaveWarp.LAVACHALLENGE.hasPlayer(p.getName()) || WaveWarp.ARENABUILD.hasPlayer(p.getName())) {
 			WaveWarp.LOBBY.send(player);
+		}
+		 }
+		  catch (NullPointerException e) {
+				player.getInventory().clear();
+			    WaveCooldown2.removeCooldown(player, KitManager2.getPlayer(player.getName()).getkit2().getName());
+			    net.wavemc.pvp.cooldown1.WaveCooldown2.removeCooldown(player, KitManager.getPlayer(player.getName()).getKit().getName());
+		    Jump.recebeu.remove(player.getName());
+		    if (Duels.protector.containsKey(player.getName())) {
+		        Duels.protector.remove(player.getName());
+		        }
+			KitManager.getPlayer(player.getName()).removeKit();
+			KitManager2.getPlayer(player.getName()).removekit2();
+			 player.getInventory().setItem(3, new ItemBuilder("§bModos de jogo §7(Clique)", Material.COMPASS)
+						.nbt("cancel-drop")
+						.nbt("cancel-click")
+						.nbt("modos", "spawn")
+						.toStack()
+				);
+			 player.getInventory().setItem(5, new ItemBuilder(Lobby2.getHead(player))
+						.nbt("cancel-drop")
+						.nbt("cancel-click")
+						.nbt("modos", "spawn")
+						.toStack()
+				);
+			 player.getInventory().setItem(4, new ItemBuilder("§bKangarinho §7(Clique)", Material.FIREWORK)
+						.nbt("cancel-drop")
+						.nbt("cancel-click")
+						.nbt("kit-handler", "kangaroo")
+						.toStack()
+				);
+			 player.teleport(new Location(Bukkit.getWorld("lobbypvp"), 24 , 69, 0));
+		}
+		  
+			
+		 
+		 
+		 
 	if (player != null) {
 		if (ArenaBuild.placed_blocks.get(p) == null) {
 			return true;
@@ -66,11 +108,13 @@ public class Lobby implements CommandExecutor {
                 }
 			return true;			
 		}
-		}
+		
+		
 		else if (WaveWarp.LOBBY.hasPlayer(p.getName())) {
 			
 			player.sendMessage(ChatColor.GREEN + "Clique no NPC de voltar ao lobby para voltar.");
 		}
 		return false;
-	}
+		 }
 }
+

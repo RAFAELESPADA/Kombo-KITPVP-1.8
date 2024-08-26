@@ -15,6 +15,8 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+import net.wavemc.pvp.inventory.listener.ItemUtils;
+
 public class RecraftGeral
   implements Listener
 {
@@ -33,7 +35,7 @@ public class RecraftGeral
     if (e.getLine(0).equalsIgnoreCase("recraft"))
     {
       e.setLine(0, "");
-      e.setLine(1, "§3§lRECRAFT");
+      e.setLine(1, "§4§lRECRAFT");
       e.setLine(2, "§f(Clique)");
       e.setLine(3, "");
     }
@@ -44,8 +46,7 @@ public class RecraftGeral
   {
     Player p = e.getPlayer();
 
-    ItemStack cocoa = new ItemStack(Material.INK_SACK, (short)3);
-    cocoa.setAmount(64);
+    ItemStack cocoa = ItemUtils.getCocoa();
     Inventory inventory = Bukkit.getServer().createInventory(p, 36, "Recraft");
     inventory.setItem(1, new ItemStack(Material.BOWL, 64));
     inventory.setItem(2, new ItemStack(Material.RED_MUSHROOM, 64));

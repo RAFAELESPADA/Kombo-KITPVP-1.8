@@ -1,6 +1,7 @@
 package net.wavemc.pvp.listener;
 
 import org.bukkit.Bukkit;
+import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.Server;
 import org.bukkit.block.Block;
@@ -13,6 +14,7 @@ import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.material.Dye;
 
 public class Cocoa
   implements Listener
@@ -42,7 +44,13 @@ public class Cocoa
   public void inv(PlayerInteractEvent e)
   {
     Player p = e.getPlayer();
-    ItemStack cocoa = new ItemStack(Material.INK_SACK, (short)3);
+
+    Dye d = new Dye();
+    ItemStack lapis;
+    d.setColor(DyeColor.BROWN);
+    lapis = d.toItemStack();
+    lapis.setAmount(1);
+    ItemStack cocoa = lapis;
     Inventory inventory = Bukkit.getServer().createInventory(p, 36, "§bCocoa");
     for (int i = 0; i != 9; i++) {
 		inventory.setItem(i, cocoa);

@@ -53,7 +53,7 @@ public void onInteract22(EntityDamageByEntityEvent event) {
 		
 		Player player = event.getPlayer();
 			
-		if (WaveWarp.LOBBY.hasPlayer(player.getName()) && (event.getItemDrop().getItemStack().getType() == Material.SKULL || event.getItemDrop().getItemStack().getType() == Material.COMPASS)) {
+		if (WaveWarp.LOBBY.hasPlayer(player.getName()) && (event.getItemDrop().getItemStack().getType() == Material.SKULL_ITEM || event.getItemDrop().getItemStack().getType() == Material.COMPASS)) {
 			event.setCancelled(true);
 		}
 		}

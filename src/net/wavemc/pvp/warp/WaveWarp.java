@@ -107,9 +107,28 @@ public enum WaveWarp {
 		Location l = new Location(Bukkit.getWorld(yaml.getString("Mundo-" + name.toLowerCase())), yaml.getInt("X-" +name.toLowerCase()) , yaml.getInt("Y-" +name.toLowerCase()), yaml.getInt("Z-" +name.toLowerCase()));
 		l.setPitch(yaml.getInt("PITCH-" +name.toLowerCase()));
 		l.setYaw(yaml.getInt("YAW-" +name.toLowerCase()));	
+		if (!name.toLowerCase().equals("lobby")) {
+			if (!l.getWorld().isChunkLoaded(l.getChunk())) {
+				l.getWorld().loadChunk(l.getChunk());
+				Bukkit.getConsoleSender().sendMessage(player.getName()+ " CHUNK LOADED for warp " + name.toLowerCase());
+				
+				}
 		player.teleport(l);
 		Bukkit.getConsoleSender().sendMessage(player.getName()+ " se teleportou para a warp " + name.toLowerCase());
 		Bukkit.getConsoleSender().sendMessage("Mundo: " + yaml.getString("Mundo-" + name.toLowerCase()));
+		}
+		else {
+			Bukkit.getConsoleSender().sendMessage(player.getName()+ " se teleportou para a warp " + name.toLowerCase());
+			
+			 Location l2 = new Location(Bukkit.getWorld("lobbypvp2"), 416111, 64, 61616);
+			 l2.setPitch(2.2f);
+l2.setYaw(-92.3f);
+if (!l2.getWorld().isChunkLoaded(l2.getChunk())) {
+l2.getWorld().loadChunk(l2.getChunk());
+}
+			 player.teleport(l2);
+		}
+		
 		player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
 		WavePvP.getInstance().getScoreboardBuilder().build(player);
 	}

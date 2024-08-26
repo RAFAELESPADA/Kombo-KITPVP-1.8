@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class SignListener implements Listener {
 	
-	private static final String soup = "§3§lSOPAS", recraft = "§4§lRECRAFT";
+	private static final String soup = "§3§lSOPAS", recraft = "§3§lRECRAFT";
 	
 	@EventHandler(ignoreCancelled = true)
 	public void onSignChange(SignChangeEvent event) {

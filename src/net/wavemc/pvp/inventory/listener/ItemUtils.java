@@ -1,16 +1,38 @@
 package net.wavemc.pvp.inventory.listener;
 
+import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.material.Dye;
 
 import java.util.Collections;
 import java.util.List;
 
 public class ItemUtils {
 
-    public static ItemStack cocoa = new ItemStack(Material.INK_SACK, (short)3);
+    public static ItemStack getCocoa() {
+
+        Dye d = new Dye();
+        ItemStack lapis;
+        d.setColor(DyeColor.BROWN);
+        lapis = d.toItemStack();
+        lapis.setAmount(64);
+        ItemStack cocoa = lapis;
+        return cocoa;
+    }
+
+    public static ItemStack getCocoa2() {
+
+        Dye d = new Dye();
+        ItemStack lapis;
+        d.setColor(DyeColor.BROWN);
+        lapis = d.toItemStack();
+        lapis.setAmount(1);
+        ItemStack cocoa = lapis;
+        return cocoa;
+    }
 
     public static ItemStack getCustomItemStack(Material material, String name, String lore) {
         ItemStack itemStack = new ItemStack(material);
@@ -42,10 +64,7 @@ public class ItemUtils {
     }
 
     public static ItemStack getPlayerSkull(String name) {
-        ItemStack itemStack = new ItemStack(Material.SKULL);
-        SkullMeta meta = (SkullMeta) itemStack.getItemMeta();
-        meta.setOwner(name);
-        itemStack.setItemMeta(meta);
+        ItemStack itemStack = new ItemStack(Material.SKULL_ITEM);
         return itemStack;
     }
 

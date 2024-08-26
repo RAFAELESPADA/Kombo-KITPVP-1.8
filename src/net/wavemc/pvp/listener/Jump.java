@@ -635,8 +635,12 @@ public void Items(Player player) {
 			.nbt("cancel-drop")
 			.toStack());
 	   
-
-    ItemStack cocoa = new ItemStack(Material.INK_SACK, (short)3);
+    Dye d = new Dye();
+    ItemStack lapis;
+    d.setColor(DyeColor.BROWN);
+    lapis = d.toItemStack();
+    lapis.setAmount(64);
+    ItemStack cocoa = lapis;
 	player.getInventory().setItem(13, new ItemStack(Material.BOWL, 32));
 	  if (PlayerCache.cacheSoupType.get(player.getName()) == "mush") {
 	player.getInventory().setItem(14, new ItemStack(Material.RED_MUSHROOM, 32));
