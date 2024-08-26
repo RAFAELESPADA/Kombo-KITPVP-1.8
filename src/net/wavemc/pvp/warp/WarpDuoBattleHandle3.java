@@ -120,7 +120,7 @@ return;
         int x = ran.nextInt(1200);
         int y = ran.nextInt(130);
         int z = ran.nextInt(1200);
-        Location newloc = new Location(Bukkit.getWorld(yaml.getString("Mundo-duels")), x, y, z);
+        Location newloc = new Location(Bukkit.getWorld(yaml.getString("Mundo-gladiator")), x, y, z);
         GladiatorListener2.newGladiatorListenerArena(p1, p2, newloc);
         GladiatorListener2.combateGlad.put(p1, p2);
         GladiatorListener2.combateGlad.put(p2, p1);

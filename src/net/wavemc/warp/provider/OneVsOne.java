@@ -196,6 +196,12 @@ public class OneVsOne extends WarpDuoBattleHandle {
 				|| !ItemBuilder.has(player.getItemInHand(), "1v1", "challenge")) {
 			return;
 		}
+		if (player.getItemInHand().getItemMeta() == null) {
+			return;
+		}
+		if (player.getItemInHand().getItemMeta().getDisplayName() == null) {
+			return;
+		}
 		event.setCancelled(true);
 		
 		Player target = (Player) event.getRightClicked();
