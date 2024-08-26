@@ -213,10 +213,16 @@ public class SelectKitListener implements Listener {
 						return;
 					}
 				   
-				   
-
+if (event.getCurrentItem().getItemMeta() == null) {
+	return;
+}
+if (ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName()) == null) {
+	return;
+}
 					String kitName3 = ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName());
-					
+					if (kitName3 == null) {
+						return;
+					}
 					
 					String kitName = ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName());
 			event.setCancelled(true);
@@ -359,6 +365,9 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 		if (!event.getView().getTitle().equals(KitsInventoryPageTwo.getInventoryName())) {
 			return;
 		}
+		if (event.getCurrentItem().getItemMeta() == null) {
+			return;
+		}
 		if (ItemBuilder.has(event.getCurrentItem(), "visual")) {
 			event.setCancelled(true);
 			return;
@@ -453,6 +462,12 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 		if (event.getCurrentItem() == null) {
 			return;
 		}
+		if (event.getCurrentItem().getItemMeta() == null) {
+			return;
+		}
+		if (event.getCurrentItem().getItemMeta().getDisplayName() == null) {
+			return;
+		}
 		event.setCancelled(true);
 		if (!player.hasPermission("wave.kit2." + ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName()) ) && event.getCurrentItem().getType() != Material.ARROW) {
 			player.sendMessage(ChatColor.RED + "Você não tem esse kit liberado.");
@@ -544,6 +559,12 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 			return;
 		}
 		if (event.getCurrentItem() == null) {
+			return;
+		}
+		if (event.getCurrentItem().getItemMeta() == null) {
+			return;
+		}
+		if (event.getCurrentItem().getItemMeta().getDisplayName() == null) {
 			return;
 		}
 		if (!player.hasPermission("wave.kit2." + ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName())) && event.getCurrentItem().getType() != Material.ARROW) {

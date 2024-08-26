@@ -179,6 +179,12 @@ public class OneVsOne extends WarpDuoBattleHandle {
 		if (event.getPlayer().getItemInHand() == null) {
 			return;
 		}
+		if (event.getPlayer().getItemInHand().getItemMeta() == null) {
+			return;
+		}
+		if (event.getPlayer().getItemInHand().getItemMeta().getDisplayName() == null) {
+			return;
+		}
 		if (event.getPlayer().getItemInHand().hasItemMeta() && event.getPlayer().getItemInHand().getItemMeta().getDisplayName().equals("§bDesafiar §7(Clique)") && WaveWarp2.DUELS.hasPlayer(player.getName()) && event.getRightClicked() != null && event.getPlayer().getItemInHand().getItemMeta().getDisplayName() != null) {
         if (Duels.c.containsKey(player)) {
             	startBattle(player , (Player)event.getRightClicked());
