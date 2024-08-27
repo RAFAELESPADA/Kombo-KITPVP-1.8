@@ -88,11 +88,6 @@ public void snowball(final ProjectileLaunchEvent e) {
     	        	shooter.sendMessage("§cNão use seu poder no spawn!");
     	    		return;
     	       }
-if (inCooldown(shooter)) {
-                	
-                    shooter.sendMessage("§4Aguarde para usar novamente!");
-                    return;
-                }
     	        Player p = (Player)e.getEntity();
     	        if (KitManager.getPlayer(p.getName()).hasKit(WaveKit.NEO) || KitManager2.getPlayer(p.getName()).haskit2(WaveKit2.NEO)) {
 					p.playSound(p.getLocation(), Sound.NOTE_BASS, 15.0f, 15.0f);
