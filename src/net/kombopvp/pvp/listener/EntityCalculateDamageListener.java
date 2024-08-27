@@ -34,6 +34,22 @@ public class EntityCalculateDamageListener implements Listener {
 
 												}	
 	 }
+	 @EventHandler(priority = EventPriority.HIGHEST)
+	    public void onDamageWoodword(final PlayerMoveEvent event) {
+		  if (event.isCancelled()) {
+			  return;
+		  }
+	        final Player p = event.getPlayer();
+		 if (!WaveWarp2.SPAWN.hasPlayer(p.getName())) { 
+			 return;
+		 }
+		 if (p.getItemInHand().getType() == Material.FISHING_ROD) {
+			 p.getItemInHand().setDurability((short)0);
+		 }
+
+	 									}	
+	 
+	 
 
 	    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	    public void onDamageWoodSword(final EntityRegainHealthEvent event) {
