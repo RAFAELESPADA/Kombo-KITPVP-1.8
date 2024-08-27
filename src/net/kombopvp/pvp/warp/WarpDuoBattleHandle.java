@@ -134,22 +134,14 @@ if (yaml.getString("Mundo-" +warpPos1) == null || yaml.getString("Mundo-" +warpP
         Random r = new Random();
         int l = r.nextInt(3);
         
-           	Location l1 = new Location(Bukkit.getWorld("1v1"), -232.14456399575266 , 234.0, 334.27369842012286);            
-       		Location l2 = new Location(Bukkit.getWorld("1v1"), -211.12331396851263 , 234.0, 334.8530479735297);
-        	 Vector direction = getVector(p1).subtract(getVector(p2)).normalize();
-             double x = direction.getX();
-             double y = direction.getY();
-             double z = direction.getZ();
-             
-             Vector direction2 = getVector(p2).subtract(getVector(p1)).normalize();
-             double x2 = direction2.getX();
-             double y2 = direction2.getY();
-             double z2 = direction2.getZ();
+           	Location l1 = new Location(Bukkit.getWorld("1v1"), 6442.14456399575266 , 65.0, 66482.183);            
+       		Location l2 = new Location(Bukkit.getWorld("1v1"), 6368.14456399575266 , 65.0, 66482.183);
+        	
           
-             l1.setYaw(180 - toDegree(Math.atan2(x, z)));
-             l1.setPitch(90 - toDegree(Math.acos(y)));
-             l2.setYaw(180 - toDegree(Math.atan2(x2, z2)));
-             l2.setPitch(90 - toDegree(Math.acos(y2)));
+             l1.setYaw(87.5f);
+             l1.setPitch(3.4f);
+             l2.setYaw(-91.2f);
+             l2.setPitch(4.2f);
              
             p1.teleport(l1);
             p2.teleport(l2);

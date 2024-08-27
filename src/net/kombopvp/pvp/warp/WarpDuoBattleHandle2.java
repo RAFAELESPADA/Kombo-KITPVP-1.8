@@ -173,23 +173,14 @@ public abstract class WarpDuoBattleHandle2 extends WarpHandle {
             return;
         }
         
-       	Location l1 = new Location(Bukkit.getWorld("1v1"), -421.357, 69.000000, 199.462);            
+       	Location l1 = new Location(Bukkit.getWorld("1v1"), 6448.124, 70.00000000, 6685.861);            
        
-   		Location l2 = new Location(Bukkit.getWorld("1v1"), -412.401, 69.00000000, 199.608);
-   	 Vector direction = getVector(p1).subtract(getVector(p2)).normalize();
-     double x = direction.getX();
-     double y = direction.getY();
-     double z = direction.getZ();
-     
-     Vector direction2 = getVector(p2).subtract(getVector(p1)).normalize();
-     double x2 = direction2.getX();
-     double y2 = direction2.getY();
-     double z2 = direction2.getZ();
-  
-     l1.setYaw(180);
-     l1.setPitch(9);
-     l2.setYaw(-180);
-     l2.setPitch(-9);
+   		Location l2 = new Location(Bukkit.getWorld("1v1"), 6438.072, 70.00000, 6685.597);
+
+        l1.setYaw(90.9f);
+        l1.setPitch(6.3f);
+        l2.setYaw(-91.0f);
+        l2.setPitch(3.9f);
         
              p1.teleport(l1);
                    p2.teleport(l2);
