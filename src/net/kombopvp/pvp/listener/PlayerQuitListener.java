@@ -47,15 +47,14 @@ Player p = player;
 	      		
 	      		return;
 	      	}
-	      		if (ArenaBuild.placed_blocks.get(p) == null) {
-	      			return;
-	      		}
+	      		if (ArenaBuild.placed_blocks.get(p) != null) {
 	      for (Block b : ArenaBuild.placed_blocks.get(p)) {
 	      	  b.setType(Material.AIR);
 	      }
 	      for (Location l : ArenaBuild.blocks) {
 	      	l.getBlock().setType(Material.AIR);
 	      }
+			}
 	      t.setNameTagVisibility(NameTagVisibility.NEVER);
 	      if (t.hasEntry(player.getName())) {
 	      t.removeEntry(player.getName());
