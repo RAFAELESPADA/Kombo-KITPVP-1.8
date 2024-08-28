@@ -51,9 +51,6 @@ Player p = player;
 	      			return;
 	      		}
 	      for (Block b : ArenaBuild.placed_blocks.get(p)) {
-	      	if (p == null) {
-	      		return;
-	      	}
 	      	  b.setType(Material.AIR);
 	      }
 	      for (Location l : ArenaBuild.blocks) {
