@@ -313,7 +313,13 @@ public final class GladiatorListener2 extends KitHandler
             loc.getBlock().setType(Material.AIR);
         }
 
+<<<<<<< HEAD
         if (WaveWarp2.SPAWN.hasPlayer(winner.getName())) {
+=======
+        WavePlayer killer = WaveBukkit.getInstance().getPlayerManager().getPlayer(winner.getName());
+        if (WaveWarp2.SPAWN.hasPlayer(winner.getName())) {
+        killer.getPvp().addKills(1);
+>>>>>>> a785920a9ab1b26ca6f8ef5df0b11ad7e0b40630
         winner.sendMessage(prefix + " Você ganhou 1 kill por matar esse jogador no Glad!");
         }
         GladiatorListener2.blocks.remove(winner.getName());
