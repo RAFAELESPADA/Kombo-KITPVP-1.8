@@ -44,6 +44,8 @@ import net.kombopvp.pvp.kit.KitManager2;
 import net.kombopvp.pvp.kit.WaveKit;
 import net.kombopvp.pvp.kit.WaveKit2;
 import net.kombopvp.pvp.warp.WaveWarp2;
+import net.wavemc.core.bukkit.WaveBukkit;
+import net.wavemc.core.bukkit.account.WavePlayer;
 import net.wavemc.core.bukkit.item.ItemBuilder;
 
 
@@ -309,6 +311,10 @@ public final class GladiatorListener2 extends KitHandler
         }
         for (final Location loc : GladiatorListener2.blocks.get(loser.getName())) {
             loc.getBlock().setType(Material.AIR);
+        }
+
+        if (WaveWarp2.SPAWN.hasPlayer(winner.getName())) {
+        winner.sendMessage(prefix + " Você ganhou 1 kill por matar esse jogador no Glad!");
         }
         GladiatorListener2.blocks.remove(winner.getName());
         GladiatorListener2.oldLocation.remove(winner.getName());

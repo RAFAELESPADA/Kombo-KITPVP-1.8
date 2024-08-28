@@ -85,11 +85,6 @@ public void snowball(final ProjectileLaunchEvent e) {
     	        if (!KitManager2.getPlayer(shooter.getName()).haskit2(this)) {
                 	return;
                 }
-    	        if (inCooldown(shooter)) {
-                	
-                    shooter.sendMessage("§4Aguarde para usar novamente!");
-                    return;
-                }
     	        else if (shooter.getLocation().getY() > KomboPvP.getInstance().getConfig().getInt("SpawnAltura") && EnderMageReal.isSpawn(shooter.getLocation())) {
     	        	shooter.sendMessage("§cNão use seu poder no spawn!");
     	    		return;

@@ -123,25 +123,6 @@ public class PlayerJoin implements Listener {
 			VanishUtil.remove(player.getName());
 			player.sendMessage("§c§lVANISH §fVocê saiu do vanish.");
 		}
-		ViaAPI ap = Via.getAPI();
-		if (ap.getPlayerVersion(player.getUniqueId()) < 498) {
-			player.sendMessage("§6§lKOMBO §7-> §fUtilize a versão 1.14.4 ou superior do minecraft");
-			player.sendMessage("§6§lKOMBO §7-> §fPara ganhar o dobro de coins e xp");
-			player.sendMessage("§6§lKOMBO §7-> §fE evitar ficar bugado no bloco e mais bugs");
-			player.sendMessage("§6§lKOMBO §7-> §fNão se preocupe. o pvp continuará da 1.8");
-		}
-		new BukkitRunnable() {
-			@Override
-			public void run() {
-				if (ap.getPlayerVersion(player.getUniqueId()) < 498) {
-					player.sendMessage("§6§lKOMBO §7-> §fUtilize a versão 1.14.4 ou superior do minecraft");
-					player.sendMessage("§6§lKOMBO §7-> §fPara ganhar o dobro de coins e xp");
-					player.sendMessage("§6§lKOMBO §7-> §fE evitar ficar bugado no bloco e mais bugs");
-					player.sendMessage("§6§lKOMBO §7-> §fNão se preocupe. o pvp continuará da 1.8");
-					player.playSound(p.getLocation(), Sound.ANVIL_LAND, 10, 10);
-					
-			}
-			}}.runTaskTimer(KomboPvP.getInstance(), 10 , 7 * 60 * 20);
 	
 	
 		if (!playerrealname.containsKey(player)) {

@@ -33,7 +33,7 @@ public class PlayerKillstreakListener implements Listener {
 			RTP.broadcast("§6§lKOMBO §e" + killer.getName() + " fez um §4§lQUADRAKILL!", killer.getWorld());
 		}
 		if (String.valueOf(killstreak).equals("8")) {
-			RTP.broadcast("§6§lKOMBO §e" + killer.getName() + " está fazendo um massacre co m§4§l8 KILLS §econsecutivas!", killer.getWorld());
+			RTP.broadcast("§6§lKOMBO §e" + killer.getName() + " está fazendo um massacre com §4§l8 KILLS §econsecutivas!", killer.getWorld());
 		}
 		if (String.valueOf(killstreak).contains("5") || (String.valueOf(killstreak).contains("0")) && killstreak != 0) {
 			RTP.broadcast("§6§lKS §e" + killer.getName() + " tem um killstreak de §b" + killstreak + "§e!", killer.getWorld());
