@@ -50,7 +50,7 @@ if (ArenaBuild.blocks != null) {
 	      for (Block b : ArenaBuild.placed_blocks.get(p)) {
 	      	  b.setType(Material.AIR);
 	      }
-	    
+	      		}
 		  
 		  if (Duels.protector.containsKey(player.getName())) {
 			    Duels.protector.remove(player.getName());
@@ -74,4 +74,3 @@ if (ArenaBuild.blocks != null) {
          }
 	      		}}
 
-}
