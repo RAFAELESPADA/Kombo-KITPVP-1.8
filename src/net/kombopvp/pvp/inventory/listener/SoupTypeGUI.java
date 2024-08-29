@@ -12,6 +12,9 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.Dye;
+import org.bukkit.scheduler.BukkitRunnable;
+
+import net.kombopvp.pvp.KomboPvP;
 
 import java.util.Arrays;
 
@@ -34,7 +37,13 @@ public class SoupTypeGUI implements Listener {
         if (event.getCurrentItem() != null && event.getCurrentItem().getItemMeta() != null && event.getView().getTitle().contains("§eMude seu estilo de sopa")) {
             if (event.getCurrentItem().getType() != Material.AIR) {
                 event.setCancelled(true);
-                player.closeInventory();
+                new BukkitRunnable() {
+            		@Override
+            		public void run() {
+            	event.getWhoClicked().closeInventory();
+            		runTask(KomboPvP.getInstance());
+            		}
+            	};
                 if (event.getCurrentItem().getItemMeta().getDisplayName().contains("Cogumelos")) {
                     if (PlayerCache.cacheSoupType.get(player.getName()) == "mush") {
                         player.sendMessage("§cO seu estilo de sopa já é o selecionado.");

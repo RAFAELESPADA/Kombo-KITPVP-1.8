@@ -14,7 +14,9 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.scheduler.BukkitRunnable;
 
+import net.kombopvp.pvp.KomboPvP;
 import net.kombopvp.pvp.command.NoBreakEvent;
 import net.kombopvp.pvp.inventory.Modo;
 import net.kombopvp.pvp.inventory.Servidores;
@@ -56,7 +58,13 @@ public class BuyKitListener implements Listener {
 		
 		
 		WaveKit2.findKit(kitName).ifPresent(kit -> {
-			player.closeInventory();
+			new BukkitRunnable() {
+				@Override
+				public void run() {
+			event.getWhoClicked().closeInventory();
+				runTask(KomboPvP.getInstance());
+				}
+			};
 			if (player.hasPermission("wave.kit2." + kit.getName())) {
 				player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 10.0f, 10.0f);
 				player.sendMessage("§cVocê ja tem esse kit!");
@@ -123,7 +131,14 @@ public void onIndfvvClicki4(InventoryClickEvent event) {
 	event.setCancelled(true);
 	
 	player.sendMessage(ChatColor.GREEN + "Enviando você para a Arena.");
-	player.closeInventory();
+	new BukkitRunnable() {
+		@Override
+		public void run() {
+	event.getWhoClicked().closeInventory();
+		runTask(KomboPvP.getInstance());
+		}
+	};
+	
 	WaveWarp2.SPAWN.send(player);
 }
 @EventHandler
@@ -148,7 +163,13 @@ public void onIndfvvCliHGcki4(InventoryClickEvent event) {
 	event.setCancelled(true);
 	
 	player.sendMessage(ChatColor.GREEN + "Enviando você para a FPS.");
-	player.closeInventory();
+	new BukkitRunnable() {
+		@Override
+		public void run() {
+	event.getWhoClicked().closeInventory();
+		runTask(KomboPvP.getInstance());
+		}
+	};
 	WaveWarp2.FPS.send(player);
 }
 
@@ -174,7 +195,13 @@ public void onInEDdfvvClicki4(InventoryClickEvent event) {
 	event.setCancelled(true);
 	
 	player.sendMessage(ChatColor.GREEN + "Enviando você para o Duels.");
-	player.closeInventory();
+	new BukkitRunnable() {
+		@Override
+		public void run() {
+	event.getWhoClicked().closeInventory();
+		runTask(KomboPvP.getInstance());
+		}
+	};
 	WaveWarp2.DUELS.send(player);
 }
 @EventHandler
@@ -199,7 +226,13 @@ public void onInEDdfvvClickti4(InventoryClickEvent event) {
 	event.setCancelled(true);
 	
 	player.sendMessage(ChatColor.GREEN + "Enviando você para o Gladiator.");
-	player.closeInventory();
+	new BukkitRunnable() {
+		@Override
+		public void run() {
+	event.getWhoClicked().closeInventory();
+		runTask(KomboPvP.getInstance());
+		}
+	};
 	WaveWarp2.GLADIATOR.send(player);
 }
 @EventHandler
@@ -224,7 +257,13 @@ public void onInEDdGfvvClicki4(InventoryClickEvent event) {
 	event.setCancelled(true);
 	
 	player.sendMessage(ChatColor.GREEN + "Enviando você para o LavaChallenge.");
-	player.closeInventory();
+	new BukkitRunnable() {
+		@Override
+		public void run() {
+	event.getWhoClicked().closeInventory();
+		runTask(KomboPvP.getInstance());
+		}
+	};
 	WaveWarp2.LAVACHALLENGE.send(player);
 }
 @EventHandler
@@ -249,7 +288,13 @@ public void onInEDdGfbvvClicki4(InventoryClickEvent event) {
 	event.setCancelled(true);
 	
 	player.sendMessage(ChatColor.GREEN + "Enviando você para a Arena com Build.");
-	player.closeInventory();
+	new BukkitRunnable() {
+		@Override
+		public void run() {
+	event.getWhoClicked().closeInventory();
+		runTask(KomboPvP.getInstance());
+		}
+	};
 	WaveWarp2.ARENABUILD.send(player);
 }
 }

@@ -79,12 +79,12 @@ else if (kit == null && jogador.hasPermission("wave.kit2.stomper")) {
 }
 				if (ggr != 0 && ggr < WaveKit2.values().length) {
 					if (jogador.hasPermission("wave.kit2." + kit)) {
-						jogador.closeInventory();
+						
 						Inventario(jogador);
 						return;
 					}
 					if (kit == "Nenhum" || kit == "Kangaroo" || kit == "Archer") {
-						jogador.closeInventory();
+						
 						Inventario(jogador);
 						return;
 					}
