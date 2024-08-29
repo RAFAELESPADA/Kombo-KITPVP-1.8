@@ -80,6 +80,12 @@ public class PlayerJoin implements Listener {
 		      p.sendMessage(ChatColor.GREEN + " Eu te trouxe de volta a segurança.");
 		      return;
 		    }
+	    if (p.getLocation().getY() < -2 && WaveWarp2.DUELS.hasPlayer(p.getName())) {
+		      WaveWarp2.DUELS.send(p, true);
+
+		      p.sendMessage(ChatColor.GREEN + " Eu te trouxe de volta a segurança.");
+		      return;
+		    }
 	    else if (p.getLocation().getY() < -2 && !KitManager.getPlayer(p.getName()).hasKit() && WaveWarp2.LOBBY.hasPlayer(p.getName())) {
 		      WaveWarp2.LOBBY.send(p, true);
 

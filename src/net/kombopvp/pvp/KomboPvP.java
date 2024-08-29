@@ -176,8 +176,8 @@ public class KomboPvP extends JavaPlugin implements Listener, PluginMessageListe
 	public static boolean euforia;
 	public JDABuilder bot;
 	  
-	 public final String TOKEN = "Seu bot token";
-	  
+	public final String TOKEN = "SEU BOT TOKEN"";
+	    
 	  
 	public ArrayList<EnchantingInventory> inventories;
 	private ScoreboardBuilder scoreboardBuilder;

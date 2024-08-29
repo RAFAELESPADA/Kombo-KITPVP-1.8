@@ -75,6 +75,8 @@ public enum WaveKit {
 	HULK("Hulk", KomboPvP.getInstance().getConfig().getInt("HulkPrice"), 420, new Hulk(), new ItemStack(Material.DROPPER), KomboPvP.getInstance().getConfig().getString("HulkLore"), 2,29),
 	SWITCHER("Switcher", KomboPvP.getInstance().getConfig().getInt("SwitcherPrice"), 0, new Switcher(), new ItemStack(Material.SNOW_BALL), KomboPvP.getInstance().getConfig().getString("SwitcherLore"), 2,30),
 	FLASH("Flash", 15000, 500, new Flash(), new ItemStack(Material.REDSTONE_TORCH_ON), "Teleporte para onde você clicar", 2,36),
+	GRAPPLER("Grappler", 15000, 500, new Grappler(), new ItemStack(Material.LEASH), "Voe por ai com sua corda!", 2,41),
+	
 	REAPER("Reaper", 13000, 500, new Reaper(), new ItemStack(Material.WOOD_HOE), "De wither com sua foice!", 2,37),
 	METEOR("Meteor", 12000, 0, new MeteorD(), new ItemStack(Material.FIREBALL), "Vire um meteoro!" , 1,39),
 	PYRO("Pyro", 6000, 0, new Pyro2(), new ItemStack(Material.CHAINMAIL_CHESTPLATE), "Atire bolas de fogo!" , 1,40),

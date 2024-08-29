@@ -114,6 +114,9 @@ public class Sumo extends WarpDuoBattleHandle2 {
 		if (event.getPlayer().getItemInHand() == null) {
 			return;
 		}
+		if (event.getPlayer().getItemInHand().getItemMeta() == null) {
+			return;
+		}
 		if (event.getPlayer().getItemInHand().getItemMeta().getDisplayName() == null) {
 			return;
 		}

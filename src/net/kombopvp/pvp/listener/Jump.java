@@ -249,6 +249,13 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
+		                if (KitManager.getPlayer(player.getName()).hasKit(WaveKit.GRAPPLER) && KitManager2.getPlayer(player.getName()).haskit2(WaveKit2.STOMPER)) {
+		                	WaveWarp2.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
 		                
 		                if (KitManager.getPlayer(player.getName()).getKit().name() == KitManager2.getPlayer(player.getName()).getkit2().name() && KitManager.getPlayer(player.getName()).getKit() != WaveKit.PVP) {
 		                	WaveWarp2.SPAWN.send(player);
@@ -463,7 +470,15 @@ public void Items(Player player) {
 				        );
 						Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed reaper kit!");
 						}
-
+					if (KitManager.getPlayer(player.getName()).hasKit( WaveKit.GRAPPLER)) {
+						player.getInventory().setItem(1, new ItemBuilder("§aGrappler", Material.LEASH)
+				                .addEnchant(Enchantment.KNOCKBACK, 1)
+				        				.addFlags(ItemFlag.HIDE_ENCHANTS)
+				                .nbt("cancel-drop")
+				                .toStack()
+				        );
+						Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed grappler kit!");
+						}
 					if (KitManager.getPlayer(player.getName()).hasKit( WaveKit.METEOR)) {
 						player.getInventory().setItem(1, new ItemBuilder("§aMeteor!", Material.FIREBALL)
 				                .addEnchant(Enchantment.KNOCKBACK, 1)

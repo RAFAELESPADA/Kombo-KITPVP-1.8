@@ -114,6 +114,17 @@ public class KitsInventoryPageTwo {
 						.nbt("kit-gui", WaveKit.PYRO.getName())
 						.toStack()
 				);
+		inventory.setItem(20 , new ItemBuilder("§a" + WaveKit.GRAPPLER.getName(), WaveKit.GRAPPLER.getIcon())
+				.lore("§f" + WaveKit.GRAPPLER.getDescription())
+						.addFlags(ItemFlag.HIDE_ATTRIBUTES,
+								ItemFlag.HIDE_DESTROYS,
+								ItemFlag.HIDE_ENCHANTS,
+								ItemFlag.HIDE_PLACED_ON,
+							
+								ItemFlag.HIDE_UNBREAKABLE)
+						.nbt("kit-gui", WaveKit.GRAPPLER.getName())
+						.toStack()
+				);
 	
 	 
 				inventory.setItem(45, new ItemBuilder("§aRetornar", Material.ARROW).nbt("voltar")
