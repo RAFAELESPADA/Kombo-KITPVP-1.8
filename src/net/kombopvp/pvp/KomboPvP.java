@@ -324,10 +324,11 @@ Bukkit.getWorlds().forEach(world -> world.setTime(18000));
 									      }
 								}
 							}, 2400L);
+
+						Bukkit.broadcastMessage("§cO evento fúria foi iniciado");
+						Bukkit.broadcastMessage("§cPor dois minutos todos serão fortes");
+						Bukkit.broadcastMessage("§cE o server estará de noite"); 
 					}
-					Bukkit.broadcastMessage("§cO evento fúria foi iniciado");
-					Bukkit.broadcastMessage("§cPor dois minutos todos serão fortes");
-					Bukkit.broadcastMessage("§cE o server estará de noite"); 
 					
 				}}.runTaskTimer(this, 0, 22 * 60 * 20L);
 		});
