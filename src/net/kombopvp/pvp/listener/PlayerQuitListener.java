@@ -41,25 +41,17 @@ public class PlayerQuitListener implements Listener {
 		 
 	      
 Player p = player;
-
+if (ArenaBuild.blocks != null) {
 	      		for (Location l : ArenaBuild.blocks) {
-	      			l.getBlock().setType(Material.AIR);
-	      		
-	      		return;
+	      			l.getBlock().setType(Material.AIR);	
+	      		}
 	      	}
 	      		if (ArenaBuild.placed_blocks.get(p) != null) {
 	      for (Block b : ArenaBuild.placed_blocks.get(p)) {
 	      	  b.setType(Material.AIR);
 	      }
-	      for (Location l : ArenaBuild.blocks) {
-	      	l.getBlock().setType(Material.AIR);
-	      }
-			}
-	      t.setNameTagVisibility(NameTagVisibility.NEVER);
-	      if (t.hasEntry(player.getName())) {
-	      t.removeEntry(player.getName());
-	      }
-		  }
+	    
+		  
 		  if (Duels.protector.containsKey(player.getName())) {
 			    Duels.protector.remove(player.getName());
 			    }
@@ -80,6 +72,6 @@ Player p = player;
             	 
              }
          }
-	}
+	      		}}
 
 }
