@@ -29,7 +29,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.server.ServerListPingEvent;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.wrappers.WrappedGameProfile;
@@ -236,13 +235,7 @@ if (ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName()) 
 							event.setCancelled(true);
 							return;
 						}
-						new BukkitRunnable() {
-							@Override
-							public void run() {
-						event.getWhoClicked().closeInventory();
-							runTask(KomboPvP.getInstance());
-							}
-						};
+						player.closeInventory();
 					});
 
 					String kitName22 = ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName());
@@ -255,47 +248,23 @@ if (ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName()) 
 
 								KitManager.getPlayer(player.getName()).removeKit();
 
-								new BukkitRunnable() {
-									@Override
-									public void run() {
-								event.getWhoClicked().closeInventory();
-									runTask(KomboPvP.getInstance());
-									}
-								};
+								player.closeInventory();
 								return;
 							}
 if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 	KitManager.getPlayer(player.getName()).removeKit();
 
-	new BukkitRunnable() {
-		@Override
-		public void run() {
-			player.closeInventory();
-		runTask(KomboPvP.getInstance());
-		}
-	};
+	player.closeInventory();
 	return;
 }
 							player.sendMessage("§cVocê já selecionou esse kit como secundário!");
 							event.setCancelled(true);
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						if (KitManager2.getPlayer(player.getName()).getkit2() == WaveKit2.STOMPER && (kitName22 == "Grappler" || kitName22 == "Kangaroo" || kitName22 == "Flash"  || kitName22 == "Neo" || kitName22 == "AntiStomper" || kitName22 == "Ninja")) {
 							player.sendMessage("§c" + kitName2 + " é incompatível com Stomper");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						
@@ -303,159 +272,75 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 						
 						if (KitManager2.getPlayer(player.getName()).getkit2() == WaveKit2.STOMPER && (kitName22 == "Meteor")) {
 							player.sendMessage("§c" + kitName2 + " é incompatível com Stomper");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						
 						if (KitManager2.getPlayer(player.getName()).getkit2() == WaveKit2.STOMPER && (kitName22 == "Grappler")) {
 							player.sendMessage("§c" + kitName2 + " é incompatível com Grappler");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						if (KitManager2.getPlayer(player.getName()).getkit2() == WaveKit2.NINJA && (event.getCurrentItem().getType() == Material.IRON_BOOTS)) {
 							player.sendMessage("§cStomper é incompatível com Ninja");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						///erfgh
 						if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.STOMPER && (kitName22 == "Grappler" || kitName22 == "Kangaroo" || kitName22 == "Flash"  || kitName22 == "Neo" || kitName22 == "AntiStomper" || kitName22 == "Ninja")) {
 							player.sendMessage("§c" + kitName22 + " é incompatível com Stomper");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						
 						if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.HULK && (event.getCurrentItem().getType() == Material.IRON_FENCE)) {
 							player.sendMessage("§c" + kitName22 + " é incompatível com Hulk");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.STOMPER && (kitName22 == "Meteor")) {
 							player.sendMessage("§c" + kitName22 + " é incompatível com Stomper");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.PHANTOM && (kitName22 == "Grappler" || kitName22 == "Kangaroo" || kitName22 == "Fisherman" || kitName22 == "Ninja" || kitName22 == "Flash" || kitName22 == "Stomper")) {
 							player.sendMessage("§c" + kitName22 + " é incompatível com Phantom");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.NINJA && (event.getCurrentItem().getType() == Material.IRON_BOOTS)) {
 							player.sendMessage("§cStomper é incompatível com Ninja");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.NEO && (event.getCurrentItem().getType() == Material.IRON_BOOTS)) {
 							player.sendMessage("§cNeo é incompatível com Stomper");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						if ((KitManager.getPlayer(player.getName()).getKit() == WaveKit.FLASH || KitManager.getPlayer(player.getName()).getKit() == WaveKit.NINJA) && (kitName22 == "Grappler" || kitName22 == "Gladiator")) {
 							player.sendMessage("§c" + kitName22 + " é incompatível com Flash");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.GLADIATOR && (kitName2 == "Flash" || kitName22 == "Ninja")) {
 							player.sendMessage("§c" + kitName22 + " é incompatível com Gladiator");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 							
 						if (KitManager2.getPlayer(player.getName()).getkit2() == WaveKit2.NEO && (event.getCurrentItem().getType() == Material.IRON_BOOTS)) {
 							player.sendMessage("§cNeo é incompatível com Stomper");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 						if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.GLADIATOR && (kitName22 == "Flash" || kitName22 == "Ninja")) {
 							player.sendMessage("§c" + kitName22 + " é incompatível com Gladiator");
-							new BukkitRunnable() {
-								@Override
-								public void run() {
-							event.getWhoClicked().closeInventory();
-								runTask(KomboPvP.getInstance());
-								}
-							};
+							player.closeInventory();
 							return;
 						}
 
-						new BukkitRunnable() {
-							@Override
-							public void run() {
-						event.getWhoClicked().closeInventory();
-							runTask(KomboPvP.getInstance());
-							}
-						};
+						player.closeInventory();
 						kit.send(player);
 					});  
 					return;
@@ -508,13 +393,7 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 				event.setCancelled(true);
 				return;
 			}
-			new BukkitRunnable() {
-				@Override
-				public void run() {
-			event.getWhoClicked().closeInventory();
-				runTask(KomboPvP.getInstance());
-				}
-			};
+			player.closeInventory();
 			kit.send(player);
 		});  
 		
@@ -531,14 +410,7 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 			return;
 		}
 		event.setCancelled(true);
-		new BukkitRunnable() {
-			@Override
-			public void run() {
-				KitsInventoryPageTwo.open(player);
-			runTask(KomboPvP.getInstance());
-			}
-		};
-		
+		KitsInventoryPageTwo.open(player);
 	}
 
 
@@ -553,13 +425,7 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 			return;
 		}
 		event.setCancelled(true);
-		new BukkitRunnable() {
-			@Override
-			public void run() {
-				KitInventory22.open(player);
-			runTask(KomboPvP.getInstance());
-			}
-		};
+		KitInventory22.open(player);
 	}
 	@EventHandler
 	public void onInvClick2456yy7(InventoryClickEvent event) {
@@ -572,13 +438,7 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 			return;
 		}
 		event.setCancelled(true);
-		new BukkitRunnable() {
-			@Override
-			public void run() {
-				KitsInventory2.open(player);
-			runTask(KomboPvP.getInstance());
-			}
-		};
+		KitsInventory2.open(player);
 	}
 	@EventHandler
 	public void onInvClick242(InventoryClickEvent event) {
@@ -591,13 +451,7 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 			return;
 		}
 		event.setCancelled(true);
-		new BukkitRunnable() {
-			@Override
-			public void run() {
-				KitsInventory.open(player);
-			runTask(KomboPvP.getInstance());
-			}
-		};
+		KitsInventory.open(player);
 	}
 
 
@@ -634,13 +488,7 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 			if (KitManager.getPlayer(player.getName()).getKit().getName() == kit.getName()) {
 				if (kit.name() == "Nenhum") {
 					kit.send(player);
-					new BukkitRunnable() {
-						@Override
-						public void run() {
-					event.getWhoClicked().closeInventory();
-						runTask(KomboPvP.getInstance());
-						}
-					};
+					player.closeInventory();
 					return;	
 				}
 				if (KitManager.getPlayer(player.getName()).getKit().getName() == "Nenhum") {
@@ -653,13 +501,7 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 			}
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.STOMPER && (kitName2 == "Grappler" || kitName2 == "Kangaroo" || kitName2 == "Flash"  || kitName2 == "Neo" || kitName2 == "AntiStomper" || kitName2 == "Ninja")) {
 				player.sendMessage("§c" + kitName2 + " é incompatível com Stomper");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 		
@@ -668,92 +510,44 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 			
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.BOXER && (kitName2 == "Anchor")) {
 				player.sendMessage("§c" + kitName2 + " é incompatível com Boxer");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.STOMPER && (kitName2 == "Meteor")) {
 				player.sendMessage("§c" + kitName2 + " é incompatível com Stomper");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 			
 			
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.PHANTOM && (kitName2 == "Grappler" || kitName2 == "Kangaroo" || kitName2 == "Fisherman" || kitName2 == "Ninja" || kitName2 == "Flash" || kitName2 == "Stomper")) {
 				player.sendMessage("§c" + kitName2 + " é incompatível com Phantom");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.NINJA && (event.getCurrentItem().getType() == Material.IRON_BOOTS)) {
 				player.sendMessage("§cStomper é incompatível com Ninja");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.NEO && (event.getCurrentItem().getType() == Material.IRON_BOOTS)) {
 				player.sendMessage("§cNeo é incompatível com Stomper");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 			if ((KitManager.getPlayer(player.getName()).getKit() == WaveKit.FLASH || KitManager.getPlayer(player.getName()).getKit() == WaveKit.NINJA) && (kitName2 == "Grappler" || kitName2 == "Gladiator")) {
 				player.sendMessage("§c" + kitName2 + " é incompatível com Flash");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.GLADIATOR && (kitName2 == "Flash" || kitName2 == "Ninja")) {
 				player.sendMessage("§c" + kitName2 + " é incompatível com Gladiator");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 				
-			new BukkitRunnable() {
-				@Override
-				public void run() {
-			event.getWhoClicked().closeInventory();
-				runTask(KomboPvP.getInstance());
-				}
-			};
+				player.closeInventory();
 				kit.send(player);
 		});
 		
@@ -795,92 +589,44 @@ if (KitManager2.getPlayer(player.getName()).getkit2().getName() == "Nenhum") {
 			}
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.STOMPER && (kitName2 == "Grappler" || kitName2 == "Kangaroo" || kitName2 == "Flash"  || kitName2 == "Neo" || kitName2 == "AntiStomper" || kitName2 == "Ninja")) {
 				player.sendMessage("§c" + kitName2 + " é incompatível com Stomper");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 			
 		
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.STOMPER && (kitName2 == "Meteor")) {
 				player.sendMessage("§c" + kitName2 + " é incompatível com Stomper");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.PHANTOM && (kitName2 == "Grappler" || kitName2 == "Kangaroo" || kitName2 == "Fisherman" || kitName2 == "Ninja" || kitName2 == "Flash" || kitName2 == "Stomper")) {
 				player.sendMessage("§c" + kitName2 + " é incompatível com Phantom");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.NINJA && (event.getCurrentItem().getType() == Material.IRON_BOOTS)) {
 				player.sendMessage("§cStomper é incompatível com Ninja");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.NEO && (event.getCurrentItem().getType() == Material.IRON_BOOTS)) {
 				player.sendMessage("§cNeo é incompatível com Stomper");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 			if ((KitManager.getPlayer(player.getName()).getKit() == WaveKit.FLASH || KitManager.getPlayer(player.getName()).getKit() == WaveKit.NINJA) && (kitName2 == "Grappler" || kitName2 == "Gladiator")) {
 				player.sendMessage("§c" + kitName2 + " é incompatível com Flash");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 			if (KitManager.getPlayer(player.getName()).getKit() == WaveKit.GLADIATOR && (kitName2 == "Flash" || kitName2 == "Ninja")) {
 				player.sendMessage("§c" + kitName2 + " é incompatível com Gladiator");
-				new BukkitRunnable() {
-					@Override
-					public void run() {
-				event.getWhoClicked().closeInventory();
-					runTask(KomboPvP.getInstance());
-					}
-				};
+				player.closeInventory();
 				return;
 			}
 				
-			new BukkitRunnable() {
-				@Override
-				public void run() {
-			event.getWhoClicked().closeInventory();
-				runTask(KomboPvP.getInstance());
-				}
-			};
+				player.closeInventory();
 				kit.send(player);
 		});
 		
