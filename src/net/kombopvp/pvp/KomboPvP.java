@@ -306,9 +306,6 @@ player.sendTitle("§4§lFÚRIA", "§cTodos ficam fortes");
 Bukkit.getWorlds().forEach(world -> world.setTime(18000));
 						player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 120*20, 0));
 						player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 1F, 10F);
-						Bukkit.broadcastMessage("§cO evento fúria foi iniciado");
-						Bukkit.broadcastMessage("§cPor dois minutos todos serão fortes");
-						Bukkit.broadcastMessage("§cE o server estará de noite");
 						euforia = true;
 						Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp group default permission settemp wave.kit2.* true 2m");
 					    Bukkit.getScheduler().scheduleSyncDelayedTask(KomboPvP.getInstance(), new Runnable() {
@@ -328,7 +325,9 @@ Bukkit.getWorlds().forEach(world -> world.setTime(18000));
 								}
 							}, 2400L);
 					}
-						 
+					Bukkit.broadcastMessage("§cO evento fúria foi iniciado");
+					Bukkit.broadcastMessage("§cPor dois minutos todos serão fortes");
+					Bukkit.broadcastMessage("§cE o server estará de noite"); 
 					
 				}}.runTaskTimer(this, 0, 22 * 60 * 20L);
 		});
