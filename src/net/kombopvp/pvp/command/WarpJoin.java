@@ -48,6 +48,10 @@ public class WarpJoin implements CommandExecutor {
 				WaveWarp2.LAVACHALLENGE.send(player);
 			
 		}
+			if (args[0].equalsIgnoreCase("glad")) {
+				WaveWarp2.GLADIATOR.send(player);
+			
+		}
 			if (args[0].equalsIgnoreCase("fps")) {
 				WaveWarp2.FPS.send(player);
 			

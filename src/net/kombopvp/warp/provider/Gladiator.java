@@ -180,7 +180,13 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 				@Override
 				public void run() {
 					Duels.duels.remove(player);
-					player.closeInventory();
+					new BukkitRunnable() {
+						@Override
+						public void run() {
+							player.closeInventory();
+						runTask(KomboPvP.getInstance());
+						}
+					};
 				}}.runTaskLater(KomboPvP.getInstance(), 600 * 1L);
 		});
 	

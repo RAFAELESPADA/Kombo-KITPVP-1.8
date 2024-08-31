@@ -1,6 +1,8 @@
 #PREFIXO DAS MENSAGENS
 Prefix: '&6&lWAVEMC:'
 
+#token do bot
+TOKEN: 'seu token'
 
 #COORDENADAS DE PROTEÇÃO DO SPAWN
 #PERGUNTE AO DESENVOLVEDOR PARA ELE TE AJUDAR COM ISSO
@@ -149,11 +151,9 @@ Anchor2Lore: 'Não de nem receba KB'
 Kangaroo2Lore: 'De pulos duplos'
 Grappler2Lore: 'Corra por ai com sua corda'
 
-#TEMPO DO FEAST (EM MINUTOS)
-TempoFeast: 5
-
-#MUNDO DO BAU DO FEAST
-FeastWorld: 'spawn'
+FEAST-Z: 5454.0
+FEAST-Y: 78.0
+FEAST-X: 44.0
 
 #LOCAIS DOS BAUS DO FEAST (ALTERE SE QUISER)
 Bau1X: -41.0

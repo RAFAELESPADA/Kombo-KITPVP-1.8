@@ -42,7 +42,7 @@ try {
 			  EmbedBuilder embed = new EmbedBuilder();
 			  embed.setTitle(guild.getName());
 			  embed.setThumbnail(guild.getIconUrl());
-			  embed.addField(":crown: Dono do grupo: ", "rafael_auler2", true);
+			  embed.addField(":crown: Dono do grupo: ", "rafael_auler3", true);
 			  embed.addField(":date: Data de criação: ", Objects.requireNonNull(arg0.getGuild().getTimeCreated().toString()), true);
 			  embed.addField(":sound: Quantia de Canais: ", Objects.requireNonNull(String.valueOf(arg0.getGuild().getChannels().size())), true);
 		   embed.addField(":diamonds: Recursos: ", Objects.requireNonNull(arg0.getGuild().getFeatures().toString()), true);

@@ -174,6 +174,14 @@ import net.wavemc.core.bukkit.account.WavePlayer;
 	    	  
 		      return String.valueOf(WaveWarp2.DUELS.getPlayerCount());
 		    }
+	    if (indentifier.equals("players_build")) {
+	    	  
+		      return String.valueOf(WaveWarp2.ARENABUILD.getPlayerCount());
+		    }
+	    if (indentifier.equals("players_glad")) {
+	    	  
+		      return String.valueOf(WaveWarp2.GLADIATOR.getPlayerCount());
+		    }
 	    if (indentifier.equals("players_lava")) {
 	    	  
 		      return String.valueOf(WaveWarp2.LAVACHALLENGE.getPlayerCount());

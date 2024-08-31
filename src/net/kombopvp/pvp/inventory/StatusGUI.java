@@ -19,10 +19,8 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import me.clip.placeholderapi.PlaceholderAPI;
-import net.kombopvp.pvp.KomboPvP;
 import net.kombopvp.pvp.inventory.listener.ItemUtils;
 import net.kombopvp.pvp.inventory.listener.SoupTypeGUI;
 import net.kombopvp.pvp.listener.Ranking;
@@ -91,21 +89,14 @@ public class StatusGUI implements Listener {
         	if (event.getCurrentItem().getItemMeta().getDisplayName().equals("§6Duels")) {
         		Player nulo = Bukkit.getPlayerExact(event.getView().getTitle().replace("Perfil de ", ""));
         		if (nulo == null) {
-        			new BukkitRunnable() {
-        				@Override
-        				public void run() {
         			event.getWhoClicked().closeInventory();
-        				}}.runTask(KomboPvP.getInstance());
-        				}
-        			
-        		
         			return;
         		}
         		Duelos.open((Player)event.getWhoClicked(), Bukkit.getPlayerExact(event.getView().getTitle().replace("Perfil de ", "")));
         	}
             
         }
-    
+    }
 
     public static void openGUI(Player player, Player target) {
     	 LuckPerms api = LuckPermsProvider.get();

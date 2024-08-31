@@ -90,36 +90,37 @@ public final class GladiatorListener2 extends KitHandler
     }
     
 
-    @EventHandler(priority = EventPriority.MONITOR)
-    public void onPlayerInteract(PlayerInteractEvent e) {
-        Player p = e.getPlayer();
-        if(e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) {
-               double i = p.getHealth();
-               if (i >= 20) {
-            	   return;
-               }
-               if (e.getItem() == null) {
-            	   return;
-               }
-               if (!(e.getItem().getType() == Material.MUSHROOM_SOUP)) {
-            	   return;
-               }
-                p.setHealth(Math.min(p.getMaxHealth(), p.getHealth() + 7));
-                p.setFoodLevel(Math.min(20, p.getFoodLevel() + 7));
-              if (KitManager.getPlayer(p.getName()).hasKit(WaveKit.AUTOBOWL) || KitManager2.getPlayer(p.getName()).haskit2(WaveKit2.AUTOBOWL)) {
-                  p.getInventory().addItem(new ItemStack(Material.BOWL));
-                  p.setItemInHand(new ItemStack(Material.AIR));
-              }  else {
-              
-                    p.getInventory().setItemInHand(new ItemStack(Material.BOWL));
-                  }
-              
-                p.updateInventory();
-                e.setCancelled(true);
+   
+        
+    @EventHandler
+    public void onSoupManager(PlayerInteractEvent event) {
+        Player player = event.getPlayer();
+
+        if (event.getAction() != Action.RIGHT_CLICK_AIR && event.getAction() != Action.RIGHT_CLICK_BLOCK) {
+            return;
+        }
+
+        if (player.getItemInHand().getType() == Material.MUSHROOM_SOUP && player.getHealth() != player.getMaxHealth()) {
+            double maxHealth = player.getMaxHealth();
+            double currentHealth = player.getHealth();
+
+            if (currentHealth > maxHealth - 7.0D) {
+                player.setHealth(maxHealth);
+            } else {
+                player.setHealth(currentHealth + 7.0D);
+                player.getWorld().playEffect(player.getLocation().add(0.0D, 1.5D, 0.0D), Effect.HEART, 7);
             }
+
+            player.getItemInHand().setType(Material.BOWL);
+            player.getItemInHand().setAmount(1);
+            player.getInventory().getItemInHand().setItemMeta(player.getItemInHand().getItemMeta());
+            player.updateInventory();
+        }
     }
+
         
-        
+    
+
     
 
         
@@ -313,16 +314,9 @@ public final class GladiatorListener2 extends KitHandler
             loc.getBlock().setType(Material.AIR);
         }
 
-        if (WaveWarp2.SPAWN.hasPlayer(winner.getName())) {
+        
         WavePlayer killer = WaveBukkit.getInstance().getPlayerManager().getPlayer(winner.getName());
         if (WaveWarp2.SPAWN.hasPlayer(winner.getName())) {
-<<<<<<< HEAD
-
-        killer.getPvp().addKills(1);
-
-=======
-        killer.getPvp().addKills(1);
->>>>>>> 4f6a1bfa5a9c0c8f62dd5f064765d7616361c26c
         winner.sendMessage(prefix + " Você ganhou 1 kill por matar esse jogador no Glad!");
         }
         GladiatorListener2.blocks.remove(winner.getName());
@@ -332,7 +326,7 @@ public final class GladiatorListener2 extends KitHandler
         GladiatorListener2.combateGlad.remove(winner);
         GladiatorListener2.combateGlad.remove(loser);
     }
-    }    
+      
     public static final void resetGladiatorListenerByScreenshare(final Player winner, final Player loser) {
     	if (WaveWarp2.DUELS.hasPlayer(winner.getName())) {
     		WaveWarp2.DUELS.send(winner, true);

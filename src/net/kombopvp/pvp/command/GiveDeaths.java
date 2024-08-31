@@ -20,7 +20,7 @@ public class GiveDeaths implements CommandExecutor {
 		if(cmd.getName().equalsIgnoreCase("givedeaths")){
 			 Player player = (Player)sender;
 			    if (!player.hasPermission("admin.givedeaths")) {
-			      player.sendMessage("§cSem permiss§o");
+			      player.sendMessage("§cSem permissão");
 			      return true;
 			    }
 			

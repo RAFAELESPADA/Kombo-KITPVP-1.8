@@ -4,7 +4,7 @@ authors: [Rafael Auler, Rafael_Auler]
 main: net.kombopvp.pvp.KomboPvP
 description: Plugin de PvP do KOMBO
 api-version: 1.14
-depend: [WaveCore, DecentHolograms, PlaceholderAPI, ajLeaderboards, ViaVersion, TAB]
+depend: [WaveCore, DecentHolograms, PlaceholderAPI, ajLeaderboards, ViaVersion, TAB, Citizens]
 
 commands:
    spawn:

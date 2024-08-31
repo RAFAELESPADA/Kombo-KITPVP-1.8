@@ -29,6 +29,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.Dye;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
 import net.kombopvp.pvp.KomboPvP;
@@ -163,7 +164,13 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 						}			
 						else if (player.getLocation().getBlockY() < KomboPvP.getInstance().getConfig().getInt("SpawnAltura") && (KitManager.getPlayer(player.getName()).hasKit() && !KitManager2.getPlayer(player.getName()).haskit2())  && !WaveWarp2.DUELS.hasPlayer(p.getName()) && !WaveWarp2.LOBBY.hasPlayer(p.getName()) && !WaveWarp2.ARENABUILD.hasPlayer(p.getName()) && !WaveWarp2.FPS.hasPlayer(p.getName()) && !WaveWarp2.DUELS.hasPlayer(p.getName()) && !WaveWarp2.GLADIATOR.hasPlayer(p.getName()) && !WaveWarp2.LAVACHALLENGE.hasPlayer(p.getName())  && !recebeu.containsKey(player.getName()) && !AdminUtil.has(player.getName()) && !VanishUtil.has(player.getName())) {
 							WaveKit2.findKit("PvP").ifPresent(kit -> {
-								player.closeInventory();
+								new BukkitRunnable() {
+									@Override
+									public void run() {
+										player.closeInventory();
+									runTask(KomboPvP.getInstance());
+									}
+								};
 								kit.send(player);
 							});
 	Items(player);
@@ -173,7 +180,19 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed nenhum kit! (
 						else if (player.getLocation().getBlockY() < KomboPvP.getInstance().getConfig().getInt("SpawnAltura") && (!KitManager.getPlayer(player.getName()).hasKit() && KitManager2.getPlayer(player.getName()).haskit2()) && !WaveWarp2.ARENABUILD.hasPlayer(p.getName())  && !WaveWarp2.FPS.hasPlayer(p.getName()) && !WaveWarp2.DUELS.hasPlayer(p.getName())  && !WaveWarp2.GLADIATOR.hasPlayer(p.getName()) && !WaveWarp2.LAVACHALLENGE.hasPlayer(p.getName()) && !WaveWarp2.LOBBY.hasPlayer(p.getName())  && !recebeu.containsKey(player.getName()) && !AdminUtil.has(player.getName()) && !VanishUtil.has(player.getName())) {
 							
 							WaveKit.findKit("PvP").ifPresent(kit -> {
-								player.closeInventory();
+								new BukkitRunnable() {
+									@Override
+									public void run() {
+										new BukkitRunnable() {
+											@Override
+											public void run() {
+												player.closeInventory();
+											runTask(KomboPvP.getInstance());
+											}
+										};
+									runTask(KomboPvP.getInstance());
+									}
+								};
 								kit.send(player);
 							});	
 							Items(player);

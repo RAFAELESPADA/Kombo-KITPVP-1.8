@@ -224,7 +224,7 @@ if (event.getPlayer().getItemInHand().getItemMeta() == null) {
         if(event.getAction() == Action.RIGHT_CLICK_BLOCK){
             Block block = event.getClickedBlock();
             if(block.getType().equals(Material.CHEST) || block.getType().equals(Material.TRAPPED_CHEST))  {
-            	if (!block.hasMetadata("PlacedBlock")) {
+            	if (!event.getPlayer().getWorld().equals(Bukkit.getWorld(yaml.getString("Mundo-spawn")))) {
                 event.setCancelled(true);
                 event.getPlayer().sendMessage("Você só pode abrir o báu do Feast!");
             }

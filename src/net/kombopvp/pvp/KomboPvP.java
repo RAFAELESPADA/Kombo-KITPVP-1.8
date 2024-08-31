@@ -66,6 +66,7 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
+
 import net.kombopvp.kit2.GladiatorListener;
 import net.kombopvp.pvp.command.ActionBar;
 import net.kombopvp.pvp.command.Admin;
@@ -176,9 +177,9 @@ public class KomboPvP extends JavaPlugin implements Listener, PluginMessageListe
 	public static boolean euforia;
 	public JDABuilder bot;
 	  
-	public final String TOKEN = "SEU TOKEN";
-	    
-	  
+	public final String TOKEN = getConfig().getString("TOKEN");
+    private static NPCRegister npcManager;
+
 	public ArrayList<EnchantingInventory> inventories;
 	private ScoreboardBuilder scoreboardBuilder;
 	private Hologram topPlayersHd;
@@ -219,12 +220,11 @@ public class KomboPvP extends JavaPlugin implements Listener, PluginMessageListe
 
      
 	public void onEnable() {
-		
+		FeastAPI.start();
 		JDA jda = JDABuilder.createLight(TOKEN, EnumSet.of(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)).addEventListeners(new SlashBott()).addEventListeners(new SlashBot2())
 	      .build();
 		 CommandListUpdateAction commands = jda.updateCommands();
-
-
+       
 		  // Add all your commands on this action instance
 		  commands.addCommands(
 
@@ -306,9 +306,6 @@ player.sendTitle("§4§lFÚRIA", "§cTodos ficam fortes");
 Bukkit.getWorlds().forEach(world -> world.setTime(18000));
 						player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 120*20, 0));
 						player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 1F, 10F);
-						Bukkit.broadcastMessage("§cO evento fúria foi iniciado");
-						Bukkit.broadcastMessage("§cPor dois minutos todos serão fortes");
-						Bukkit.broadcastMessage("§cE o server estará de noite");
 						euforia = true;
 						Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp group default permission settemp wave.kit2.* true 2m");
 					    Bukkit.getScheduler().scheduleSyncDelayedTask(KomboPvP.getInstance(), new Runnable() {
@@ -327,8 +324,11 @@ Bukkit.getWorlds().forEach(world -> world.setTime(18000));
 									      }
 								}
 							}, 2400L);
+
+						Bukkit.broadcastMessage("§cO evento fúria foi iniciado");
+						Bukkit.broadcastMessage("§cPor dois minutos todos serão fortes");
+						Bukkit.broadcastMessage("§cE o server estará de noite"); 
 					}
-						 
 					
 				}}.runTaskTimer(this, 0, 22 * 60 * 20L);
 		});
@@ -476,6 +476,7 @@ net.kombopvp.pvp.listener.RTP.broadcast(ChatColor.RED + "A arena BUILD está sen
 		loadTopPlayersHologram();
 		Bukkit.getConsoleSender().sendMessage("§a§lWavePVP: §fPlugin habilitado! §a[v" + getDescription().getVersion() + "]");
 		Bukkit.getConsoleSender().sendMessage("§a§lWavePVP: §fCriado por §a[v" + getDescription().getAuthors() + "]");
+		npcManager = new NPCRegister(getInstance());
 	}
 	public String color(String s) {
 		s = ChatColor.translateAlternateColorCodes('&', s);
@@ -497,9 +498,6 @@ net.kombopvp.pvp.listener.RTP.broadcast(ChatColor.RED + "A arena BUILD está sen
 			Bukkit.getLogger().severe("TopKills Creation Failed. Aborting");
 			return;
 		}
-		
-		
-		
 		
 
 			String header = "§e§lTop 15 players §a(KILLS)";	
@@ -601,7 +599,7 @@ net.kombopvp.pvp.listener.RTP.broadcast(ChatColor.RED + "A arena BUILD está sen
 		getCommand("givecoins").setExecutor(new GiveCoins());
 		getCommand("warpjoin").setExecutor(new WarpJoin());
 		getCommand("givekills").setExecutor(new GiveKills());
-
+		getCommand("setfeast").setExecutor(new SetFeast());
 		getCommand("furia").setExecutor(new EuforiaB2());
 		getCommand("givedeaths").setExecutor(new GiveDeaths());
 		getCommand("build").setExecutor(new NoBreakEvent());
@@ -656,7 +654,6 @@ net.kombopvp.pvp.listener.RTP.broadcast(ChatColor.RED + "A arena BUILD está sen
 	}
 	public void loadListeners() {
 		PluginManager pm = Bukkit.getPluginManager();
-		
 		pm.registerEvents(new StatusGUI(), this);
 		pm.registerEvents(new Boxer(), this);
 		pm.registerEvents(new Flash(), this);

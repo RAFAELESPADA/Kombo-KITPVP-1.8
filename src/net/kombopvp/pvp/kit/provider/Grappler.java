@@ -174,7 +174,6 @@ public void onPlayerItemHeldListener(PlayerItemHeldEvent e) {
 public void onPlayerQuitListener(PlayerQuitEvent e) {
 	if (hooks.containsKey(e.getPlayer().getUniqueId())) {
 		hooks.remove(e.getPlayer().getUniqueId());
-		hooks.get(e.getPlayer().getUniqueId()).remove();
 	}
 }
 

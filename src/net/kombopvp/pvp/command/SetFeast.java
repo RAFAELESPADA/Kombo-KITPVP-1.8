@@ -1,50 +1,50 @@
 package net.kombopvp.pvp.command;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
 import net.kombopvp.pvp.KomboPvP;
 
 
-public class SetFeast implements CommandExecutor {
-    public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
-        if (!(sender instanceof Player)) {
-            sender.sendMessage("No console");
-            return true;
-        }
-        final Player p = (Player)sender;
-        if (label.equalsIgnoreCase("setfeast")) {
-        	if (!p.hasPermission("kitpvp.setarena")){
-        	  	  sender.sendMessage("§c§lERROR: §fYou dont have permission to do that");
-        	  	  return true;
-        	    }
-                if (args.length == 0) {
-                    p.sendMessage(String.valueOf("KITPVP") + "Write: /setfeast (1|30)");
+
+        public class SetFeast implements CommandExecutor {
+            @Override
+            public boolean onCommand(CommandSender sender, Command cmd, String lb, String[] args) {
+                if (!(sender instanceof Player)) {
                     return true;
                 }
-                if (isNumeric(args[0])) {
-                    p.sendMessage(String.valueOf("KITPVP") + "§aYou seted the FEAST " + args[0]);
-                    KomboPvP.getInstance().getConfig().set("Bau" + args[0] + "X", (Object)p.getLocation().getX());
-                    KomboPvP.getInstance().getConfig().set("Bau" + args[0] + "Y", (Object)p.getLocation().getY());
-                    KomboPvP.getInstance().getConfig().set("Bau" + args[0] + "Z", (Object)p.getLocation().getZ());
-                    KomboPvP.getInstance().saveConfig();
-                } else {
-                 p.sendMessage(ChatColor.RED + "Use apenas números");   	
-                    }
+                if (!sender.hasPermission("*")) {
+                    sender.sendMessage(ChatColor.RED + "Você não tem permissão");
+                    return true;
                 }
+                Player player = (Player)sender;
+                if (cmd.getName().equalsIgnoreCase("setfeast")) {
+                    // Obtém a seção "MiniFeast" da configuração
+                    ConfigurationSection config = KomboPvP.getInstance().getConfig().getConfigurationSection("MiniFeast");
 
-		return false;
-    }
+                    // Verifica se a seção existe
+                    if (config == null) {
+                        config = KomboPvP.getInstance().getConfig().createSection("MiniFeast");
+                    }
 
-    	public static boolean isNumeric(String str) {
-    		try {
-    			Integer.parseInt(str);
-    		} catch (NumberFormatException nfe) {
-    			return false;
-    		}
-    		return true;
-    	}
-}
+                    Location loc = player.getLocation();
+
+                    // Define os valores dentro da seção
+                    config.set("x", loc.getBlockX());
+                    config.set("y", loc.getBlockY());
+                    config.set("z", loc.getBlockZ());
+
+                    // Salva a configuração
+                    KomboPvP.getInstance().saveConfig();
+
+                    player.sendMessage("§a§lFEAST §fVocê setou o feast com sucesso.");
+                    return true;
+                }
+                return false;
+            }
+        }
