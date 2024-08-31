@@ -178,13 +178,8 @@ public class KomboPvP extends JavaPlugin implements Listener, PluginMessageListe
 	public JDABuilder bot;
 	  
 	public final String TOKEN = getConfig().getString("TOKEN");
-<<<<<<< HEAD
     private static NPCRegister npcManager;
 
-=======
-	    
-	  
->>>>>>> 69373b85045ee02c8b1de193760b33cbc8ff3a5e
 	public ArrayList<EnchantingInventory> inventories;
 	private ScoreboardBuilder scoreboardBuilder;
 	private Hologram topPlayersHd;
