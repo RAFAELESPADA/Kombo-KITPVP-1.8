@@ -7,6 +7,7 @@ import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.DyeColor;
 import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -16,20 +17,31 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.material.Dye;
 import org.bukkit.scheduler.BukkitRunnable;
-
+import net.kombopvp.pvp.inventory.listener.*;
 import com.viaversion.viaversion.api.Via;
 
 import lombok.NonNull;
 import net.kombopvp.pvp.KomboPvP;
 import net.kombopvp.pvp.event.WavePlayerDeathEvent;
 import net.kombopvp.pvp.event.WavePlayerDeathEvent.Reason;
+import net.kombopvp.pvp.inventory.listener.ItemUtils;
 import net.kombopvp.pvp.warp.WaveWarp2;
 import net.wavemc.core.bukkit.WaveBukkit;
 import net.wavemc.core.bukkit.account.WavePlayer;
 
 public class PlayerDieArenaListener implements Listener {
-	
+	public static ItemStack getCocoa2() {
+
+        Dye d = new Dye();
+        ItemStack lapis;
+        d.setColor(DyeColor.BROWN);
+        lapis = d.toItemStack();
+        lapis.setAmount(1);
+        ItemStack cocoa = lapis;
+        return cocoa;
+    }
 	@EventHandler
 	public void onPlayerDieInArena(WavePlayerDeathEvent event) {
 		if (event.getReason() != Reason.ARENA) {
@@ -49,7 +61,7 @@ public class PlayerDieArenaListener implements Listener {
 		ItemStack capacete2 = new ItemStack(Material.BROWN_MUSHROOM);
 		ItemStack capacete3 = new ItemStack(Material.RED_MUSHROOM);
 
-	    ItemStack capacete4 = new ItemStack(Material.INK_SACK, (short)3);
+		  ItemStack capacete4 = getCocoa2();
 		event.getDrops().clear();
 		drops.clear();
 		new BukkitRunnable() {
