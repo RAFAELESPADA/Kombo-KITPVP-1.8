@@ -178,13 +178,10 @@ public class KomboPvP extends JavaPlugin implements Listener, PluginMessageListe
 	public JDABuilder bot;
 	  
 	public final String TOKEN = getConfig().getString("TOKEN");
-<<<<<<< HEAD
+
     private static NPCRegister npcManager;
 
-=======
-	    
-	  
->>>>>>> 69373b85045ee02c8b1de193760b33cbc8ff3a5e
+
 	public ArrayList<EnchantingInventory> inventories;
 	private ScoreboardBuilder scoreboardBuilder;
 	private Hologram topPlayersHd;
@@ -606,6 +603,7 @@ net.kombopvp.pvp.listener.RTP.broadcast(ChatColor.RED + "A arena BUILD está sen
 		getCommand("givekills").setExecutor(new GiveKills());
 		getCommand("setfeast").setExecutor(new SetFeast());
 		getCommand("furia").setExecutor(new EuforiaB2());
+		getCommand("sc").setExecutor(new net.kombopvp.pvp.command.StaffChat(this));
 		getCommand("givedeaths").setExecutor(new GiveDeaths());
 		getCommand("build").setExecutor(new NoBreakEvent());
 		getCommand("resetkdr").setExecutor(new ResetKDR());

@@ -61,6 +61,8 @@ commands:
    arenainiciar:
    vanish:
    sethologram:
+   sc:
+      aliases: [staffchat]
    rank:
       aliases: [ranks]
    scoreboard:
