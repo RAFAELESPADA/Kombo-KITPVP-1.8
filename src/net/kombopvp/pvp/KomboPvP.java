@@ -182,7 +182,6 @@ public class KomboPvP extends JavaPlugin implements Listener, PluginMessageListe
     private static NPCRegister npcManager;
 
 
-    private static NPCRegister npcManager;
 
 	public ArrayList<EnchantingInventory> inventories;
 	private ScoreboardBuilder scoreboardBuilder;
