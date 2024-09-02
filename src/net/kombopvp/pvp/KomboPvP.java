@@ -165,12 +165,12 @@ import net.wavemc.core.bukkit.warp.WaveWarp;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import us.ajg0702.leaderboards.LeaderboardPlugin;
 
-public class KomboPvP2 extends JavaPlugin implements Listener, PluginMessageListener {
+public class KomboPvP extends JavaPlugin implements Listener, PluginMessageListener {
 	
-	public static KomboPvP2 getInstance() {
-		return getPlugin(KomboPvP2.class);
+	public static KomboPvP getInstance() {
+		return getPlugin(KomboPvP.class);
 	}
-	public static KomboPvP2 getInstance2() {
+	public static KomboPvP getInstance2() {
 		return instance;
 	}
 	public static boolean euforia;
@@ -187,7 +187,7 @@ public class KomboPvP2 extends JavaPlugin implements Listener, PluginMessageList
 	File file = new File(path1.toAbsolutePath().toString());
 	YamlConfiguration yaml = YamlConfiguration.loadConfiguration(file);
 	
-	private static KomboPvP2 instance;
+	private static KomboPvP instance;
 	 
 
 	 protected String getIpLocalHost() {
@@ -307,7 +307,7 @@ Bukkit.getWorlds().forEach(world -> world.setTime(18000));
 						player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 1F, 10F);
 						euforia = true;
 						Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp group default permission settemp wave.kit2.* true 2m");
-					    Bukkit.getScheduler().scheduleSyncDelayedTask(KomboPvP2.getInstance(), new Runnable() {
+					    Bukkit.getScheduler().scheduleSyncDelayedTask(KomboPvP.getInstance(), new Runnable() {
 								public void run() {
 									if (!euforia) {
 										  return;
@@ -364,7 +364,7 @@ for (Location l : ArenaBuild.blocks) {
 }
 net.kombopvp.pvp.listener.RTP.broadcast(ChatColor.RED + "A arena BUILD está sendo resetada automaticamente", Bukkit.getWorld(yaml.getString("Mundo-arenabuild")));
 
-}}.runTaskTimer(KomboPvP2.getInstance(), 1, 300 * 20L);
+}}.runTaskTimer(KomboPvP.getInstance(), 1, 300 * 20L);
 		});
 	
 
@@ -547,7 +547,7 @@ net.kombopvp.pvp.listener.RTP.broadcast(ChatColor.RED + "A arena BUILD está sen
 				Location location = warpOptional.get().getLocation();
 				handleTopPlayers(location);
 			}
-		}.runTaskTimer(KomboPvP2.getInstance(), 10 * 20L, 2 * (60 * 20L));
+		}.runTaskTimer(KomboPvP.getInstance(), 10 * 20L, 2 * (60 * 20L));
 	}
 	
 	public void onDisable() {
