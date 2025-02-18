@@ -2,9 +2,9 @@ name: WaveMC
 version: 4.0.0
 authors: [Rafael Auler, Rafael_Auler]
 main: net.kombopvp.pvp.KomboPvP
-description: Plugin de PvP do IMPACT
+description: Plugin de PvP do KOMBO
 api-version: 1.14
-depend: [KPCore, DecentHolograms, PlaceholderAPI, ajLeaderboards, ViaVersion, TAB, Citizens]
+depend: [KPCore, DecentHolograms, PlaceholderAPI, ajLeaderboards, ViaVersion, LeafPlugins, Citizens]
 
 commands:
    spawn:
