@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="src/" kind="src" path=""/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/area de trabalho 1 (1)/NOVO SLADE V2/ARENA/plugins/ProtocolLib.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/area de trabalho 1 (1)/NOVO SLADE V2/ARENA/plugins/Vault (2).jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/area de trabalho 1 (1)/NOVO SLADE V2/ARENA/plugins/ajLeaderboards-2.7.0 (2).jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/area de trabalho 1 (1)/NOVO SLADE V2/ARENA/plugins/DecentHolograms-2.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/area de trabalho 1 (1)/NOVO SLADE V2/ARENA/plugins/PlaceholderAPI-2.11.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/area de trabalho 1 (1)/NOVO SLADE V2/ARENA/plugins/LuckPerms-Bukkit-5.4.98.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Downloads/lombok.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO-BACKUP-TOTAL/PVP - 1.8/plugins/MCJDA.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO-BACKUP-TOTAL/NOVO PVP - 1.8/plugins/Citizens-2.0.33-b3361.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Desktop/KOMBO-BACKUP-TOTAL/NOVO PVP - 1.8/plugins/ViaVersion-5.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Downloads/spigot-1.8.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Home/Downloads/KP-CORE-v3.5.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

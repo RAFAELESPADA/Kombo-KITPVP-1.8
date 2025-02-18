@@ -1,0 +1,211 @@
+Prefix: '&6&lIMPACT:'
+TOKEN: MTIxMTg3MzIwMTE5ODQ2NTA5NA.GtJap6.8GMOU6oko02dZzjRMeI7ELMP6wMiPNvAYsQKUU
+SpawnProtecaoZ1: 64535
+SpawnProtecaoZ2: 64605
+SpawnProtecaoX1: 64351
+SpawnProtecaoX2: 64460
+FEAST-Z: 64447.834
+FEAST-Y: 68.86823
+FEAST-X: 64414.329.0
+SpawnAltura: 104
+GladAltura: 90
+ShopItem: '&cCompre kits aqui'
+LojaInv: '&bLoja de kits'
+WarpsInv: '&aWarps'
+StatusInv: '&aSeu Perfil'
+GrapplerCooldown: 4
+JumperCooldown: 25
+ThorCooldown: 5
+NinjaCooldown: 10
+MilkManCooldown: 15
+ScoutCooldown: 40
+SwitcherCooldown: 7
+TimeLordCooldown: 30
+TornadoCooldown: 60
+GodRank: GOD
+LendarioRank: Lendário
+RubyRank: Ruby
+SafiraRank: Safira
+CristalRank: Cristal
+EsmeraldaRank: Esmeralda
+DiamanteRank: Diamante
+OuroRank: Ouro
+PrataRank: Prata
+VeteranoRank: Veterano
+ExperienteRank: Experiente
+AvancadoRank: Avançado
+InicianteRank: Iniciante
+UnrankedRank: Unranked
+InicianteKills: 100
+AvancadoKills: 300
+ExperienteKills: 600
+VeteranoKills: 850
+PrataKills: 1200
+OuroKills: 1500
+DiamanteKills: 2200
+EsmeraldaKills: 3000
+CristalKills: 4200
+SafiraKills: 5000
+RubyKills: 6300
+LendarioKills: 7500
+GodKills: 10000
+IPScore: kombopvp.com
+MSGYT1: '&f* 100 visualizações'
+MSGYT2: '&f* 10 likes'
+MSGYT3: '&f* Vídeo no Servidor'
+MSGSTREAMER1: '&f* 50 seguidores'
+MSGSTREAMER2: '&f* 5 telespectadores'
+MSGSTREAMER3: '&f* Fazer live a cada 15 dias'
+REGRA1: '&e* &cProibido usar trapaças ou cheats.'
+REGRA2: '&e* &cProibido Divulgar outros Servidores.'
+REGRA3: '&e* &cProibido Assédio.'
+REGRA4: '&e* &cProibido Abusar de Erros ou Bugs.'
+REGRA5: '&e* &cProibido Xingar jogadores.'
+REGRA6: '&e* &cProibido Xingar a Staff ou Servidor.'
+REGRA7: '&e* &cProibido Chat Fake.'
+NenhumLore: Sem habilidade
+PvPLore: Ganhe espada afiada 1
+AntiStomperLore: Seja imune a stompers
+JumperLore: Voe com sua enderpearl
+KangarooLore: De pulos duplos
+ThorLore: Solte raios
+ArcherLore: Ganhe arco e flecha
+NeoLore: Imune a varios kits
+QuickDropperLore: Drope potes automaticamente
+StomperLore: Esmague seus inimigos
+FishermanLore: Pesque players
+AnchorLore: Não de nem receba KB
+TornadoLore: Crie um tornado
+ViperLore: De veneno ao hitar
+SnailLore: De lentidao ao hitar
+PoseidonLore: Ganhe efeitos na agua
+FiremanLore: De fogo ao hitar
+NinjaLore: Aperte SHIFT e teleporte ao inimigo
+GrapplerLore: Corra por ai com sua corda
+TimelordLore: Pare o tempo
+MonkLore: Embaralhe o inventario do inimigo
+LeechLore: Roube a vida dos inimigos
+CamelLore: Ganhe efeitos em desertos
+GrandpaLore: De muito KB!
+ScoutLore: Ganhe velocidade
+CriticalLore: De danos criticos
+MilkmanLore: Beba leite e fique forte
+TurtleLore: Aperte SHIFT e leve menos damage
+PhantomLore: Voe com seu kit
+BoxerLore: Seja um boxeador
+HulkLore: Pegue os inimigos nas costas
+SwitcherLore: Troque de lugar com o inimigo
+GladiatorLore: Puxe seu inimigo para uma arena particular
+Anchor2Lore: Não de nem receba KB
+Kangaroo2Lore: De pulos duplos
+Grappler2Lore: Corra por ai com sua corda
+TempoFeast: 5
+FeastWorld: world
+Bau1X: -2154.498477835207
+Bau1Y: 102.0
+Bau1Z: 980.7332998940448
+Bau2X: -2152.334718628011
+Bau2Y: 102.0
+Bau2Z: 981.9839399806232
+Bau3X: -2148.592037129393
+Bau3Y: 102.0
+Bau3Z: 984.4319800486054
+Bau4X: -2148.2282170295875
+Bau4Y: 102.0
+Bau4Z: 987.2008286177777
+Bau5X: -2148.857273254551
+Bau5Y: 102.0
+Bau5Z: 991.8829644184686
+Bau6X: -2152.4211777682353
+Bau6Y: 102.0
+Bau6Z: 993.8870239101627
+Bau7X: -2157.8102912175323
+Bau7Y: 102.0
+Bau7Z: 992.8741004121537
+Bau8X: -2160.101305073314
+Bau8Y: 102.0
+Bau8Z: 991.1724067479666
+RaioX: -2154.0
+RaioY: 102.0
+RaioZ: 987.0
+ab: 163.123.204.170
+EVENTOSPAWNMUNDO: Eventos
+EVENTOSPAWNX: 0.88
+EVENTOSPAWNY: 54.0
+EVENTOSPAWNZ: 0.078
+ARENAMUNDO: Eventos
+EventoArenaX: 6438.5
+EventoArenaY: 69.0
+EventoArenaZ: 66444.5
+LAVAMUNDO: Eventos
+EventoLavaX: 6445.0
+EventoLavaY: 75.0
+EventoLavaZ: 664442.0
+MDRMUNDO: spawn2
+EventoMDRX: 9945.105
+EventoMDRY: 115.0
+EventoMDRZ: -25101.469
+ab2: 3306
+ac: s3055_bot
+ad: u3055_SyyUanevTm
+ae: sZlQ!x4Y3!Z.w^LiBFPj8ECe
+PvPPrice: 0
+KangarooPrice: 0
+ThorPrice: 0
+ArcherPrice: 0
+NeoPrice: 0
+QuickDropperPrice: 0
+AntiStomperPrice: 0
+FishermanPrice: 7000
+AnchorPrice: 7000
+TornadoPrice: 20000
+ViperPrice: 5000
+SnailPrice: 6000
+PoseidonPrice: 5000
+FiremanPrice: 7000
+NinjaPrice: 7000
+GrapplerPrice: 15000
+TimeLordPrice: 13000
+MonkPrice: 7500
+StomperPrice: 12500
+LeechPrice: 11000
+CamelPrice: 8000
+GrandpaPrice: 10000
+ScoutPrice: 10000
+CriticalPrice: 14000
+MilkmanPrice: 12500
+TurtlePrice: 7000
+PhantomPrice: 11000
+BoxerPrice: 12000
+HulkPrice: 11000
+SwitcherPrice: 0
+GladiatorPrice: 18000
+JumperPrice: 10000
+Bau9X: -2161.4257032602072
+Bau9Y: 102.0
+Bau9Z: 986.8156158170684
+Bau10X: -2160.914139977943
+Bau10Y: 102.0
+Bau10Z: 981.9383057925429
+Bau11X: -2166.172150092262
+Bau11Y: 102.0
+Bau11Z: 979.0542395489296
+Bau12X: -2166.23130425852
+Bau12Y: 102.0
+Bau12Z: 991.9575122818757
+Bau100X: -2148.857273254551
+Bau100Y: 102.0
+Bau100Z: 991.8829644184686
+Bau13X: -2162.6324343787987
+Bau13Y: 102.0
+Bau13Z: 999.6011347325248
+Bau14X: -2154.0798258130317
+Bau14Y: 102.0
+Bau14Z: 1004.2891104323402
+Bau15X: -2142.5842228231622
+Bau15Y: 102.0
+Bau15Z: 997.1136668870954
+MiniFeast:
+  x: 64414
+  y: 65
+  z: 64448
