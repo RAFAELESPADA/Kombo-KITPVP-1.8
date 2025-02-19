@@ -1,7 +1,6 @@
 package net.kombopvp.pvp.kit.provider;
 
 
-import java.awt.Event;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +9,6 @@ import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Effect;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -23,21 +21,18 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.inventory.InventoryCreativeEvent;
 import org.bukkit.event.inventory.InventoryType;
-import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
-import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import net.kombopvp.pvp.KomboPvP;
-import net.kombopvp.pvp.kit.Habilidade;
 import net.kombopvp.pvp.kit.KitHandler;
 import net.kombopvp.pvp.kit.KitManager;
 import net.kombopvp.pvp.kit.KitManager2;
@@ -92,33 +87,73 @@ public final class GladiatorListener2 extends KitHandler
 
    
         
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onSoupManager(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (event.getAction() != Action.RIGHT_CLICK_AIR && event.getAction() != Action.RIGHT_CLICK_BLOCK) {
-            return;
-        }
+        if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
+         
 
         if (player.getItemInHand().getType() == Material.MUSHROOM_SOUP && player.getHealth() != player.getMaxHealth()) {
             double maxHealth = player.getMaxHealth();
             double currentHealth = player.getHealth();
 
-            if (currentHealth > maxHealth - 7.0D) {
-                player.setHealth(maxHealth);
-            } else {
-                player.setHealth(currentHealth + 7.0D);
-                player.getWorld().playEffect(player.getLocation().add(0.0D, 1.5D, 0.0D), Effect.HEART, 7);
-            }
-
+            player.setHealth(currentHealth > maxHealth - 7.0D ? maxHealth : currentHealth + 7.0D);        
+            event.setCancelled(true);
             player.getItemInHand().setType(Material.BOWL);
             player.getItemInHand().setAmount(1);
             player.getInventory().getItemInHand().setItemMeta(player.getItemInHand().getItemMeta());
-            player.updateInventory();
+            
+        }
         }
     }
 
-        
+    @EventHandler
+    public void onInventoryInteract(final InventoryClickEvent e)
+    {
+        if (!(e.getWhoClicked() instanceof Player))
+        {
+            return;
+        }
+        final Inventory inv = e.getInventory();
+        final ItemStack current = e.getCurrentItem();
+        final ItemStack cursor = e.getCursor();
+        if (!inv.getType().equals(InventoryType.PLAYER))
+        {
+            return;
+        }
+        if (cursor != null && current != null) {
+        if (current.getType().equals(Material.MUSHROOM_SOUP) && cursor.getType().equals(Material.AIR))
+        {
+           e.getWhoClicked().setItemInHand(new ItemStack(Material.MUSHROOM_SOUP));
+           Bukkit.getConsoleSender().sendMessage("[DEBUG] Bug da sopa aconteceu com " + e.getWhoClicked().getName() + " mas foi arrumado!");
+            return;
+        }
+        }
+    }
+    @EventHandler
+    public void onInventoryInteract(final InventoryCreativeEvent e)
+    {
+        if (!(e.getWhoClicked() instanceof Player))
+        {
+            return;
+        }
+        final Inventory inv = e.getInventory();
+        final ItemStack current = e.getCurrentItem();
+        final ItemStack cursor = e.getCursor();
+        if (!inv.getType().equals(InventoryType.PLAYER))
+        {
+            return;
+        }
+        if (cursor != null && current != null) {
+        if (current.getType().equals(Material.MUSHROOM_SOUP) && cursor.getType().equals(Material.AIR))
+        {
+           e.getWhoClicked().setItemInHand(new ItemStack(Material.MUSHROOM_SOUP));
+           Bukkit.getConsoleSender().sendMessage("[DEBUG] Bug da sopa aconteceu com " + e.getWhoClicked().getName() + " mas foi arrumado!");
+            return;
+        }
+        }
+    }
     
 
     
