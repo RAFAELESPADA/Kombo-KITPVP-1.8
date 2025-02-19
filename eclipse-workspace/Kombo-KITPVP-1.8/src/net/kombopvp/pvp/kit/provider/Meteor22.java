@@ -62,7 +62,7 @@ public class Meteor22 extends KitHandler {
 				  else if (p2.getLocation().getY() > KomboPvP.getInstance().getConfig().getInt("SpawnAltura")  && EnderMageReal.isSpawn(p2.getLocation())) {
 						return;
 					 }
-				p2.damage(10);
+				p2.damage(7, p);
 				p2.playSound(p.getLocation(), Sound.GHAST_SCREAM, 10, 10);
 				p2.getWorld().strikeLightning(p2.getLocation());
 				p2.setFireTicks(140);

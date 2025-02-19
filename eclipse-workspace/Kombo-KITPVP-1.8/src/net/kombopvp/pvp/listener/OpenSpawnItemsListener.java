@@ -61,7 +61,7 @@ public class OpenSpawnItemsListener implements Listener {
 	        
 		}
 	}
-	
+//	
 @EventHandler
 public void onInteractt(PlayerPickupItemEvent event) {
 	Player player = event.getPlayer();
@@ -69,49 +69,49 @@ public void onInteractt(PlayerPickupItemEvent event) {
 	event.setCancelled(true);
 	}
 }
-@EventHandler
-public void onInteracttVgf(PlayerDropItemEvent event) {
-	Player player = event.getPlayer();
-	if (event.getItemDrop().getItemStack().getType() == Material.MUSHROOM_SOUP && WaveWarp2.SPAWN.hasPlayer(player.getName())) {
-	event.setCancelled(true);
-	}
-}
-@EventHandler
-public void V(PlayerDropItemEvent event) {
-	Player player = event.getPlayer();
-	if (event.getItemDrop().getItemStack().getType() == Material.MUSHROOM_SOUP && WaveWarp2.FPS.hasPlayer(player.getName())) {
-	event.setCancelled(true);
-	}
-}
-@EventHandler
-public void AV(PlayerDropItemEvent event) {
-	Player player = event.getPlayer();
-	if (event.getItemDrop().getItemStack().getType() == Material.MUSHROOM_SOUP && WaveWarp2.GLADIATOR.hasPlayer(player.getName())) {
-	event.setCancelled(true);
-	}
-}
-@EventHandler
-public void AV2(PlayerDropItemEvent event) {
-	Player player = event.getPlayer();
-	if (event.getItemDrop().getItemStack().getType() == Material.MUSHROOM_SOUP && WaveWarp2.ARENABUILD.hasPlayer(player.getName())) {
-	event.setCancelled(true);
-	}
-}
-@EventHandler
-public void AAV2(PlayerDropItemEvent event) {
-	Player player = event.getPlayer();
-	if (event.getItemDrop().getItemStack().getType() == Material.MUSHROOM_SOUP && WaveWarp2.DUELS.hasPlayer(player.getName())) {
-	event.setCancelled(true);
-	}
-}
-@EventHandler
-	public void onInteracttf(PlayerDropItemEvent event) {
-		Player player = event.getPlayer();
-		if (WaveWarp2.SPAWN.hasPlayer(player.getName()) && EnderMageReal.isSpawn(player.getLocation()) && player.getLocation().getY() > KomboPvP.getInstance().getConfig().getInt("SpawnAltura") && PlayerJoin.fall.contains(player)) {
-		event.setCancelled(true);
-		}
-	}
-	 
+//@EventHandler
+//public void onInteracttVgf(PlayerDropItemEvent event) {
+	//	Player player = event.getPlayer();
+	//	if (event.getItemDrop().getItemStack().getType() == Material.MUSHROOM_SOUP && WaveWarp2.SPAWN.hasPlayer(player.getName())) {
+		//	event.setCancelled(true);
+	//	}
+	//}
+//@EventHandler
+//public void V(PlayerDropItemEvent event) {
+	//	Player player = event.getPlayer();
+	//	if (event.getItemDrop().getItemStack().getType() == Material.MUSHROOM_SOUP && WaveWarp2.FPS.hasPlayer(player.getName())) {
+		//	event.setCancelled(true);
+	//	}
+	//}
+//@EventHandler
+//public void AV(PlayerDropItemEvent event) {
+	//	Player player = event.getPlayer();
+	//	if (event.getItemDrop().getItemStack().getType() == Material.MUSHROOM_SOUP && WaveWarp2.GLADIATOR.hasPlayer(player.getName())) {
+		//	event.setCancelled(true);
+	//	}
+	//}
+//@EventHandler
+//public void AV2(PlayerDropItemEvent event) {
+	// player = event.getPlayer();
+	//	if (event.getItemDrop().getItemStack().getType() == Material.MUSHROOM_SOUP && WaveWarp2.ARENABUILD.hasPlayer(player.getName())) {
+		//	event.setCancelled(true);
+	//	}
+	//}
+	//@EventHandler
+//public void AAV2(PlayerDropItemEvent event) {
+	//	Player player = event.getPlayer();
+	//	if (event.getItemDrop().getItemStack().getType() == Material.MUSHROOM_SOUP && WaveWarp2.DUELS.hasPlayer(player.getName())) {
+		//event.setCancelled(true);
+	//}
+	////}
+//@EventHandler
+//	public void onInteracttf(PlayerDropItemEvent event) {
+	//	Player player = event.getPlayer();
+//		if (WaveWarp2.SPAWN.hasPlayer(player.getName()) && EnderMageReal.isSpawn(player.getLocation()) && player.getLocation().getY() > KomboPvP.getInstance().getConfig().getInt("SpawnAltura") && PlayerJoin.fall.contains(player)) {
+	//	event.setCancelled(true);
+		//}
+//	}
+	// 
 		@EventHandler
 		public void onInteracttgf(PlayerDropItemEvent event) {
 			Player player = event.getPlayer();
