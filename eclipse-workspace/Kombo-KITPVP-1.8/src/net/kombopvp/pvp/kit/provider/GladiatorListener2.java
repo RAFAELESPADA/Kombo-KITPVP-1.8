@@ -126,8 +126,7 @@ public final class GladiatorListener2 extends KitHandler
         if (current.getType().equals(Material.MUSHROOM_SOUP) && cursor.getType().equals(Material.AIR))
         {
            e.getWhoClicked().setItemInHand(new ItemStack(Material.MUSHROOM_SOUP));
-           Bukkit.getConsoleSender().sendMessage("[DEBUG] Bug da sopa aconteceu com " + e.getWhoClicked().getName() + " mas foi arrumado!");
-            return;
+           return;
         }
         }
     }
@@ -149,7 +148,6 @@ public final class GladiatorListener2 extends KitHandler
         if (current.getType().equals(Material.MUSHROOM_SOUP) && cursor.getType().equals(Material.AIR))
         {
            e.getWhoClicked().setItemInHand(new ItemStack(Material.MUSHROOM_SOUP));
-           Bukkit.getConsoleSender().sendMessage("[DEBUG] Bug da sopa aconteceu com " + e.getWhoClicked().getName() + " mas foi arrumado!");
             return;
         }
         }
